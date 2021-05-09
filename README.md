@@ -1,4 +1,4 @@
-<h1 align="center">UIT BARBER</h1>
+<h1 align="center">UIT NEW</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="https://www.uit.edu.vn/" target="_blank">University Of Informations Technology</a>.
