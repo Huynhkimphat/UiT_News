@@ -1,0 +1,15 @@
+/* Custom CSS */
+
+.block1 {}
+
+.block1__header {}
+
+.block1__subheader {}
+
+.block1__content {}
+
+.block1__content__price {}
+
+.block1__contnet__price--active {}
+
+.block1__content__price--unactive {}

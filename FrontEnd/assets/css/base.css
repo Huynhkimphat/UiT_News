@@ -1,3 +1,9 @@
+/* Import Font-Family */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&display=swap");
+
+/* Common Variables */
+
 :root {
     --white-color: #f6f6f6;
     --black-color: #000;
@@ -13,16 +19,19 @@
     --header-sort-bar-height: 46px;
 }
 
+
+/* Reset CSS and Using Font-Family */
+
 * {
     box-sizing: inherit;
     padding: 0;
     margin: 0;
+    font-family: "Poppins";
 }
 
 html {
     /* 1rem =10px => 1.2rem=12px... */
     font-size: 62.5%;
     line-height: 1.6rem;
-    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
