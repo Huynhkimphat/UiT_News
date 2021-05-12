@@ -20,8 +20,9 @@ a:hover{ text-decoration: none!important;}
     
 }
 
-a .card-text{ 
-    color:black
+a { 
+    color:black!important;
+    text-decoration:none!important;
 }
 .carousel-caption{ 
     backdrop-filter: blur(5px);
