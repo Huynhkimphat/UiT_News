@@ -1,0 +1,31 @@
+/* Reset format */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navbar{
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+}
+.navbar-hello{
+    margin: 0;
+    margin-bottom:0;
+}
+.media-body{
+    color:#EE2B47 !important;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 30px;
+}
+.dropdown-toggle:after{
+    color: #EE2B47;
+}
+.input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child){
+    border-color:#EE2B47;
+}
+/* Ma mau
+#34374C
+#2C2E3E
+#EE2B47
+#F6F6F6 */
