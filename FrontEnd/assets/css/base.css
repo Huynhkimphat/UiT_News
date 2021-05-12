@@ -15,11 +15,10 @@
     --star-gold-color: #ffc637;
     --navbar-height: px;
     --header-height: px;
-    --header-with-search-height: calc(
-        var(--header-height) - var(--navbar-height)
-    );
+    --header-with-search-height: calc( var(--header-height) - var(--navbar-height));
     --header-sort-bar-height: 46px;
 }
+
 
 /* Reset CSS and Using Font-Family */
 
