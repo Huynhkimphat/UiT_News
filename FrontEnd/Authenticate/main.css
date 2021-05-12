@@ -133,11 +133,31 @@
   box-shadow: 0 0 0 0.25rem #2f363c73 !important;
 }
 
+.authen__form-wrapper__action__btn--primary {
+  color: var(--white-color);
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.authen__form-wrapper__action__btn--primary:focus {
+  box-shadow: 0 0 0 0.25rem #d6171773 !important;
+}
+
 .authen__form-wrapper__action__btn--secondary {
   color: var(--primary-color) !important;
   background-color: var(--white-color) !important;
   border-color: var(--white-color) !important;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.btn-link_layout {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.btn-link_layout p {
+  margin: 0;
 }
 
 /* line separate button*/
