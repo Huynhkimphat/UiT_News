@@ -1,3 +1,7 @@
+html {
+    font-size: 100%;
+}
+
 .typePost input[type="radio"] {
     display: none;
 }
@@ -11,7 +15,7 @@
     color: blue;
 }
 
-.typePost input[type="radio"]:checked + span {
+.typePost input[type="radio"]:checked+span {
     background-color: blue;
     color: black;
 }
