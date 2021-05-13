@@ -184,6 +184,28 @@
   font-size: 1.2rem;
 }
 
+/* styles message */
+
+.authen__form__control {
+  position: relative;
+}
+.authen__form__error {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  color: var(--secondary-color);
+  background-color: rgba(255, 0, 0, 0.534);
+  opacity: 0;
+  transition: all ease 0.7s;
+}
+
+.invalid {
+  opacity: 1;
+}
+
 /* responsive */
 
 @media screen and (max-width: 768px) {
