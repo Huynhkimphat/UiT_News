@@ -5,13 +5,12 @@ body{
     width:10%;
 }
 #pop-news{ 
-    display: flex;
+   
     margin: 30px 5%;
 }
 #pop-news .carousel-inner img{ 
     width: 100%;
-    
-    filter: brightness(0.7);
+   
     border-radius: 5px;
 }
 a:hover{ text-decoration: none!important;}
@@ -117,9 +116,7 @@ a {
     }
 }
 @media screen and (max-width:992px) {
-    #hiden { 
-        display: none;
-    };
+    
     .news-roller img{ 
         height: 60%;
      }
