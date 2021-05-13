@@ -31,13 +31,6 @@ a {
     
 }
 .board{ 
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 100vh;
-    float: left;
     margin-bottom: 55px;
 }
 .news-roller{ 
@@ -145,13 +138,6 @@ a {
     margin: 30px 5%;
 }
 .left-board{ 
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 150vh;
-    float: left;
     margin-bottom: 55px;
 }
 #news-video h2{ 
