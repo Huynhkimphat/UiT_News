@@ -3,10 +3,10 @@
 ### DESCRIPTION
 
 - UI:
-  - [ ] Logo and text
-  - [ ] A form with 2 input fields: username (email) and password
-  - [ ] A login button
-  - [ ] 2 anchors tag to links: forget password and register
+  - [x] Logo and text
+  - [x] A form with 2 input fields: username (email) and password
+  - [x] A login button
+  - [x] 2 anchors tag to links: forget password and register
 - Validate:
   - [ ] All fields are required (If username/password empty and clicked login => Notice message required)
   - [ ] On focus => Blur => Notice message require
