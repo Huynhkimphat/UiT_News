@@ -137,7 +137,7 @@ a {
     
 }
 #news-video{ 
-    display: flex;
+   
     margin: 30px 5%;
 }
 .left-board{ 
@@ -161,15 +161,15 @@ a {
 }
 .thumbnails img{ 
     width:30%;
-    margin-left: 15vh;
-    margin-top: 3vh;
+    margin-left: 43%;
+    margin-top: 13%;
    visibility: hidden;
 }
 
 
 .thumbnails{ 
-    width: 50vh;
-    height: 25vh;
+    width: 80%;
+    height: 50%;
     opacity: 0.9;
 }
 #video1{ 
