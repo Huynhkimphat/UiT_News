@@ -312,6 +312,15 @@
                 $(this).text(text);
             }
             }) ;
+           $(".card-title").each(function(){ 
+            var l=$(this).text().length;
+            if(l>56){ 
+                var x=$(this).text().slice(50,l);
+                var text=$(this).text();
+                text=text.replace(x,"...");
+                $(this).text(text);
+            }
+            }) ;
         }) ;
         $(".btn-news-videos").on("click",function(){ 
             $(".more:hidden").slice(0,3).slideDown()
