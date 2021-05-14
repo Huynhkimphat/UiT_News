@@ -15,7 +15,7 @@
         
         <main> 
             <article id="pop-news"> 
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="col-xl-7 col-lg-7 col-md-10 col-sm-10" id="featured"> 
 
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -63,7 +63,7 @@
                             </button>
                         </div>
                         <div id="picked" class="row "> 
-                            <div class="col-xl-4 col-lg-4 "> 
+                            <div class="col-xl-4 col-lg-4 col-md-4"> 
                                 <div class="card" >
                                     <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/07-may-2021/5-languages-of-apology-feature-768x432.jpg" alt="Card image">
                                     <div class="card-body">
@@ -73,7 +73,7 @@
                                     </div>
                                   </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4"> 
+                            <div class="col-xl-4 col-lg-4 col-md-4"> 
                                 <div class="card" >
                                     <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/06-may-2021/210426-metime-feature-768x432.jpg" alt="Card image">
                                     <div class="card-body">
@@ -83,7 +83,7 @@
                                     </div>
                                   </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4" >
+                            <div class="col-xl-4 col-lg-4 col-md-4" >
                                 <div class="card">
                                     <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/21-apr-2021/bonao2-optim-768x432.jpg" alt="Card image">
                                     <div class="card-body">
@@ -305,12 +305,13 @@
        $(document).ready(function(){ 
         $(".content").each(function(){ 
             var l=$(this).text().length;
-            if(l>112){ 
-                var x=$(this).text().slice(106,l);
+            if(l>74){ 
+                var x=$(this).text().slice(70,l);
                 var text=$(this).text();
                 text=text.replace(x,"...");
                 $(this).text(text);
             }
+            }) ;
         }) ;
         $(".btn-news-videos").on("click",function(){ 
             $(".more:hidden").slice(0,3).slideDown()
