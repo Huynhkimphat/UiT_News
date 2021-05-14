@@ -1,36 +1,85 @@
-
-body {
+body 
+{
     box-sizing: inherit;
     padding: 0;
     margin: 0;
-    font-family: "Poppins";
-    background-color:#F6F6F6;
+    color :#2C2E3E;
+    font-family: "Inter";
+    background-color:#34374C ;
+    font-size:15px
 }
+.post_title 
+{ font-weight: bold!important;
+  font-size: 2.3!important;
+  font-weight: 400;
+  margin-bottom: 15px;
+  line-height: 30px;
+  padding: 15px;
+  border-left-style: solid;
+  border-left-width: 15px;
+}
+.author_name
+{
+  color:#2C2E3E
+}
+.single_post_content
+{
+  color:#2C2E3E;
+}
+.single_post_area
+{
+  width: 700px;
 
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+}
+.middle_bar
+{
+  margin-left: 185px
+}
+.btn-success
+{
+ color:#fff;
+ background-color: #2C2E3E;
+ border-color: #2C2E3E;
+}
+.btn-warning
+{
+ color:#fff;
+ background-color: #EE2B47;
+ border-color: #EE2B47;
+}
+.btn-primary
+{ 
+  color:#fff;
+  background-color: #2C2E3E;
+  border-color: #2C2E3E;
+
+}
+.scrollToTop {
+  bottom: 105px;
+  display: none;
+  font-size: 32px;
+  font-weight: bold;
+  height: 50px;
+  position: fixed;
+  right: 290px!important;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  width: 50px;
+  z-index: 9999;
+  margin-right: 80px !important;
+ 
 }
-
-.fa:hover {
-    opacity: 0.7;
+.related_post
+{
+  width: 700px;
 }
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
+.mr-2
+{
+  font-size: 16px;
+  font-weight: bold!important;
 }
-
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.fa-google {
-  background: #dd4b39;
-  color: white;
+.h5, h5 
+{
+  font-size: 1.5rem;
+  font-weight: bold!important;
 }
