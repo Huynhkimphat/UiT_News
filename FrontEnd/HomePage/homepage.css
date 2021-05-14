@@ -97,6 +97,7 @@ a {
 h4.card-title {
     height: 50px;
     font-weight: bolder;
+    overflow:hidden;
 }
 
 .card{ 
