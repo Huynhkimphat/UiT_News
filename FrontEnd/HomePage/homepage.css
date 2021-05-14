@@ -15,7 +15,7 @@ html {
 
 #pop-news{ 
    
-    margin: 30px 5%;
+    margin: 30px 10%;
 }
 #pop-news .carousel-inner img{ 
     width: 100%;
@@ -118,6 +118,7 @@ h4.card-title {
     .slot1 .content{ 
         display: grid;
         line-height:18px;
+        font-size: 0.9rem;
     }
    
     
@@ -141,7 +142,7 @@ h4.card-title {
 }
 
 #news-video{ 
-    margin: 30px 5%;
+    margin: 30px 10%;
 }
 .left-board{ 
     margin-bottom: 55px;
