@@ -81,14 +81,19 @@ a {
    
     font-size: 1.2rem;
 }
+h4.card-title {
+    height: 50px;
+}
+
+.card{ 
+    border: none!important;
+}
 
 @media screen and (max-width:1025px){ 
     #latest{ 
         display: none;
     }
-    #picked{ 
-        display: none;
-    }
+    
     .btn-news-videos{ 
         display: none!important;
     }
@@ -101,6 +106,12 @@ a {
     }
    
     
+}
+@media screen and (max-width:767px) {
+
+#picked{ 
+    display: none;
+}
 }
 @media (max-width:1024px){ 
     .col-lg-7{ 
