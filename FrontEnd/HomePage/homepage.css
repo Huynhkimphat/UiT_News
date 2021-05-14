@@ -81,17 +81,7 @@ a {
    
     font-size: 1.2rem;
 }
-@media screen and (max-width:992px) {
-    .slot1 span strong{ 
-        font-size: 1rem!important;
-    }
-}
-@media screen and (max-width:992px) {
-    
-    .news-roller img{ 
-        height: 60%;
-     }
-}
+
 @media screen and (max-width:1200px){ 
     #latest{ 
         display: none;
@@ -104,7 +94,7 @@ a {
     }
     .news-roller img{ 
         width: 30%;
-        height:55%;
+        height:45%;
     }
     .slot1 .content{ 
         font-size: 12px;
@@ -189,24 +179,14 @@ a {
 
 a .item-title{ 
     text-align: left;
-    color: black;
     line-height: 20px;
     margin-bottom: 20px;
     
 }
 a .item-info{ 
-    color: black;
     line-height: 18px;
 }
-sup{ 
-    font-size: 29rem;
-}
-@media screen and (max-width:916px) {
-    .thumbnails p{ 
-        margin-top: 50%;
-    }
-    
-}
+
 .more{ 
     display: none;
 }
@@ -268,11 +248,7 @@ sup{
      border: none;
     color: #fff;
 } 
-.btn-videos, .btn-news{ 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 @media screen and (min-width:1201px) {
     .btn-news{ 
         display: none!important;
