@@ -102,6 +102,18 @@ a {
    
     
 }
+@media (max-width:1024px){ 
+    .col-lg-7{ 
+        flex:0 0 auto;
+        width: 83.3333333333333333%!important;
+    }
+    .col-lg-6{ 
+        flex:0 0 auto;
+        width: 83.3333333333333333%!important;
+    }
+    
+}
+
 #news-video{ 
     margin: 30px 5%;
 }
