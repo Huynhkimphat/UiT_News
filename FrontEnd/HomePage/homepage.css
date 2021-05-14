@@ -82,7 +82,7 @@ a {
     font-size: 1.2rem;
 }
 
-@media screen and (max-width:1200px){ 
+@media screen and (max-width:1025px){ 
     #latest{ 
         display: none;
     }
@@ -249,7 +249,7 @@ a .item-info{
     color: #fff;
 } 
 
-@media screen and (min-width:1201px) {
+@media screen and (min-width:1025px) {
     .btn-news{ 
         display: none!important;
     }
