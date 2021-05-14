@@ -14,4 +14,9 @@ const rules = {
     if (password.length < 6)
       return { message: `${inputName} required at lease 6 character` };
   },
+  confirmPassword: (inputName, rootPassword, password) => {
+    if (password !== rootPassword) {
+      return { message: `${inputName} dont match` };
+    }
+  },
 };

@@ -47,7 +47,7 @@ const Validator = (formObj) => {
 
       //  Add event onblur input element
       inputElement.onblur = () => {
-        isFirstSubmit && Validate(inputElement, selectorRules[rule.selector]);
+        Validate(inputElement, selectorRules[rule.selector]);
       };
 
       inputElement.oninput = () => {
@@ -82,6 +82,16 @@ Validator.password = (selector) => {
     selector: selector,
     test: (name, value) => {
       return rules.password(name, value);
+    },
+  };
+};
+Validator.confirmPassword = (selector, selectorConfirm) => {
+  const confirmElement = $(selectorConfirm);
+
+  return {
+    selector: selector,
+    test: (name, value) => {
+      return rules.confirmPassword(name, confirmElement.value, value);
     },
   };
 };
