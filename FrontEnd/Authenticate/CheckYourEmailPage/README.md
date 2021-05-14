@@ -3,4 +3,4 @@
 ### DESCRIPTION
 
 - UI:
-  - [ ] Logo and text
+  - [x] Logo and text

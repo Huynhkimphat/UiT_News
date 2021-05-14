@@ -1,0 +1,29 @@
+.container--fullHeight {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 3rem !important;
+}
+.container--halfHeight {
+  height: 50% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.title--large {
+  font-size: 7rem !important;
+}
+.title--small {
+  font-size: 3rem !important;
+}
+
+.wrap-title--left {
+  display: flex;
+  width: 100%;
+  padding: 0 4rem;
+  justify-content: flex-start !important;
+}
+.wrap-title--center {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-3rem);
+}
