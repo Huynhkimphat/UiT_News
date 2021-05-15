@@ -1,28 +1,42 @@
 /* Reset format */
+
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 .navbar {
-  line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
 }
+
 .navbar-hello {
-  margin: 0;
-  margin-bottom: 0;
+    margin: 0;
+    margin-bottom: 0;
 }
 
 /* .dropdown-toggle:after {
   color: #ee2b47;
 } */
+
 .input-group > .custom-select:not(:last-child),
 .input-group > .form-control:not(:last-child) {
-  border-color: #ee2b47;
+    border-color: #ee2b47;
 }
+
 /* Ma mau
 #34374C
 #2C2E3E
 #EE2B47
 #F6F6F6 */
+
+.desktop-none {
+    display: none;
+}
+
+@media (max-width: 739px) {
+    .mobile-none {
+        display: none;
+    }
+}
