@@ -151,6 +151,9 @@ a {
     #hidden{ 
         display: none;
     }
+    #latest .slot1 a{ 
+        height:66px!important;
+    }
 }
 #news-video{ 
     margin: 30px 10%;
