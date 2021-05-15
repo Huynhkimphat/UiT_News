@@ -116,9 +116,7 @@ a {
     #latest .content{ 
         height:40px;
     }
-    #hidden{ 
-        display: none;
-    }
+    
     .thumbnails p{ 
         margin-top: 70%!important;
      }
@@ -149,6 +147,9 @@ a {
 @media screen and (max-width:768px) { 
     .news-roller .slot1{ 
         margin-bottom: 15px;
+    }
+    #hidden{ 
+        display: none;
     }
 }
 #news-video{ 
