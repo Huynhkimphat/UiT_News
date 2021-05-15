@@ -13,40 +13,58 @@
     <link rel="stylesheet" href="../../../assets/css/base.css">
     <!-- TODO : Link Custom CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>CreatNewPage</title>
+    <title>Update Video</title>
 </head>
 
 <body>
     <div class="mt-4 container">
-        <h3>CREATE NEW POST</h3>
+        <h3>UPDATE VIDEO NO.1</h3>
         <form class="mt-4 " method="POST" action="">
             <div>
                 <label for="title">TITLE: </label><br>
-                <input type="text" name="title" id="title" width="full" placeholder="Title 1"><br>
+                <input type="text" name="title" id="title" width="full" value="Tin tuc so 1"><br>
             </div>
             <div>
                 <label for="author">AUTHOR: </label><br>
-                <input type="text" name="author" id="author" width="full" placeholder="Author 1"><br>
+                <input type="text" name="author" id="author" width="full" value="Tac gia so 1"><br>
             </div>
-            <div>
+            <div class="col-12">
                 <label for="content">CONTENT: </label><br>
-                <textarea name="content" id="content" cols="100" rows="10" class="w-100" placeholder="Place to hold your content"></textarea><br>
+                <textarea name="content" id="content" cols="100" rows="10" class="w-100">  Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up
+                    the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+                    Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to
+                    build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and
+                    make up the bulk of the card's content.</textarea><br>
             </div>
             <div>
                 <label for="img">PICTURE: </label>
                 <input type="file" id="img" name="img">
             </div>
+            <div class="mt-4">
+                <label for="video">Video: </label>
+                <input type="text" id="video" name="video">
+            </div>
             <div class="form-group" id="postType">
                 <label for="typePost">Post Type: </label>
                 <p class="typePost">
-                    <label><input type="radio" name="typePost" value="Music" id="typePost"><span>Music</span></label>
+                    <label><input type="radio" name="typePost" value="Music" id="typePost"
+                            checked><span>Music</span></label>
                     <label><input type="radio" name="typePost" value="Movie" id="typePost"><span>Moive</span></label>
                     <label><input type="radio" name="typePost" value="Sport" id="typePost"><span>Sport</span></label>
                 </p>
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-            <a href="../ManagePost/index.html" class="btn btn-warning">Back</a>
+            <div class="form-group" id="postStatus">
+                <label for="statusPost">Post Type: </label>
+                <p class="statusPost">
+                    <label><input type="radio" name="statusPost" value="ACTIVE" id="statusPost"
+                            checked><span>ACTIVE</span></label>
+                    <label><input type="radio" name="statusPost" value="UNACTIVE"
+                            id="statusPost"><span>UNACTIVE</span></label>
+                </p>
+            </div>
 
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="../ManageVideo/index.html" class="btn btn-warning">Back</a>
         </form>
     </div>
 </body>
