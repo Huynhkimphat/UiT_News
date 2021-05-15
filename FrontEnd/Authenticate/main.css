@@ -250,6 +250,10 @@
   }
   .authen-page__container__banner {
     min-height: 10rem;
-    max-height: 30rem;
+    max-height: 48rem;
+  }
+  .authen-page__container__form {
+    min-height: 5rem;
+    max-height: 48rem;
   }
 }
