@@ -66,7 +66,7 @@ body
   text-decoration: none;
   width: 50px;
   z-index: 9999;
-  margin-right: 80px !important;
+  margin-left: 150px !important;
  
 }
 .related_post
@@ -76,10 +76,31 @@ body
 .mr-2
 {
   font-size: 16px;
-  font-weight: bold!important;
+  font-weight: bold;
+  margin-top:  5px !important;
 }
 .h5, h5 
 {
   font-size: 1.5rem;
   font-weight: bold!important;
+  margin-top:  5px !important;
+}
+
+.author_name {
+  color: #2C2E3E;
+  margin-right: 20px;
+}
+.ml-2, .mx-2 
+{
+  margin-bottom: .23rem!important;
+  
+}
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
 }
