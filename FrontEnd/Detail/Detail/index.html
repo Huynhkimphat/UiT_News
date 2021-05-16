@@ -5,9 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="image/logo2.png" />
     <title>'Muộn rồi mà sao còn' của Sơn Tùng M-TP có gì đặc biệt?</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+   
+
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-comments.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Data -->
+	<script type="text/javascript" src="data/comments-data.js"></script>
+
+		<!-- Libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.0/jquery.textcomplete.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-comments.js"></script>
+
+    <script type="text/javascript" src="test.js"></script>
+
+    <!-- Init jquery-comments -->
+    <!-- <script type="text/javascript">
+        $(function() {
+            var saveComment = function(data) {
+
+                // Convert pings to human readable format
+                $(Object.keys(data.pings)).each(function(index, userId) {
+                    var fullname = data.pings[userId];
+                    var pingText = '@' + fullname;
+                    data.content = data.content.replace(new RegExp('@' + userId, 'g'), pingText);
+                });
+
+                return data;
+            }
+            $('#comments-container').comments({
+                profilePictureURL: 'https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-1/p240x240/149943665_467969470998408_3401684646876157977_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=7206a8&_nc_ohc=cGiUDb5rVQ0AX_5aRfx&_nc_ht=scontent.fpnh22-3.fna&tp=6&oh=6f710e994a6a95fe7038809a79d515f6&oe=60C80421',
+                currentUserId: 1,
+                roundProfilePictures: true,
+                textareaRows: 1,
+                enableAttachments: true,
+                enableHashtags: true,
+                enablePinging: true,
+                scrollContainer: $(window),
+                searchUsers: function(term, success, error) {
+                    setTimeout(function() {
+                        success(usersArray.filter(function(user) {
+                            var containsSearchTerm = user.fullname.toLowerCase().indexOf(term.toLowerCase()) != -1;
+                            var isNotSelf = user.id != 1;
+                            return containsSearchTerm && isNotSelf;
+                        }));
+                    }, 500);
+                },
+                getComments: function(success, error) {
+                    setTimeout(function() {
+                        success(commentsArray);
+                    }, 500);
+                },
+                postComment: function(data, success, error) {
+                    setTimeout(function() {
+                        success(saveComment(data));
+                    }, 500);
+                },
+                putComment: function(data, success, error) {
+                    setTimeout(function() {
+                        success(saveComment(data));
+                    }, 500);
+                },
+                deleteComment: function(data, success, error) {
+                    setTimeout(function() {
+                        success();
+                    }, 500);
+                },
+                upvoteComment: function(data, success, error) {
+                    setTimeout(function() {
+                        success(data);
+                    }, 500);
+                },
+                validateAttachments: function(attachments, callback) {
+                    setTimeout(function() {
+                        callback(attachments);
+                    }, 500);
+                },
+            });
+        });
+    </script> -->
     <!-- TODO : Link Bootstrap 5.0 Lib -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <!-- TODO : Link FontAwesome Lib -->
@@ -49,74 +128,14 @@
                             <p>Điều đặc biệt, thời gian phát hành của ca khúc này là 21h57 phút, một khung giờ lẻ chứ không phải con số tròn trịa như trước đây anh đã từng chọn. Điều này cũng khiến MV của Sơn Tùng trở nên đặc biệt hơn, giúp màn trở lại thêm
                                 bất ngờ, hấp dẫn, khiến nhiều người trông ngóng.</p>
                             <a href="#" class="btn btn-default">tags</a> <a href="#" class="btn btn-success">Sơn Tùng MTP</a> <a href="#" class="btn btn-warning">Thiều Bảo Trâm</a> <a href="#" class="btn btn-info">MTP-Entertainment</a>
-                        </div>
-                        <div class="comment_content">
-                            <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
-                                <div class="profile-image"><img class="rounded-circle" src="image/nane.jpg" width="70"></div>
+                            <p>
+                                 <div id="comments-container"></div>
 
-                                <div class="d-flex flex-column ml-3">
-                                    <div class="d-flex flex-row post-title">
-                                        <h5>Lê Hoàng Thùy Na </h5>
-                                    </div>
-                                    <div class="d-flex flex-row align-items-center align-content-center post-title">
-                                        <h5><span class="mr-2 dot"></span><span>6 hours ago</span></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="cmt" class="coment-bottom bg-white p-2 px-4">
-                                <div class="d-flex flex-row add-comment-section mt-4 mb-4">
-                                    <img class="img-fluid img-responsive rounded-circle mr-2" src="image/nane.jpg" width="35">
-                                    <input type="text" class="form-control mr-3" id='add_comment' placeholder="Add comment">
-                                    <button class="btn btn-primary" type="button" width="35" onclick="getComment()">Comment</button>
-                                </div>
-                                <div id='cmt1' class="commented-section mt-2">
-                                    <div class="d-flex flex-row align-items-center commented-user">
-                                        <img class="img-fluid img-responsive rounded-circle mr-2" src="image/nane.jpg" width="35">
-                                        <h5 class="mr-2">Nguyễn Thanh Tùng </h5>
-                                        <h5><span class="dot mb-1"></span><span class="mb-1 ml-2">4 hours ago</span></h5>
-                                    </div>
-                                    <div class="comment-text-sm"><span>Thời gian phát hành của ca khúc này là 21h57 phút, một khung
-                      giờ lẻ chứ không phải con số tròn trịa như trước đây anh đã từng chọn.</span></div>
-                                    <div id="reply" class="reply-section">
-                                        <div class="d-flex flex-row align-items-center voting-icons">
-                                            <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
-                                            <h6 class="ml-2 mt-1" onclick="reply_cmt1()">Reply</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id='cmt2' class="commented-section mt-2">
-                                    <div class="d-flex flex-row align-items-center commented-user">
-                                        <img class="img-fluid img-responsive rounded-circle mr-2" src="image/nane.jpg" width="35">
-                                        <h5 class="mr-2">Thiều Bảo Trâm</h5>
-                                        <h5><span class="dot mb-1"></span><span class="mb-1 ml-2">5 hours ago</span></h5>
-                                    </div>
-                                    <div class="comment-text-sm"><span>Với bài mới này, có thể nhận thấy Sơn Tùng không quá chú trọng
-                      đầu tư nhiều cho MV...</span></div>
-                                    <div class="reply-section">
-                                        <div class="d-flex flex-row align-items-center voting-icons">
-                                            <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
-                                            <h6 class="ml-2 mt-1" onclick="reply_cmt2()">Reply</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id='cmt3' class="commented-section mt-2">
-                                    <div class="d-flex flex-row align-items-center commented-user">
-                                        <img class="img-fluid img-responsive rounded-circle mr-2" src="image/nane.jpg" width="35">
-                                        <h5 class="mr-2">Jack</h5>
-                                        <h5><span class="dot mb-1"></span><span class="mb-1 ml-2">10 hours ago</span></h5>
-                                    </div>
-                                    <div class="comment-text-sm"><span>Trở lại với sản phẩm lần này, Sơn Tùng khiến nhiều người bất
-                      ngờ về hình thức ra mắt.</span></div>
-                                    <div class="reply-section">
-                                        <div class="d-flex flex-row align-items-center voting-icons">
-                                            <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
-                                            <h6 class="ml-2 mt-1" onclick="reply_cmt3()">Reply</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </p>
                         </div>
+                       
                     </div>
+                    
                     <div class="social_area wow fadeInLeft">
                         <ul>
                             <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -145,13 +164,13 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
+<!--     <script src="assets/js/jquery.min.js"></script>
+ -->    <script src="assets/js/jquery.li-scroller.1.0.js"></script>
+
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/jquery.li-scroller.1.0.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="runtime.js" defer></script>
+
+    <script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script>
+
     <script src="polyfills.js" defer></script>
     <script src="styles.js" defer></script>
     <script src="vendor.js" defer></script>
@@ -160,8 +179,7 @@
 
 </html>
 <!-- TODO : Link jQuery Lib  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script> -->
 <!-- TODO : Link  Bootstrap Libs -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
-<script type="text/javascript" src="test.js"></script>

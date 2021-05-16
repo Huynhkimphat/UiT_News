@@ -6,6 +6,10 @@ body {
     font-family: "Inter";
     background-color: #34374c;
     font-size: 15px;
+    padding: 20px;
+    margin: 0px;
+    font-size: 14px;
+    font-family: "Arial", Georgia, Serif;
 }
 
 .white-background {
