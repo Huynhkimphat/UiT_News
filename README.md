@@ -1,4 +1,4 @@
-<h1 align="center">UIT NEW</h1>
+<h1 align="center">UIT NEWS</h1>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/30569818/118405764-6d9f1a00-b6a3-11eb-8a5f-5ad8d1ebf7fc.png">
