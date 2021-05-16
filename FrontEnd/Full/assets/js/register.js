@@ -15,7 +15,7 @@ Validator({
         Validator.confirmPassword("#confirm-password", "#password"),
     ],
     submitSuccess: (data) => {
-        window.location.pathname = "FrontEnd/Full/login.html";
+        window.location.pathname = "UiT_News/FrontEnd/Full/login.html";
 
         console.log(data);
     },
