@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TODO : Link Bootstrap 5.0 Lib -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <!-- TODO : Link FontAwesome Lib -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- TODO : Link Base CSS -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <!-- TODO : Link Custom CSS-->
+    <link rel="stylesheet" href="./assets/css/info.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Info</title>
+</head>
+
+<body>
+    <div class="welcome-header">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color:#34374c">
+
+            <div class="container-fluid">
+                <!-- Left elements -->
+                <p class="navbar-hello brand text-danger mobile-none"><strong>CIRCLE NEWS</strong></p>
+                <p class="navbar-hello" style="color:white;">WELCOME, GUEST</p>
+                <!-- Right elements -->
+                <!-- <div class="d-flex align-items-center">
+                    <a href="./login.html" type="button" class="btn btn-outline-danger px-3 me-2 text-theme authen" data-mdb-ripple-color="dark">
+                        Login
+                    </a>
+                    <a href="./register.html" type="button" class="btn btn-danger btn-theme authen">
+                        Sign up
+                    </a>
+                </div> -->
+                <!-- User Login Success -->
+                <ul class="dropdown ml-auto ">
+                    <div class="dropdown ml-auto avaInfo align-items-center" style="display:flex;justify-content:space-evenly;width:9em;margin-right:10%">
+                        <a href="#" class="btn-user">
+                            <img class="mr-2" style="border-radius:50%" src="https://wall.vn/wp-content/uploads/2020/03/avatar-hai-huoc-ba-dao-8.jpg" width="40" height="40" alt="avatar">
+                        </a>
+                        <div class="username" style="color:#DC3545;">
+                            QuyQuy
+                        </div>
+                    </div>
+                    <div id=" myDropdown" class="dropdown-content">
+                        <a href="./info.html">My Profile</a>
+                        <a href="./index.html">Log Out</a>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header-nav">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <!-- Logo to back home -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="./assets/images/logo2.png" width="100" height="100"></a>
+            <!-- Navbar Toggle         -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Latest
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Politics</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Medical</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Public</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Entertainment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            View
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Events</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Trending</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Popularity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            World
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Document</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Analyser</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Vietnamese 5 Continents</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Here's that life</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Military</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Education
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Admissions</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Test Scores</a></li>
+                            <li><a class="dropdown-item full-size " href="#">University Lookup</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Study Abroad</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Learn English</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Education 4.0</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Kid-Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Health
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">News</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Counsel</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Nutritious</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Healthy and Beautiful</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Diseases</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Cancer</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Vaccine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Business
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Markets</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Tech</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Media</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Success</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Perspectives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Latest News</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Rhythm of Life</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Sport Life</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Life 4.0</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Music</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Travel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Collapsible wrapper -->
+
+            <!-- Right elements -->
+            <!-- Search Button  -->
+            <form class="d-flex input-group w-auto header-search">
+                <input type="search" class="form-control mobile-none iPad-none" placeholder="Type here" aria-label="Search" />
+                <button class="btn btn-outline-danger mobile-none iPad-none" type="button" data-mdb-ripple-color="dark" onclick="alert('Search Results')">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
+    <div class="container light-style flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-4">
+            Account settings
+        </h4>
+
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group account-settings-links" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" data-bs-toggle="list" role="tab" href="#account-general">General</a>
+                        <a class="list-group-item list-group-item-action" data-bs-toggle="list" role="tab" href="#account-change-password">Change password</a>
+                        <a class="list-group-item list-group-item-action" data-bs-toggle="list" role="tab" href="#account-notifications">Notifications</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade active show" role="tabpanel" id="account-general">
+
+                            <div class="card-body media align-items-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="d-block ui-w-80">
+                                <div class="media-body ml-4">
+                                    <label class="btn btn-outline-primary">
+                                        Upload new photo
+                                        <input type="file" class="account-settings-fileinput">
+                                    </label> &nbsp;
+                                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
+
+                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input type="text" class="form-control mb-1" value="nmaxwell@mail.com">
+                                    <div class="alert alert-warning mt-3">
+                                        Your email is not confirmed. Please check your inbox.<br>
+                                        <a href="javascript:void(0)">Resend confirmation</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" role="tabpanel" id="account-change-password">
+                            <div class="card-body pb-2">
+
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" role="tabpanel" id="account-notifications">
+                            <div class="card-body pb-2">
+
+                                <h6 class="mb-4">Activity</h6>
+
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked="">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">Email me when someone reply on my comment</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body pb-2">
+
+                                <h6 class="mb-4">Application</h6>
+
+                                <div class="form-group">
+                                    <label class="switcher">
+                                        <input type="checkbox" class="switcher-input" checked="">
+                                        <span class="switcher-indicator">
+                                            <span class="switcher-yes"></span>
+                                            <span class="switcher-no"></span>
+                                        </span>
+                                        <span class="switcher-label">News and announcements</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-right mt-3">
+            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+            <button type="button" class="btn btn-default">Cancel</button>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <h4 class="font-weight-bold py-3 mb-4">
+            Current Post
+        </h4>
+    </div>
+    <section class="hero-section">
+
+        <div class="card-grid">
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Post Title</h3>
+                </div>
+            </a>
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Post Title</h3>
+                </div>
+            </a>
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Post Title</h3>
+                </div>
+                </li>
+            </a>
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Post Title</h3>
+                </div>
+            </a>
+            <div>
+    </section>
+    <div class="container">
+        <hr>
+        <h4 class="font-weight-bold py-3 mb-4">
+            Current Video
+        </h4>
+    </div>
+    <section class="hero-section">
+
+        <div class="card-grid">
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Video Title</h3>
+                </div>
+            </a>
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Video Title</h3>
+                </div>
+            </a>
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Video Title</h3>
+                </div>
+                </li>
+            </a>
+            <a class="card2" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                </div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Video Title</h3>
+                </div>
+            </a>
+            <div>
+    </section>
+    <footer class="bg-dark text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!-- first row -->
+                <div class="row rowFirst">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                        <!-- Logo -->
+                        <a href="#!" class="footer-logo">
+                            <img src="./assets/images/logo.png" alt="footer_logo" class="img-thumbnail w-100" style="width: 300px;height: 250px;">
+                        </a>
+                        <!-- Text -->
+                        <p style="text-align:justify" class="full-size">
+                            Circle News is an operational information division of the UIT responsible for the gathering and broadcasting of news and current affairs around the world. Circle News, giving information on its origins, as well.
+                        </p>
+                    </div>
+                    <!--Grid column-->
+                    <div class="col-lg-2"></div>
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase text-danger toogleText1 full-size">Discover</h5>
+
+                        <ul class="list-unstyled mb-0 toogleMobile1">
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Latest</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">View</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">World</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Technology</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Design</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Culture</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Business</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase text-danger toogleText2 full-size">About</h5>
+
+                        <ul class="list-unstyled mb-0 toogleMobile2">
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Newsroom</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Advertisement</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Testimonials</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!-- first row -->
+
+                <!-- second row -->
+                <div class="row rowSecond">
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-md-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong class="text-danger full-size">Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+
+                                <div class="col-md-5 col-12">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="formEmail" class="form-control full-size" placeholder="Email address" />
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-danger mb-4 full-size" onclick="onclick=mySubscribe()">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+                </div>
+                <!-- second row -->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Social media -->
+        <div class="text-center p-3">
+            <section class="mb-4 center p-4 pb-0">
+                <!-- Facebook -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #3b5998;" href="https://www.facebook.com/" target="_blank" role="button"><i
+                        class="fab fa-facebook-f full-size"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #55acee;" href="https://twitter.com/twitter?lang=vi" target="_blank" role="button"><i
+                        class="fab fa-twitter full-size"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #dd4b39;" href="https://www.instagram.com/" target="_blank" role="button"><i
+                        class="fab fa-google full-size"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #ac2bac;" href="https://www.instagram.com/" target="_blank" role="button"><i
+                        class="fab fa-instagram full-size"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #0082ca;" href="https://www.linkedin.com/" target="_blank" role="button"><i
+                        class="fab fa-linkedin-in full-size"></i></a>
+                <!-- Github -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #333333;" href="https://github.com/" target="_blank" role="button"><i class="fab fa-github full-size"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 full-size" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright © 2021, Circle News
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>
+<!-- TODO : Link jQuery Lib  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<!-- TODO : Link  Bootstrap Libs -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+</script>
+<script>
+    // Toggle for mobile
+    document.querySelector('.toogleText1').onclick = () => {
+        document.querySelector('.toogleMobile1').classList.toggle("active");
+
+    }
+    document.querySelector('.toogleText2').onclick = () => {
+            document.querySelector('.toogleMobile2').classList.toggle("active");
+
+        }
+        // Js for Subscribe
+    function mySubscribe() {
+        if (document.getElementById("formEmail").value.length == 0) {
+            alert("Please fill in the email address box below!").innerHTML;
+        } else {
+            alert("Thank you for your subscription!").innerHTML;
+        }
+    }
+</script>

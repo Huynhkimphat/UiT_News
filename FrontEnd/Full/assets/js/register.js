@@ -15,7 +15,8 @@ Validator({
         Validator.confirmPassword("#confirm-password", "#password"),
     ],
     submitSuccess: (data) => {
-        alert("No error in validation");
+        window.location.pathname = "FrontEnd/Full/login.html";
+
         console.log(data);
     },
 });
