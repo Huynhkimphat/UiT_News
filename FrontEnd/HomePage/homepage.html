@@ -17,7 +17,7 @@
         <main> 
             <article id="pop-news"> 
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-7 col-10" id="featured"> 
+                    <div class="col-md-7 col-12" id="featured"> 
 
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
@@ -194,8 +194,8 @@
                             <div class="news-roller"> 
                                 <div class="playlist clearfix"> 
                                     <a href="#"> 
-                                        <div id="video1" class="thumbnails"> 
-                                            <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
+                                        <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/1V86NyTL25g/maxresdefault.jpg')"> 
+                                            <img src="https://vietcetera.com/images/outline/Play.svg">
                                             <p>4:27</p>
                                         </div>
                                          
@@ -209,8 +209,8 @@
                                         
                                     </a> 
                                     <a href="#"> 
-                                        <div id="video2" class="thumbnails"> 
-                                            <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
+                                        <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/KmPUD_F1-bQ/maxresdefault.jpg');"> 
+                                            <img src="https://vietcetera.com/images/outline/Play.svg">
                                             <p>4:27</p>
                                         </div>
                                          
@@ -225,8 +225,8 @@
                                     </a>
                                 
                                     <a href="#"> 
-                                        <div id="video3" class="thumbnails"> 
-                                            <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
+                                        <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/s0tUZhVY5Vc/maxresdefault.jpg');"> 
+                                            <img src="https://vietcetera.com/images/outline/Play.svg">
                                             <p>4:27</p>
                                         </div>
                                          
@@ -242,8 +242,8 @@
                                 </div>
                                 <div class="playlist clearfix more more-videos"> 
                                     <a href="#"> 
-                                        <div id="video4" class="thumbnails"> 
-                                            <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
+                                        <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/m-kLlUOq8fg/mqdefault.jpg');"> 
+                                            <img src="https://vietcetera.com/images/outline/Play.svg">
                                             <p>4:27</p>
                                         </div>
                                          
@@ -257,7 +257,7 @@
                                         </div> 
                                     </a>
                                     <a href="#"> 
-                                        <div id="video5" class="thumbnails"> 
+                                        <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/qCt0-w1dX2o/mqdefault.jpg');"> 
                                             <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
                                             <p>2:18</p>
                                         </div>
@@ -297,18 +297,13 @@
        
         $(".btn-news-videos").on("click",function(){ 
             $(".more:hidden").slice(0,3).slideDown()
-            if ($(".more:hidden").length==0){$(".btn-news-videos").fadeOut()}
-            
+   
         });
         $(".btn-news").on("click",function(){ 
-            $(".more-news:hidden").slice(0,3).slideDown()
-            if ($(".more-news:hidden").length==0){$(".btn-news").fadeOut()}
-            
+            $(".more-news:hidden").slice(0,3).slideDown() 
         });
         $(".btn-videos").on("click",function(){ 
-            $(".more-videos:hidden").slice(0,3).slideDown()
-            if ($(".more-videos:hidden").length==0){$(".btn-videos").fadeOut()}
-            
+            $(".more-videos:hidden").slice(0,3).slideDown()  
         });
          </script>
     </body>
