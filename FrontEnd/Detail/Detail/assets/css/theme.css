@@ -1,0 +1,86 @@
+.scrollToTop {
+    background: none repeat scroll 0 0 #09c;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.scrollToTop:hover,
+.scrollToTop:focus {
+    background-color: #fff;
+    border-color: #09c;
+    color: #09c !important;
+}
+
+.single_post_area .author_name,
+.single_post_area .post_date {
+    color: #09c;
+}
+
+.single_post_area .author_name:hover,
+.single_post_area .post_date:hover {
+    color: #444;
+}
+
+.single_post_area .author_name i,
+.post_date i {
+    color: #252525;
+}
+
+.post_title {
+    border-color: #09c;
+    color: #555;
+}
+
+.related_post>h2 i {
+    color: #09c;
+}
+
+.single_post_content ul li:before {
+    color: #09c;
+}
+
+.custom-tabs {
+    background: none repeat scroll 0 0 #09c;
+}
+
+.custom-tabs>li>a:hover {
+    background-color: #09c;
+    color: #fff;
+}
+
+.custom-tabs>li.active>a,
+.custom-tabs>li.active>a:hover,
+.custom-tabs>li.active>a:focus {
+    border-top: 3px solid #09c;
+}
+
+.left_slide {
+    background: none repeat scroll 0 0 #09c;
+}
+
+.footer_top {
+    border-top: 5px solid #09c;
+}
+
+.slick-prev,
+.slick-next {
+    background: none repeat scroll 0 0 #09c;
+    color: #fff;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    background: #fff;
+    color: #09c !important;
+}
+
+.single_post_content blockquote {
+    border-color: #09c;
+}
+
+.error_content a:hover {
+    background-color: #09c;
+}
