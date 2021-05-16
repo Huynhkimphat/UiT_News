@@ -18,7 +18,9 @@ a:hover{
     color: white!important;
     
 }
-
+.carousel-title{ 
+    text-decoration:none!important;
+}
 a { 
     color:black!important;
     text-decoration:none!important;
@@ -51,7 +53,9 @@ a {
 .news-roller a{ 
     padding: 5px;
     overflow:hidden;
-    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     line-height: 18px;
     
 }
@@ -110,7 +114,7 @@ a {
         
     }
     .slot1 .content{ 
-        display: grid;
+       
         line-height:18px;
         font-size: 0.9rem;
         
@@ -195,44 +199,18 @@ a {
 .thumbnails{ 
     width: 80%;
     opacity: 0.9;
-}
-#video1{ 
-    background: url('https://i.ytimg.com/vi/1V86NyTL25g/maxresdefault.jpg');
-    border-radius: 2px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#video2{ 
-    background: url('https://i.ytimg.com/vi/KmPUD_F1-bQ/maxresdefault.jpg');
     border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
 }
-#video3{ 
-    background: url('https://i.ytimg.com/vi/s0tUZhVY5Vc/maxresdefault.jpg');
-    border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#video4{ 
-    background: url('https://i.ytimg.com/vi/m-kLlUOq8fg/mqdefault.jpg');
-    border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#video5{ 
-    background: url('https://i.ytimg.com/vi/qCt0-w1dX2o/mqdefault.jpg');
-    border-radius: 4px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .thumbnails p{ 
     margin-top: 50%;
     font-size: 14px;
     color: white;
     display: inline-block;
     background-color: #0f0f0f;
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 1px;
 }
 .video-info{ 
