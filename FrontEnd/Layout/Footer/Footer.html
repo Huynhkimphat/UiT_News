@@ -48,9 +48,9 @@
                     <div class="col-lg-2"></div>
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase text-danger toogleText">Discover</h5>
+                        <h5 class="text-uppercase text-danger toogleText1">Discover</h5>
 
-                        <ul class="list-unstyled mb-0 toogleMobile">
+                        <ul class="list-unstyled mb-0 toogleMobile1">
                             <li>
                                 <a href="#!" target="blank" class="text-white">Latest</a>
                             </li>
@@ -78,9 +78,9 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase text-danger mb-0">About</h5>
+                        <h5 class="text-uppercase text-danger toogleText2">About</h5>
 
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled mb-0 toogleMobile2">
                             <li>
                                 <a href="#!" target="blank" class="text-white">Newsroom</a>
                             </li>
@@ -119,7 +119,7 @@
                                 <div class="col-md-5 col-12">
                                     <!-- Email input -->
                                     <div class="form-outline form-white mb-4">
-                                        <input type="email" id="form5Example2" class="form-control"
+                                        <input type="email" id="formEmail" class="form-control"
                                             placeholder="Email address" />
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@
                                 <div class="col-auto">
                                     <!-- Submit button -->
                                     <button type="submit" class="btn btn-outline-danger mb-4"
-                                        onclick="alert('Thank you for your subscribing Circle News!')">
+                                        onclick="onclick=mySubscribe()">
                                         Subscribe
                                     </button>
                                 </div>
@@ -176,7 +176,6 @@
             </section>
             <!-- Section: Social media -->
         </div>
-        <!-- Copyright -->
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -187,9 +186,22 @@
 </body>
 
 <script>
-    document.querySelector('.toogleText').onclick = () => {
-        document.querySelector('.toogleMobile').classList.toggle("active");
+    // Toggle for mobile
+    document.querySelector('.toogleText1').onclick = () => {
+        document.querySelector('.toogleMobile1').classList.toggle("active");
 
+    }
+    document.querySelector('.toogleText2').onclick = () => {
+        document.querySelector('.toogleMobile2').classList.toggle("active");
+
+    }
+    // Js for Subscribe
+    function mySubscribe() {
+        if (document.getElementById("formEmail").value.length == 0) {
+            alert("Please fill in the email address box below!").innerHTML;
+        } else {
+            alert("Thank you for your subscription!").innerHTML;
+        }
     }
 </script>
 
