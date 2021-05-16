@@ -79,7 +79,7 @@
     .mobile-none {
         display: none;
     }
-    .navbar-dark .navbar-toggler {
+    .navbar-light .navbar-toggler {
         margin-left: auto;
     }
 }
@@ -88,7 +88,7 @@
     .iPad-none {
         display: none;
     }
-    .navbar-dark .navbar-toggler {
+    .navbar-light .navbar-toggler {
         margin-left: auto;
     }
 }
