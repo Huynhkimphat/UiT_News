@@ -8,10 +8,10 @@
   - [x] A forget password button
   - [x] 2 anchors tag to links: Login and Register
 - Validate:
-  - [ ] Field is required
-  - [ ] On focus => Blur => Notice message require
-  - [ ] Username : must be a valid email <...@....>
+  - [x] Field is required
+  - [x] On focus => Blur => Notice message require
+  - [x] Username : must be a valid email <...@....>
 - Logic:
-  - [ ] Click Login => To Page Login
-  - [ ] Click Register => To Page Register
-  - [ ] Click forget password => To Page Check Your Email
+  - [x] Click Login => To Page Login
+  - [x] Click Register => To Page Register
+  - [x] Click forget password => To Page Check Your Email

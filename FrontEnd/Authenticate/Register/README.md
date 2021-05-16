@@ -8,12 +8,12 @@
   - [x] A register button
   - [x] 1 anchors tag to links: Login
 - Validate:
-  - [ ] All fields are required (If username/password/confirm password empty and clicked register => Notice message require)
-  - [ ] On focus => Blur => Notice message require
-  - [ ] Username : must be a valid email <...@....>
-  - [ ] Password : must be higher than 6 characters
-  - [ ] Confirm Password: must be the same with password field
+  - [x] All fields are required (If username/password/confirm password empty and clicked register => Notice message require)
+  - [x] On focus => Blur => Notice message require
+  - [x] Username : must be a valid email <...@....>
+  - [x] Password : must be higher than 6 characters
+  - [x] Confirm Password: must be the same with password field
   - [ ] Re-type Password Field => Empty Confirm Password Field
 - Logic:
-  - [ ] Click Login => To Page Login
-  - [ ] Click Register and all validations are right => Register and go to page login
+  - [x] Click Login => To Page Login
+  - [x] Click Register and all validations are right => Register and go to page login
