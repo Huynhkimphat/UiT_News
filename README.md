@@ -1,7 +1,8 @@
 <h1 align="center">UIT NEW</h1>
 
-![2](https://user-images.githubusercontent.com/30569818/118405764-6d9f1a00-b6a3-11eb-8a5f-5ad8d1ebf7fc.png)
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/30569818/118405764-6d9f1a00-b6a3-11eb-8a5f-5ad8d1ebf7fc.png">
+</p>
 <div align="center">
    Solution for a challenge from  <a href="https://www.uit.edu.vn/" target="_blank">University Of Informations Technology</a>.
 </div>
