@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="image/logo2.png" />
     <title>'Muộn rồi mà sao còn' của Sơn Tùng M-TP có gì đặc biệt?</title>
-    
-    
-   
-
     <link rel="stylesheet" type="text/css" href="assets/css/jquery-comments.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -19,74 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.0/jquery.textcomplete.js"></script>
     <script type="text/javascript" src="assets/js/jquery-comments.js"></script>
-
     <script type="text/javascript" src="test.js"></script>
-
-    <!-- Init jquery-comments -->
-    <!-- <script type="text/javascript">
-        $(function() {
-            var saveComment = function(data) {
-
-                // Convert pings to human readable format
-                $(Object.keys(data.pings)).each(function(index, userId) {
-                    var fullname = data.pings[userId];
-                    var pingText = '@' + fullname;
-                    data.content = data.content.replace(new RegExp('@' + userId, 'g'), pingText);
-                });
-
-                return data;
-            }
-            $('#comments-container').comments({
-                profilePictureURL: 'https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-1/p240x240/149943665_467969470998408_3401684646876157977_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=7206a8&_nc_ohc=cGiUDb5rVQ0AX_5aRfx&_nc_ht=scontent.fpnh22-3.fna&tp=6&oh=6f710e994a6a95fe7038809a79d515f6&oe=60C80421',
-                currentUserId: 1,
-                roundProfilePictures: true,
-                textareaRows: 1,
-                enableAttachments: true,
-                enableHashtags: true,
-                enablePinging: true,
-                scrollContainer: $(window),
-                searchUsers: function(term, success, error) {
-                    setTimeout(function() {
-                        success(usersArray.filter(function(user) {
-                            var containsSearchTerm = user.fullname.toLowerCase().indexOf(term.toLowerCase()) != -1;
-                            var isNotSelf = user.id != 1;
-                            return containsSearchTerm && isNotSelf;
-                        }));
-                    }, 500);
-                },
-                getComments: function(success, error) {
-                    setTimeout(function() {
-                        success(commentsArray);
-                    }, 500);
-                },
-                postComment: function(data, success, error) {
-                    setTimeout(function() {
-                        success(saveComment(data));
-                    }, 500);
-                },
-                putComment: function(data, success, error) {
-                    setTimeout(function() {
-                        success(saveComment(data));
-                    }, 500);
-                },
-                deleteComment: function(data, success, error) {
-                    setTimeout(function() {
-                        success();
-                    }, 500);
-                },
-                upvoteComment: function(data, success, error) {
-                    setTimeout(function() {
-                        success(data);
-                    }, 500);
-                },
-                validateAttachments: function(attachments, callback) {
-                    setTimeout(function() {
-                        callback(attachments);
-                    }, 500);
-                },
-            });
-        });
-    </script> -->
     <!-- TODO : Link Bootstrap 5.0 Lib -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <!-- TODO : Link FontAwesome Lib -->
