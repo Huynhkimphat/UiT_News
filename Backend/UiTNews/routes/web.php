@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostsController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/signup/{id}', function ($id) {
+    $user = User::find($id);
+    $user->name = 'Yen';
+    $user->email = '10@gmail.com';
+    $user->password = '12312312312';
+    $user->save();
+});
+Route::get('/login/{id}', function ($id) {
+    $user = User::find($id);
+    return $user;
+});
+Route::get('/login/', function () {
+    $users = User::all();
+    return $users;
+});
+Route::group(['middleware' => 'web'], function () {
+    Route::resource('/posts', PostsController::class);
 });
