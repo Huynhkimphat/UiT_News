@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Models\User;
+use App\Middleware\Application;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,7 @@ use App\Models\User;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,9 +26,8 @@ Route::get('/signup/{id}', function ($id) {
     $user->password = '12312312312';
     $user->save();
 });
-Route::get('/login/{id}', function ($id) {
-    $user = User::find($id);
-    return $user;
+Route::get('/login/{email}', function ($email) {
+    return User::where('email', $email)->first()->password;
 });
 Route::get('/login/', function () {
     $users = User::all();
