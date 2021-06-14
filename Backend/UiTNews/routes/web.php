@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\CommentController;
 use App\Models\User;
 use App\Middleware\Application;
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,27 +20,37 @@ use App\Middleware\Application;
 
 
 Route::get('/', function () {
+
     return view('welcome');
 });
-Route::get('/signup/{id}', function ($id) {
-    $user = User::find($id);
-    $user->name = 'Yen';
-    $user->email = '10@gmail.com';
-    $user->password = '12312312312';
-    $user->save();
-});
-Route::get('/login/{email}', function ($email) {
-    return User::where('email', $email)->first()->password;
-});
-Route::get('/login/', function () {
+
+Route::get('/account/loadall', function () {
     $users = User::all();
     return $users;
 });
-Route::group(['middleware' => 'web'], function () {
-    Route::resource('/posts', PostsController::class);
+
+Route::get('/account/{id}/loaduser',function ($id){
+    $user = User::find($id);
+    return $user;
 });
-Route::resource('comments', CommentController::class);
-Route::get('/token', function () {
-    return csrf_token(); 
+Route::get('/account/{id}/update' ,function ($id)
+{
+  $user = user::find($id);
+  $user->name =$_GET["name"];
+  $user->email =$_GET["email"];
+  $user->password =$_GET["password"];
+  $user->save();
 });
+// Route::get('/UpDate/{id}' ,function ($id)
+// {
+//   $user = user::find($id);
+//   $user->name = User::get('name');
+//   $user->email = User::get('email');
+//   $user->password = User::get('password');
+//   $user-> save();
+// });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
