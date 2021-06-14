@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentController;
 use App\Models\User;
 use App\Middleware\Application;
 /*
@@ -36,3 +37,8 @@ Route::get('/login/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::resource('/posts', PostsController::class);
 });
+Route::resource('comments', CommentController::class);
+Route::get('/token', function () {
+    return csrf_token(); 
+});
+
