@@ -9,6 +9,6 @@ Validator({
         Validator.isEmail("#email"),
     ],
     submitSuccess: (data) => {
-        window.location.pathname = "UiT_News/FrontEnd/Full/checkYourEmail.html";
+        window.location.pathname = "/FrontEnd/Full/checkYourEmail.html";
     },
 });

@@ -12,7 +12,7 @@ Validator({
         Validator.password("#password"),
     ],
     submitSuccess: (data) => {
-        window.location.pathname = "UiT_News/FrontEnd/Full/detail.html";
+        window.location.pathname = "FrontEnd/Full/detail.html";
 
         console.log(data);
     },
