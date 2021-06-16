@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Middleware\Application;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\Auth\ForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,4 +53,6 @@ Route::get('/account/{id}/update' ,function ($id)
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// -----------------------------forget password ------------------------------
+Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
+Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
