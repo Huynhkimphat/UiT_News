@@ -37,8 +37,8 @@ Route::get('/login/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::resource('/posts', PostsController::class);
 });
-Route::resource('comments', CommentController::class);
-Route::get('/token', function () {
-    return csrf_token(); 
-});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

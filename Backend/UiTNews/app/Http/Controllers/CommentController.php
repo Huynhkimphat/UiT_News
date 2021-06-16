@@ -16,8 +16,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments=Comment::all();
-        return $comments;
+        $comments=Comment::all()->toJson(JSON_PRETTY_PRINT);;
+        return response($comments,200);
     }
 
     /**
@@ -38,12 +38,25 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->COMMENT_BODY==NULL){ 
-            return back()->withFail('Error message');;
-        }else{
-        $comment=Comment::create([ "USER_ID" => auth()->user()->id, "COMMENT_POST_ID" => $request->post_id, "COMMENT_BODY" => $request->COMMENT_BODY]);
-        return $comment; 
-        }
+        
+      Comment::create([ "COMMENT_USER_ID" => $request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
+          
+      return response()->json([
+          "message" => "Reply record created"
+        ], 201);
+
+        
+        
+    }
+    public function replyStore(Request $request)
+    {
+        
+        Comment::create([ "COMMENT_USER_ID" => auth()->user()->id, "COMMENT_POST_ID" => $request->COMMENT_POST_ID,"COMMENT_PARENT_ID"=>$request->COMMENT_PARENT_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
+          
+        return response()->json([
+            "message" => "Reply record created"
+          ], 201);
+
     }
 
     /**
@@ -54,7 +67,8 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        $comment=Comment::find($id);
+        return $comment;
     }
 
     /**
@@ -63,11 +77,7 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $comment=Comment::find($id);
-        return $comment;
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -79,9 +89,11 @@ class CommentController extends Controller
     public function update(Request $request, $id)
     {
         $comment = Comment::find($id);
-        $comment->COMMENT_BODY = $request->COMMENT_BODY;
+        $comment->COMMENT_BODY = $request->COMMENT_BODY ;
         $comment->save();
-        return $comment;
+        return response()->json([
+            "message" => "records updated successfully"
+          ], 200);;
     }
 
     /**
@@ -93,14 +105,16 @@ class CommentController extends Controller
     public function destroy($id)
     {
         $comment=Comment::find($id);
-        if(count($comment->replies) > 0) {
-        // Delete children recursive
+          if(count($comment->replies) > 0) {
+         // Delete children recursive
         foreach ($comment->replies as $reply) {
-            $reply->delete();
-        }
-    }
+              $reply->delete();
+         }
+      }
     $comment->delete();
-    return redirect()->action([CommentController::class, 'index']);
+     return response()->json([
+        "message" => "records deleted"
+      ], 202);
     }
     
 }
