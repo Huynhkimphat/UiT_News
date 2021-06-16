@@ -7,10 +7,16 @@
             <div class="card">
                 <div class="card-body">
                     <p>{{ $post->POST_TITLE }}</p>
-                    <p>Views: {{ $post->POST_VIEW }}</p>
                     <p>
                         {{ $post->POST_CONTENT }}
                     </p>
+                    
+                    <p>Views: {{ $post->POST_VIEW }}</p>
+
+                    <hr >
+                   <a href ="./{{$post->id}}/edit" class="btn btn-primary">Edit</a>
+                   
+                   
                 </div>
             </div>
         </div>

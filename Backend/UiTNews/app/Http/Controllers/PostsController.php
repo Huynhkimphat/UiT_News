@@ -17,7 +17,7 @@ class PostsController extends Controller
     public function index()
     {
         $latestPosts = Post::latest()->take(4)->get();
-        $topView = Post::orderByDesc('POST_VIEW')->take(3)->get();
+        $topView = Post::orderByDesc('POST_VIEW')->take(4)->get();
         return view('posts.index', compact('latestPosts', 'topView'));
     }
     public function Loadpostall()
@@ -38,7 +38,7 @@ class PostsController extends Controller
     {
         $post=new Post;
         $post->POST_TITLE='Title 1';
-        $post->POST_CONTENT='Title 12';
+        $post->POST_CONTENT='Content 12';
         $post->POST_AUTHOR_ID='2';
         $post->POST_ORIGIN='Title 1';
         $post->POST_TYPE_ID=' 12';
@@ -84,15 +84,15 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showeditform($id)
+    public function showEditform($id)
     {
-        
+
+        return view('posts.edit', compact('post'));
     }
     public function edit($id)
-    {
+    {  
         $post = Post::find($id);
-        //return view("posts.show",compact ('post'));
-    
+        return view("posts.edit", compact('post'));
     }
 
     /**
@@ -103,9 +103,15 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $post = Post::find($id);
-        $post->update($request->all);
+    { 
+        
+        $post =  Post::find($id);
+        $post->POST_TITLE = $request->title;
+        $post->POST_CONTENT = $request->body;
+        $post->POST_AUTHOR_ID = 1;//mai mốt cũng phải đổi thằng này
+        $post->POST_ORIGIN = "title";//này là gì?t k biet no la gi :>> à xuất xứ 
+        $post->POST_TYPE_ID = "1234";// 3 cái này vẫn đổi đc bth nhá 
+        $post->save();
         return redirect('/posts');
     }
 

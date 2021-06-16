@@ -20,12 +20,11 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'web'], function () {
-  
-    Route::get('/posts/Showcreateform', [PostsController::class, 'showCreateForm']);
-    Route::get('/posts/Loadpostall', [PostsController::class, 'Loadpostall']);
+    Route::get('/posts/Showcreateform',[PostsController::class,'showCreateform']);
+    Route::get('/posts/Loadpostall',[PostsController::class,'Loadpostall']);
+    
     Route::resource('/posts', PostsController::class);
 
 });
-
 
 

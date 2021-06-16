@@ -10,15 +10,16 @@
                     <form method="post" action="{{ route('posts.store') }}">
                         <div class="form-group">
                             @csrf
-                            <label class="label">Post Title: </label>
-                            <input type="text" name="title" class="form-control" required/>
+                            <label class="label">Post Title </label>
+                            <input type="text" name="title" class="form-control mt-4" required/>
                         </div>
                         <div class="form-group">
-                            <label class="label">Post Body: </label>
-                            <textarea name="body" rows="10" cols="30" class="form-control" required></textarea>
+                            <label class="label">Post Body </label>
+                            <textarea name="body" rows="10" cols="30" class="form-control mt-4" required></textarea>
                         </div>
+                       
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" />
+                            <input type="submit" class="btn btn-success mt-4" />
                         </div>
                     </form>
                 </div>
