@@ -20,7 +20,7 @@ class PostsController extends Controller
         $topView = Post::orderByDesc('POST_VIEW')->take(4)->get();
         return view('posts.index', compact('latestPosts', 'topView'));
     }
-    public function Loadpostall()
+    public function loadpostall()
     {
         $posts= Post::all();
         return view('posts.all', compact('posts'));
@@ -35,7 +35,8 @@ class PostsController extends Controller
         return view('posts.create');
     }
     public function create()
-    {
+    {  
+        
         $post=new Post;
         $post->POST_TITLE='Title 1';
         $post->POST_CONTENT='Content 12';
@@ -44,6 +45,58 @@ class PostsController extends Controller
         $post->POST_TYPE_ID=' 12';
         $post->save();
     }
+    public function createallposst()
+    {  
+        $post = [
+            [
+                // 'id' => 1,
+                'POST_TITLE' => 'Dịch Covid ảnh hưởng đến kinh tế Việt Nam',
+                'POST_CONTENT' => 'Gây ảnh hưởng nghiêm trọng trên mọi lĩnh vực',
+                'POST_AUTHOR_NAME' => 'Na',
+                'POST_ORIGIN' => 'VTV1',
+                'POST_TYPE_ID'=>12,
+                'POST_VIEW'=>12,
+            ],
+            [
+                // 'id' => 2,
+                'POST_TITLE' => 'Dịch Covid ảnh hưởng đến kinh tế Việt Nam',
+                'POST_CONTENT' => 'Gây ảnh hưởng nghiêm trọng trên mọi lĩnh vực',
+                'POST_AUTHOR_NAME' => 'Na',
+                'POST_ORIGIN' => 'VTV1',
+               'POST_TYPE_ID'=>12,
+                'POST_VIEW'=>12,
+
+            ],
+            [
+                // 'id' => '3',
+                'POST_TITLE' => 'Dịch Covid ảnh hưởng đến kinh tế Việt Nam',
+                'POST_CONTENT' => 'Gây ảnh hưởng nghiêm trọng trên mọi lĩnh vực',
+                'POST_AUTHOR_NAME' => 'Na',
+                'POST_ORIGIN' => 'VTV1',
+                'POST_TYPE_ID'=>12,
+                'POST_VIEW'=>12,
+            ],
+            [
+                // 'id' => '4',
+                'POST_TITLE' => 'Dịch Covid ảnh hưởng đến kinh tế Việt Nam',
+                'POST_CONTENT' => 'Gây ảnh hưởng nghiêm trọng trên mọi lĩnh vực',
+                'POST_AUTHOR_NAME' => 'Na',
+                'POST_ORIGIN' => 'VTV1',
+                'POST_TYPE_ID'=>12,
+                'POST_VIEW'=>12,
+            ],
+            [
+                // 'id' => '10',
+                'POST_TITLE' => 'Dịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt NamDịch Covid ảnh hưởng đến kinh tế Việt Nam',
+                'POST_CONTENT' => 'Gây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vựcGây ảnh hưởng nghiêm trọng trên mọi lĩnh vực',
+                'POST_AUTHOR_NAME' => 'Na',
+                'POST_ORIGIN' => 'VTV1',
+                'POST_TYPE_ID'=>12,
+                'POST_VIEW'=>12,
+            ],
+        ];
+                Post::insert($post);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -51,7 +104,7 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+   {
         $post = new Post();
         $post->POST_TITLE = $request->title;
         $post->POST_CONTENT = $request->body;
@@ -59,7 +112,7 @@ class PostsController extends Controller
         $post->POST_ORIGIN = "title";
         $post->POST_TYPE_ID = "1234";
         $post->save();
-        return redirect('posts/Loadpostall');
+        return redirect('posts');
     }
 
     /**
@@ -84,11 +137,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showEditform($id)
-    {
-
-        return view('posts.edit', compact('post'));
-    }
+   
     public function edit($id)
     {  
         $post = Post::find($id);
