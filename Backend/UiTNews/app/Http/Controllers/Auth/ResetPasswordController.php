@@ -22,7 +22,6 @@ class ResetPasswordController extends Controller
 
     public function reset(Request $request)
     {
-        return "HI";
         $request->validate([
             'email' => 'required|email|exists:users',
             'password' => 'required|string|min:6|confirmed',
@@ -32,15 +31,15 @@ class ResetPasswordController extends Controller
         $updatePassword = DB::table('password_resets')
                             ->where(['email' => $request->email, 'token' => $request->token])
                             ->first();
-        return $updatePassword;
-        if(!$updatePassword)
+
+        if(!$updatePassword){
             return back()->withInput()->with('error', 'Invalid token!');
+        }
 
-          $user = User::where('email', $request->email)
-                      ->update(['password' => Hash::make($request->password)]);
+        $user = User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
 
-          DB::table('password_resets')->where(['email'=> $request->email])->delete();
+        DB::table('password_resets')->where(['email'=> $request->email])->delete();
 
-          return view('/login')->with('message', 'Your password has been changed!');
+        return redirect('/login');
     }
 }

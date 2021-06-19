@@ -26,12 +26,13 @@ Route::get('/', function () {
 
 Route::get('/account/loadall', function () {
     $users = User::all();
-    return $users;
+    return response() -> json($users);
 });
 
 Route::get('/account/{id}/loaduser',function ($id){
     $user = User::find($id);
-    return $user;
+    return $user->password;
+    return response() -> json($user);
 });
 Route::get('/account/{id}/update' ,function ($id)
 {
