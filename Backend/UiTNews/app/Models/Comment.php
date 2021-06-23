@@ -13,7 +13,7 @@ class Comment extends Model
     protected $guarded = [];
     public function user()
     {
-        return $this->belongsTo(User::class,'USER_ID');
+        return $this->belongsTo(User::class,'COMMENT_USER_ID','id');
     }
     public function replies()
     {

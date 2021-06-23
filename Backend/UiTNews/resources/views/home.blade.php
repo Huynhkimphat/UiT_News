@@ -16,8 +16,16 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+                
+                <div id="comment-display"> 
+                
+        </div>
+                 </div>
+                
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection
