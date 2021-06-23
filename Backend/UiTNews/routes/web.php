@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\PostsController;
 use App\Models\User;
 use App\Middleware\Application;
@@ -18,7 +19,6 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 |
 */
 
-
 Route::get('/', function () {
 
     return view('welcome');
@@ -26,26 +26,25 @@ Route::get('/', function () {
 // -----------------------------load account ------------------------------
 Route::get('/account/loadall', function () {
     $users = User::all();
-    return response() -> json($users);
+    return response()->json($users);
 });
 
-Route::get('/account/{id}/loaduser',function ($id){
+Route::get('/account/{id}/loaduser', function ($id) {
     $user = User::find($id);
     return $user->password;
-    return response() -> json($user);
+    return response()->json($user);
 });
-Route::get('/account/{id}/update' ,function ($id)
-{
-  $user = user::find($id);
-  $user->name =$_GET["name"];
-  $user->email =$_GET["email"];
-  $user->password =$_GET["password"];
-  $user->save();
+Route::get('/account/{id}/update', function ($id) {
+    $user = user::find($id);
+    $user->name = $_GET["name"];
+    $user->email = $_GET["email"];
+    $user->password = $_GET["password"];
+    $user->save();
 });
 // -----------------------------role account ------------------------------
-Route::get('/account/{id}/isAdmin',function($id){
-    $user=User::find($id)->role;
-    return $user=='Admin'?true:false;
+Route::get('/account/{id}/isAdmin', function ($id) {
+    $user = User::find($id)->role;
+    return $user == 'Admin' ? true : false;
 });
 // -----------------------------------------------------------
 Auth::routes();
@@ -54,5 +53,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // -----------------------------forget password ------------------------------
 Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
-
-
