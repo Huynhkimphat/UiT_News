@@ -57,3 +57,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // -----------------------------forget password ------------------------------
 Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+
+Route::get('/account/{id}/isAdmin',function($id){
+    $user=User::find($id)->role;
+    return $user=='Admin'?true:false;
+});
