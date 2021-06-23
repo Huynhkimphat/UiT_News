@@ -1,3 +1,33 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <p>{{ $post->title }}</p>
+                    <p>
+                        {{ $post->body }}
+                    </p>
+                       
+                    <form id="createcmt">
+                        @csrf
+                        <div class="form-group">
+                        <input type="text" name="COMMENT_BODY" class="form-control" />
+                        <input type="hidden" name="COMMENT_POST_ID" id="COMMENT_POST_ID" value="{{ $post->id }}" />    
+                        <input type="hidden" name="COMMENT_USER_ID" id="COMMENT_USER_ID" value="{{ Auth::user()->id }}" />                  
+                        <button type="submit" class="btn btn-warning" id="btn-submit" >Submit</button>
+                    </div>
+                        
+                    </form>
+                    @include('commentdisplay', ['comments' => $post->comments->sortDesc()->take(5), 'post_id' => $post->id])
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <form id="createcmt">
     @csrf
     <div class="form-group">
@@ -8,6 +38,7 @@
     </div>
                         
 </form>
+@include
 <script type="text/javascript"> 
     $("#createcmt").submit(function(){ 
         let COMMENT_BODY=$("input[name='COMMENT_BODY']").val();
@@ -38,3 +69,4 @@
   });
 })          
 </script>
+@endsection

@@ -146,12 +146,9 @@ class CommentController extends Controller
         $comment = Comment::find($id);
         $comment->COMMENT_BODY = $request->COMMENT_BODY ;
         $comment->save();
-        return response()->json([
-            "message" => "records updated successfully"
-          ], 200);
-        }
+        return back();
     }
-
+  }
     /**
      * Remove the specified resource from storage.
      *
@@ -168,9 +165,7 @@ class CommentController extends Controller
          }
       }
     $comment->delete();
-     return response()->json([
-        "message" => "records deleted"
-      ], 202);
-    }
+    return back();
     
+}
 }
