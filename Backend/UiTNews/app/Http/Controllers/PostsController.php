@@ -34,6 +34,10 @@ class PostsController extends Controller
     {   
         return view('posts.create');
     }
+    public function showeditform()
+    {   
+        return view('posts.edit');
+    }
     public function create()
     {  
         
