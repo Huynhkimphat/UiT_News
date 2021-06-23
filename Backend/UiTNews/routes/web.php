@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\VideosController;
+// use App\Http\Resources\VideosResource;
 use App\Models\User;
+use App\Models\Video;
 use App\Middleware\Application;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,4 +39,16 @@ Route::get('/login/', function () {
 });
 Route::group(['middleware' => 'web'], function () {
     Route::resource('/posts', PostsController::class);
+    // Route::resource('/videos', VideoController::class);
 });
+
+//Videos
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/videos/createAllVideos',[VideosController::class,'createAllVideos'])->name('videos.createAllVideos');
+    Route::resource('/videos', VideosController::class);
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
