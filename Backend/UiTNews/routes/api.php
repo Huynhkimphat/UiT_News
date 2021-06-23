@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CommentController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,5 +17,3 @@ use App\Http\Controllers\CommentController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiresource('comments', CommentController::class);
-Route::post('/reply',[App\Http\Controllers\CommentController::class, 'replyStore'])->name('reply.store');

@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\CommentController;
-use App\Models\User;
-use App\Middleware\Application;
+use App\Http\Controllers\TypesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,29 +15,25 @@ use App\Middleware\Application;
 |
 */
 
-
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/signup/{id}', function ($id) {
-    $user = User::find($id);
-    $user->name = 'Yen';
-    $user->email = '10@gmail.com';
-    $user->password = '12312312312';
-    $user->save();
-});
-Route::get('/login/{email}', function ($email) {
-    return User::where('email', $email)->first()->password;
-});
-Route::get('/login/', function () {
-    $users = User::all();
-    return $users;
-});
+
+
 Route::group(['middleware' => 'web'], function () {
+    //Route for Posts
+    Route::get('/',[PostsController::class,'loadpostall']);
+    Route::get('/posts/posttype',[PostsController::class,'posttype']);
+    Route::get('/posts/showcreateform',[PostsController::class,'showCreateForm']);
+    Route::get('/posts/showeditform',[PostsController::class,'showeditform']);
+    Route::get('/posts/createallpost',[PostsController::class,'createallpost']);
+    Route::get('/posts/type/{id}',[PostsController::class,'showPostByTypes']);
     Route::resource('/posts', PostsController::class);
+    //Route for Types
+    Route::get('/types/showcreatetypeform',[TypesController::class,'showCreatetypeform']);
+    Route::get('/types/loadtypeall',[TypesController::class,'Loadtypeall']);
+    Route::get('/types/createalltype',[TypesController::class,'createalltype']);
+    Route::resource('/types', TypesController::class);
+
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
