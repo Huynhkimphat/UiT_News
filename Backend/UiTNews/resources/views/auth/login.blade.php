@@ -49,21 +49,11 @@
                         <label for="email" class="form-label authen__form-wrapper__inputs__label">{{ __('E-Mail Address') }}</label>
                         <input name="email" id="email" type="email" class="form-control authen__form-wrapper__inputs__input @error('email') is-invalid @enderror " placeholder="Enter your Email">
                         <span class="authen__form__error"></span>
-                        {{-- @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                        @enderror --}}
                     </div>
                     <div class="mb-3 authen__form__control">
                         <label for="password" class="form-label authen__form-wrapper__inputs__label">{{ __('Password') }}</label>
                         <input name="password" id="password" type="password" class="form-control authen__form-wrapper__inputs__input" placeholder="Enter your password">
                         <span class="authen__form__error"></span>
-                        {{-- @error('password')
-                        {{-- <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span> --}}
-                        {{-- @enderror --}}
                     </div>
                     <div class="mt-3 authen__form__control">
                         <a class="text-color-primary forgot-password__link" href="{{ route('password.request') }}">Forgot your password ? </a>
@@ -73,12 +63,6 @@
                     <button type="submit" class="btn btn-primary authen__form-wrapper__action__btn btn-login">
                         {{ __('Login') }}
                     </button>
-
-                    {{-- @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
-                @endif --}}
                 </div>
             </form>
         </div>
@@ -86,7 +70,7 @@
 </div>
 
 </body>
-<script src="././js/rules.js" type="text/javascript"></script>
+<script src="././js/rule.js" type="text/javascript"></script>
 <script src="././js/ValidationInput.js" type="text/javascript"></script>
 <script src="././js/Validator.js" type="text/javascript"></script>
 <script src="././js/login.js"></script>

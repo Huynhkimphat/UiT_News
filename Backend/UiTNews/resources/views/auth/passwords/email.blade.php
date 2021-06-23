@@ -1,6 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en"> --}}
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,14 +66,10 @@
     </div>
 </body>
 <!-- my script -->
-<script src="././js/rules.js" type="text/javascript"></script>
-<script src="././js/ValidationInput.js" type="text/javascript"></script>
-<script src="././js/Validator.js" type="text/javascript"></script>
-<script src="././js/email.js"></script>
-{{-- <script src="../src/constants/rules.js" type="text/javascript"></script>
-<script src="../src/js/ValidateInput.js" type="text/javascript"></script>
-<script src="../src/js/Validator.js" type="text/javascript"></script>
-<script src="./assets/js/main.js"></script> --}}
+<script src="../js/rule.js" type="text/javascript"></script>
+<script src="../js/ValidationInput.js" type="text/javascript"></script>
+<script src="../js/Validator.js" type="text/javascript"></script>
+<script src="../js/email.js"></script>
 
 <!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"

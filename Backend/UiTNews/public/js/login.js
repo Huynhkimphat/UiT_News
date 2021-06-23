@@ -11,8 +11,4 @@ Validator({
     Validator.isRequired("#password"),
     Validator.password("#password"),
   ],
-//   submitSuccess: (data) => {
-//     alert("No error in validation");
-//     console.log(data);
-//   },
 });

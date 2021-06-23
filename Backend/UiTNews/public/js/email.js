@@ -8,10 +8,10 @@ Validator({
     Validator.isRequired("#email"),
     Validator.isEmail("#email"),
   ],
-  submitSuccess: (data) => {
-    // alert("No error in validation");
-    window.location.pathname =
-      "FrontEnd/Authenticate/CheckYourEmailPage/checkYourEmail.html";
-    console.log(data);
-  },
+//   submitSuccess: (data) => {
+//     alert("No error in validation");
+//     window.location.pathname =
+//       "FrontEnd/Authenticate/CheckYourEmailPage/checkYourEmail.html";
+//     console.log(data);
+//   },
 });

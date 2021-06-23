@@ -128,56 +128,33 @@
                     <div class="authen__form-wrapper__inputs">
                         <div class="mb-3 authen__form__control">
                             <label for="name" class="form-label authen__form-wrapper__inputs__label" >{{ __('Name') }}</label>
-                            <input id="name" name="name" type="text" class="form-control authen__form-wrapper__inputs__input @error('name') is-invalid @enderror"  placeholder="Enter your name"  name="name" value="{{ old('name') }}" required autocomplete="name" autofocus >
+                            <input id="name" name="name" type="text" class="form-control authen__form-wrapper__inputs__input "  placeholder="Enter your name"  name="name" value="{{ old('name') }}" required autocomplete="name" autofocus >
                             <span class="authen__form__error"></span>
                         </div>
                         <div class="mb-3 authen__form__control">
                             <label for="email" class="form-label authen__form-wrapper__inputs__label" >{{ __('E-Mail Address') }}</label>
-                            <input  id="email" name="email" type="email" class="form-control authen__form-wrapper__inputs__input @error('email') is-invalid @enderror"  placeholder="Enter your Email"
+                            <input  id="email" name="email" type="email" class="form-control authen__form-wrapper__inputs__input "  placeholder="Enter your Email"
                              name="email" value="{{ old('email') }}" required autocomplete="email">
-                            {{-- @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror --}}
                             <span class="authen__form__error"></span>
                         </div>
                         <div class="mb-3 authen__form__control">
                             <label for="password" class="form-label authen__form-wrapper__inputs__label" >{{ __('Password') }}</label>
                             <input id="password" name="password" type="password" class="form-control authen__form-wrapper__inputs__input
-                            @error('password') is-invalid @enderror
                             " placeholder="Enter your password"
                              name="password" >
                             <span class="authen__form__error"></span>
                         </div>
-                        {{-- <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
                         <div class="mb-3 authen__form__control">
                             <label for="password-confirm"
                             class="form-label authen__form-wrapper__inputs__label" >{{ __('Confirm Password') }}</label>
-                            <input
-                            id="password-confirm"
-                            type="password"
+                            <input id="confirmPassword" type="password"
                             name="password_confirmation"
                             class="form-control authen__form-wrapper__inputs__input"
                             placeholder="Confirm your password">
-                            <span id="error-confirm-password" class="authen__form__error"></span>
+                            <span
+                            id="error-confirm-password"
+                             class="authen__form__error"></span>
                         </div>
-
-
-
-
                     </div>
                     <div class="authen__form-wrapper__action">
                         <button type="submit"
@@ -200,12 +177,6 @@
         </div>
     </div>
 </body>
-{{-- <!-- my script -->
-<script src="../src/constants/rules.js" type="text/javascript"></script>
-<script src="../src/js/ValidateInput.js" type="text/javascript"></script>
-<script src="../src/js/Validator.js" type="text/javascript"></script>
-<script src="./assets/js/main.js"></script> --}}
-
 <!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
@@ -217,10 +188,9 @@
     integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
     crossorigin="anonymous"></script>
 <!-- my script -->
-<script src="././js/rules.js" type="text/javascript"></script>
+<script src="././js/rule.js" type="text/javascript"></script>
 <script src="././js/ValidationInput.js" type="text/javascript"></script>
 <script src="././js/Validator.js" type="text/javascript"></script>
 <script src="././js/register.js"></script>
 </html>
 
-{{-- @endsection --}}

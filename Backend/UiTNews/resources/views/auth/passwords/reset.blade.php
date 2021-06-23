@@ -42,6 +42,7 @@
                     <div class="authen__form-wrapper__title">
                         <p class="text-color-primary">Reset</p>
                         <p class="text-color-normal">Password</p>
+
                     </div>
                     <div class="authen__form-wrapper__inputs">
                         <div class="mb-3 authen__form__control">
@@ -67,7 +68,7 @@
                             <label for="password-confirm"
                             class="form-label authen__form-wrapper__inputs__label" >{{ __('Confirm Password') }}</label>
                             <input
-                            id="password-confirm"
+                            id="confirmPassword"
                             type="password"
                             name="password_confirmation"
                             class="form-control authen__form-wrapper__inputs__input"
@@ -79,12 +80,6 @@
                             <button type="submit" class="btn btn-primary authen__form-wrapper__action__btn btn-login">
                                 {{ __('Reset Password') }}
                             </button>
-
-                            {{-- @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif --}}
                         </div>
                 </form>
             </div>
@@ -102,11 +97,10 @@
     integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
     crossorigin="anonymous"></script>
 <!-- my script -->
-<script src="../../js/rules.js" type="text/javascript"></script>
+<script src="../../js/rule.js" type="text/javascript"></script>
 <script src="../../js/ValidationInput.js" type="text/javascript"></script>
 <script src="../../js/Validator.js" type="text/javascript"></script>
-<script src="../../js/register.js"></script>
-<script src="../../js/email.js"></script>
+<script src="../../js/reset.js"></script>
 </html>
 
 

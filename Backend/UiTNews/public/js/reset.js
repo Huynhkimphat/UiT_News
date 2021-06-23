@@ -2,10 +2,8 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 Validator({
-  form: "#form-register",
+  form: "#form-reset",
   rules: [
-       // rule name
-    Validator.isRequired("#name"),
     // rule email
     Validator.isRequired("#email"),
     Validator.isEmail("#email"),

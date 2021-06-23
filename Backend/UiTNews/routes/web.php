@@ -23,7 +23,7 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-
+// -----------------------------load account ------------------------------
 Route::get('/account/loadall', function () {
     $users = User::all();
     return response() -> json($users);
@@ -42,23 +42,17 @@ Route::get('/account/{id}/update' ,function ($id)
   $user->password =$_GET["password"];
   $user->save();
 });
-// Route::get('/UpDate/{id}' ,function ($id)
-// {
-//   $user = user::find($id);
-//   $user->name = User::get('name');
-//   $user->email = User::get('email');
-//   $user->password = User::get('password');
-//   $user-> save();
-// });
-
+// -----------------------------role account ------------------------------
+Route::get('/account/{id}/isAdmin',function($id){
+    $user=User::find($id)->role;
+    return $user=='Admin'?true:false;
+});
+// -----------------------------------------------------------
 Auth::routes();
-
+// -----------------------------------------------------------
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // -----------------------------forget password ------------------------------
 Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
 
-Route::get('/account/{id}/isAdmin',function($id){
-    $user=User::find($id)->role;
-    return $user=='Admin'?true:false;
-});
+
