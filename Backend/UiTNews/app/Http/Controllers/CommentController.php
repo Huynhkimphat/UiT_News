@@ -82,12 +82,15 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-      
+      if($request->COMMENT_BODY==null){ 
+        return back()->withFail('Error message');
+
+      }else{ 
        $comment= Comment::create([ "COMMENT_USER_ID" =>$request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
           
         return $comment;
      
-      
+      }
       
         
         
@@ -95,19 +98,14 @@ class CommentController extends Controller
     public function replyStore(Request $request)
     {
       if($request->COMMENT_BODY==null){ 
-        return response()->json([
-          "message" => "Comment can not be null"
-        ], 201);
+        return back()->withFail('Error message');
 
       }else{ 
-        Comment::create([ "COMMENT_USER_ID" => auth()->user()->id, "COMMENT_POST_ID" => $request->COMMENT_POST_ID,"COMMENT_PARENT_ID"=>$request->COMMENT_PARENT_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
+        Comment::create([ "COMMENT_USER_ID" =>$request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID,"COMMENT_PARENT_ID"=>$request->COMMENT_PARENT_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
           
-        return response()->json([
-            "message" => "Reply record created"
-          ], 201);
-        }
+        return back()->withSuccess('Success message');
     }
-
+  }
     /**
      * Display the specified resource.
      *
@@ -138,15 +136,13 @@ class CommentController extends Controller
     public function update(Request $request, $id)
     {
       if($request->COMMENT_BODY==null){ 
-        return response()->json([
-          "message" => "Comment can not be null"
-        ], 201);
+        return back()->withFail('Error message');
 
       }else{ 
         $comment = Comment::find($id);
         $comment->COMMENT_BODY = $request->COMMENT_BODY ;
         $comment->save();
-        return back();
+        return back()->withSuccess('Success message');
     }
   }
     /**
@@ -165,7 +161,7 @@ class CommentController extends Controller
          }
       }
     $comment->delete();
-    return back();
+    return back()->withSuccess('Success message');
     
 }
 }

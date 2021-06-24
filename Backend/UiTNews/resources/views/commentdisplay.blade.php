@@ -17,7 +17,7 @@
         <button class="delete" id="reply" onclick="replyFunction{{$comment->COMMENT_ID}}()" >Reply</button>
         <div id="replycomment{{$comment->COMMENT_ID}}"></div></br>
         <div id="replies{{$comment->COMMENT_ID}}">
-        @include('commentsDisplay', ['comments' => $comment->replies->sortDesc()->take(1)])
+        @include('commentdisplay', ['comments' => $comment->replies->sortDesc()->take(1)])
         </div>
         @if (count($comment->replies)>1)
         <button id="morereples" >{{count($comment->replies)-1}} replies</button>
@@ -26,7 +26,7 @@
         <script> 
     
             function myFunction{{$comment->COMMENT_ID}}(){ 
-                document.getElementById("display{{$comment->COMMENT_ID}}").innerHTML='@include('editcomment',['COMMENT_ID'=>$comment->COMMENT_ID]) ';
+                document.getElementById("display{{$comment->COMMENT_ID}}").innerHTML='@include('editcomment',['COMMENT_ID'=>$comment->COMMENT_ID, 'post_id' => $post->id]) ';
             };
             function replyFunction{{$comment->COMMENT_ID}}(){ 
                 document.getElementById("replycomment{{$comment->COMMENT_ID}}").innerHTML='@include('reply')';
