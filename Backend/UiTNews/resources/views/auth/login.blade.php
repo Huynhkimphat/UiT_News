@@ -70,10 +70,6 @@
 </div>
 
 </body>
-<script src="././js/rule.js" type="text/javascript"></script>
-<script src="././js/ValidationInput.js" type="text/javascript"></script>
-<script src="././js/Validator.js" type="text/javascript"></script>
-<script src="././js/login.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
@@ -84,5 +80,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
     crossorigin="anonymous"></script>
+ <!-- my script -->
+<script src="././js/rule.js" type="text/javascript"></script>
+<script src="././js/ValidationInput.js" type="text/javascript"></script>
+<script src="././js/Validator.js" type="text/javascript"></script>
+<script src="././js/login.js"></script>
+
 </html>
-{{-- @endsection --}}
+
