@@ -17,7 +17,7 @@ class ForgotPasswordController extends Controller
         //$this->data['title'] = trans('backpack::base.reset_password'); // set the page title
         // return view('backpack::auth.passwords.email', $this->data);
         return view('auth.passwords.email');
-    // }
+        // }
     }
 
     // public function getEmail()
@@ -38,11 +38,11 @@ class ForgotPasswordController extends Controller
         DB::table('password_resets')->insert(
             ['email' => $request->email, 'token' => $token, 'created_at' => Carbon::now()]
         );
-        Mail::send('auth.verify',['token' => $token], function($message) use ($request) {
-                  $message->from('19520056@gm.uit.edu.vn');
-                  $message->to($request->email);
-                  $message->subject('Reset Password Notification');
-               });
+        Mail::send('auth.verify', ['token' => $token], function ($message) use ($request) {
+            $message->from('19520056@gm.uit.edu.vn');
+            $message->to($request->email);
+            $message->subject('Reset Password Notification');
+        });
 
         return view('auth.checkmail');
         // back()->with('message', 'We have e-mailed your password reset link!');
