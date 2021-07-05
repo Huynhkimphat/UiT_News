@@ -40,20 +40,11 @@
                     <hr> 
 
                     <h4>Add Comment</h4>   
-                    @if(Session::has('fail'))
-                            <div class="alert alert-danger">
-                                {{Session::get('fail')}}
-                            </div>
-                    @endif
-                    @if(Session::has('success'))
-                            <div class="alert alert-success">
-                                {{Session::get('success')}}
-                            </div>
-                    @endif
+                    
                     <form id="createcmt">
                         @csrf
                         <div class="form-group">
-                        <input type="text" name="COMMENT_BODY" id="COMMENT_BODY" class="form-control" />
+                        <input type="text" name="COMMENT_BODY" id="COMMENT_BODY" class="form-control" required/>
                         <input type="hidden" name="COMMENT_POST_ID" id="COMMENT_POST_ID" value="{{ $post->id }}" />    
                         <input type="hidden" name="COMMENT_USER_ID" id="COMMENT_USER_ID" value="{{Auth::user()->id}}" />                  
                         <button type="submit" class="btn btn-warning" id="btn-submit" >Submit</button>
@@ -68,17 +59,13 @@
                     <button type="sunmit" id="btn-loadmore">Load more comments</button> 
                     </center>
                    
-                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
 <script type="text/javascript"> 
-
     const username=()=>{ 
         $.ajax({
             type:"GET",
@@ -89,11 +76,8 @@
                     $("#username"+i).prepend(user.USER_NAME);
                     i++;
                 });
-            })
-            
+            });      
     };
-
-
     var count=0;
     const loadComment=()=>{
         $.ajax({
@@ -108,13 +92,13 @@
                     
                     if(cmt.COMMENT_PARENT_ID== null){
                         if(cmt.COMMENT_USER_ID=={{Auth::user()->id}}){ 
-                            
                             commentBox.prepend(`
                     <div id="display-comment`+count+`" > 
                         <img src="https://image.flaticon.com/icons/png/512/924/924874.png" style="display:inline-block;width:5%;float:left;border-radius:60%;" >
                         <div  style="background-color:#dfeeea;padding:8px 23px; border-radius:13px;margin-bottom:0;margin-left:45px;margin-right:45px;"> 
                             <strong id="username`+count+`"></strong>
                              <p id="display${cmt.COMMENT_ID}">${cmt.COMMENT_BODY}</p>
+                             <div id="formedit${cmt.COMMENT_ID}"></div>
                         </div>
                         <button class="crud" id="btn-delete${cmt.COMMENT_ID}"  data-id="${cmt.COMMENT_ID}">Delete</button>
                         <button class="crud" id="btn-formedit${cmt.COMMENT_ID}" data-id="${cmt.COMMENT_ID}" >Edit</button>
@@ -135,6 +119,7 @@
                         <div  style="background-color:#dfeeea;padding:8px 23px; border-radius:13px;margin-bottom:0;margin-left:45px;margin-right:45px;"> 
                         <strong id="username`+count+`"></strong>
                              <p id="display${cmt.COMMENT_ID}">${cmt.COMMENT_BODY}</p>
+                             <div id="formedit${cmt.COMMENT_ID}"></div>
                         </div>
                         
                         <button class="crud" id="btn-formreply${cmt.COMMENT_ID}" data-id="${cmt.COMMENT_ID}">Reply</button>
@@ -155,6 +140,7 @@
                         <div  style="background-color:#dfeeea;padding:8px 23px; border-radius:13px;margin-bottom:0;margin-left:45px;margin-right:45px;"> 
                         <strong id="username`+count+`"></strong>
                             <p id="display${cmt.COMMENT_ID}">${cmt.COMMENT_BODY}</p>
+                            <div id="formedit${cmt.COMMENT_ID}"></div>
                         </div>
                         <button class="crud" id="btn-delete${cmt.COMMENT_ID}"  data-id="${cmt.COMMENT_ID}">Delete</button>
                         <button class="crud" id="btn-formedit${cmt.COMMENT_ID}" data-id="${cmt.COMMENT_ID}" >Edit</button>
@@ -176,6 +162,7 @@
                         <div  style="background-color:#dfeeea;padding:8px 23px; border-radius:13px;margin-bottom:0;margin-left:45px;margin-right:45px;"> 
                         <strong id="username`+count+`"></strong>
                             <p id="display${cmt.COMMENT_ID}">${cmt.COMMENT_BODY}</p>
+                            <div id="formedit${cmt.COMMENT_ID}"></div>
                         </div>
                         
                         <button class="crud" id="btn-formreply${cmt.COMMENT_ID}" data-id="${cmt.COMMENT_ID}">Reply</button>
@@ -187,52 +174,39 @@
                         count++;
                         replyComment(cmt.COMMENT_ID);
 
-                        }
+                        };
                         
-                    }
-
-                    
-                })
-               
-                displaymore();
-                
+                };
+                });
+                displaymore();          
     }).done(()=>{
-     
-    
     });
     }; 
     loadComment();
     username();
     
     const displaymore=()=>{ 
-        console.log(count);
         var b=count-8;
         var d;
         for (d=0;d<b;d++){ 
-            console.log("d="+d);
             $("#display-comment"+d).hide();
         };
         $("#btn-loadmore").click(function(){ 
             if(b>8){ 
                 b=b-8;
-                console.log("b="+b);
             }else{ 
                 b=0;
                 $("#btn-loadmore").hide();
             }
             for (let x=b;x<d;x++){ 
-            console.log("x="+x);
             $("#display-comment"+x).show();
         };
         if(d>8){ 
             d=d-8;
-            console.log("d="+d);
             }
-        
         });
     };
     const deleleComment=(id)=>{
-        
         
         $("#btn-delete"+id).click(function(e){
             console.log("click to delete");
@@ -267,8 +241,12 @@
         $("#btn-formedit"+id).click(function(e){
             console.log("edit");
             var edit_id = $(e.currentTarget).data('id');
-            $("#display"+edit_id).append(`<input type="text" id="COMMENT_BODY`+edit_id+`" name="COMMENT_BODY" class="form-control" required/> <input type="submit" data-id=`+edit_id+` id="btn-edit" class="btn btn-warning" value="Update" />`);
-           
+            $("#display"+edit_id).hide();
+            $("#formedit"+edit_id).append(`<input type="text" value="`+$("#display"+edit_id).text()+`" id="COMMENT_BODY`+edit_id+`" name="COMMENT_BODY" class="form-control" required/> <input type="submit" data-id=`+edit_id+` id="btn-edit" class="btn btn-warning" value="Update" />  <input style="margin-left:10px;" type="submit"  id="canceledit`+id+`" class="btn btn-light" value="Cancel" />`);
+           $("#canceledit"+id).click(function(){ 
+            $("#formedit"+edit_id).html(' ');
+            $("#display"+edit_id).show();
+           });
             $("#btn-edit").click(function(e){ 
             
             var edit_id = $(e.currentTarget).data('id');
@@ -305,8 +283,10 @@
        
         $("#btn-formreply"+id).click(function(e){
             var parent_id = $(e.currentTarget).data('id');
-            $("#formrep"+parent_id).append(`<input style="margin-left:40px; margin-top:5px; width:90%;" type="text" id="REPLY_COMMENT_BODY`+parent_id+`" name="COMMENT_BODY" class="form-control" required/> <input style="margin-left:40px;" type="submit" data-id=`+parent_id+` id="btn-reply`+id+`" class="btn btn-warning" value="Reply" />`);
-           
+            $("#formrep"+parent_id).append(`<input style="margin-left:40px; margin-top:5px; width:90%;" type="text" id="REPLY_COMMENT_BODY`+parent_id+`" name="COMMENT_BODY" class="form-control" required/> <input style="margin-left:40px;" type="submit" data-id=`+parent_id+` id="btn-reply`+id+`" class="btn btn-warning" value="Reply"/>  <input style="margin-left:10px;" type="submit"  id="cancelreply`+id+`" class="btn btn-light" value="Cancel" />`);
+           $("#cancelreply"+id).click(function(){ 
+            $("#formrep"+parent_id).html(' ');
+           });
             $("#btn-reply"+id).click(function(e){ 
             
             var parent_id = $(e.currentTarget).data('id');
@@ -337,12 +317,8 @@
         });
 
            });
-        
-
     };
 
-    
-    
     $("#btn-submit").click(function (e) {
     e.preventDefault();
     $.ajaxSetup({
@@ -364,17 +340,9 @@
         jQuery('#createcmt').trigger("reset");
         count=0;
         loadComment();
-        username();
-        
+        username();    
     }).fail((e)=>{
     });
     });
-
-    
-
-
-
-
-
 </script>
 @endsection
