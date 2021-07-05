@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiresource('comments', CommentController::class);
 Route::post('/reply',[App\Http\Controllers\CommentController::class, 'replyStore'])->name('reply.store');
 Route::post('/comments/create',[App\Http\Controllers\CommentController::class, 'create'])->name('comment.create');
+Route::get('/post/{post}/comments',[App\Http\Controllers\CommentController::class, 'showpost'])->name('commentpost.show');

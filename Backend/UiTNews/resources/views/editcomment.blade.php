@@ -1,1 +1,0 @@
-<form method="post" action="{{ route('comments.update',$comment->COMMENT_ID) }}">@csrf @method('PUT')<div class="form-group"><input type="text" name="COMMENT_BODY" class="form-control" required/> </div><div class="form-group"><input type="submit" class="btn btn-warning" value="Add Comment" /></div></form>

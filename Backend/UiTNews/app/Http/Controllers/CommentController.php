@@ -19,8 +19,14 @@ class CommentController extends Controller
     {
         $comments=Comment::all();
         return response()->json($comments);
+        
     }
-
+    public function showpost($id){ 
+      
+      $comments=Comment::where('COMMENT_POST_ID',"=",$id)->orderBy('COMMENT_ID')->get();
+      return $comments;
+      
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -101,9 +107,9 @@ class CommentController extends Controller
         return back()->withFail('Error message');
 
       }else{ 
-        Comment::create([ "COMMENT_USER_ID" =>$request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID,"COMMENT_PARENT_ID"=>$request->COMMENT_PARENT_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
+        $reply=Comment::create([ "COMMENT_USER_ID" =>$request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID,"COMMENT_PARENT_ID"=>$request->COMMENT_PARENT_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
           
-        return back()->withSuccess('Success message');
+        return $reply;
     }
   }
     /**
@@ -114,8 +120,16 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        $comment=Comment::find($id);
-        return $comment;
+      $comments=Comment::where('COMMENT_POST_ID',"=",$id)->orderBy('COMMENT_ID')->get();
+        $comtusers=[];
+        $i=0;
+      foreach($comments as $comment){ 
+
+        $comtusers[$i]=["COMMENT_USER_ID"=>$comment->COMMENT_USER_ID,"USER_NAME"=>$comment->user->name];
+        $i++;
+      }
+      return $comtusers;
+        
     }
 
     /**
@@ -136,13 +150,21 @@ class CommentController extends Controller
     public function update(Request $request, $id)
     {
       if($request->COMMENT_BODY==null){ 
-        return back()->withFail('Error message');
+        return response()->json([
+
+          'error' => 'fail!'
+    
+      ]);
 
       }else{ 
         $comment = Comment::find($id);
         $comment->COMMENT_BODY = $request->COMMENT_BODY ;
         $comment->save();
-        return back()->withSuccess('Success message');
+        return response()->json([
+
+          'success' => 'Record updated successfully!'
+    
+      ]);
     }
   }
     /**
@@ -161,7 +183,11 @@ class CommentController extends Controller
          }
       }
     $comment->delete();
-    return back()->withSuccess('Success message');
     
+    return response()->json([
+
+      'success' => 'Record deleted successfully!'
+
+  ]);
 }
 }
