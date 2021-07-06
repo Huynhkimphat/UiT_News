@@ -1,13 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PostsController;
+use App\Http\Controllers\Admin\TypesController;
+use App\Http\Controllers\Guest\GuestController;
 
+<<<<<<< HEAD
+=======
 use App\Http\Controllers\PostsController;
 use App\Models\User;
 use App\Middleware\Application;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+>>>>>>> master
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +24,13 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('types', TypesController::class)->except(['create', 'show']);
+    Route::resource('post', PostsController::class);
+});
 Route::get('/', function () {
-
     return view('home');
 });
-// -----------------------------load account ------------------------------
 Route::get('/account/loadall', function () {
     $users = User::all();
     return response()->json($users);
@@ -53,3 +60,8 @@ Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordControll
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+Route::get('/', [GuestController::class, 'loadpostall']);
+Route::get('postdetail/{id}',[GuestController::class,'show'])->name('postdetail.show');
+Route::get('types/{nametype}',[GuestController::class,'getpost'])->name('type.getpost');
