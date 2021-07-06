@@ -22,7 +22,7 @@
     <div class="authen-page">
 
         <div class="authen-page__container row">
-            <a href="../Login/" class="authen-page__btn-back btn btn-outline-primary">
+            <a href="{{ url('/login') }}" class="authen-page__btn-back btn btn-outline-primary">
                 <i class="fas fa-chevron-left"></i>
                 <p>Back</p>
             </a>
@@ -57,8 +57,8 @@
                                 <p class="text-color-gray">Or</p>
                             </div>
                         </div>
-                        <a role="button" href="../login" class="btn-link_layout mb-4 btn btn-primary authen__form-wrapper__action__btn mt-4 authen__form-wrapper__action__btn--secondary">Login Account</a>
-                        <a role="button" href="../register" class="btn-link_layout btn btn-primary authen__form-wrapper__action__btn mt-4 authen__form-wrapper__action__btn--primary">Register Account</a>
+                        <a role="button" href="{{ url('/login') }}" class="btn-link_layout mb-4 btn btn-primary authen__form-wrapper__action__btn mt-4 authen__form-wrapper__action__btn--secondary">Login Account</a>
+                        <a role="button" href="{{ url('/register') }}" class="btn-link_layout btn btn-primary authen__form-wrapper__action__btn mt-4 authen__form-wrapper__action__btn--primary">Register Account</a>
                     </div>
                 </div>
             </form>

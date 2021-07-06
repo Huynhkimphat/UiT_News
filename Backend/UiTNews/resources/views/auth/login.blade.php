@@ -22,7 +22,7 @@
 <div class="authen-page">
 
     <div class="authen-page__container row">
-        <a href="" class="authen-page__btn-back btn btn-outline-primary">
+        <a href="{{ url('/') }}" class="authen-page__btn-back btn btn-outline-primary">
             <i class="fas fa-chevron-left"></i>
             <p>Back</p>
         </a>
@@ -33,7 +33,7 @@
             <div class="authen__link">
                 <div class="authen__link__wrap-text">
                     <p class="text-color-gray">New around here ?</p>
-                    <a href="../public/register" class="text-color-primary"> Register here</a>
+                    <a href="{{ url('/register') }}" class="text-color-primary"> Register here</a>
                 </div>
             </div>
 
@@ -85,6 +85,5 @@
 <script src="././js/ValidationInput.js" type="text/javascript"></script>
 <script src="././js/Validator.js" type="text/javascript"></script>
 <script src="././js/login.js"></script>
-
 </html>
 

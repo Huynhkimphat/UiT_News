@@ -20,11 +20,6 @@ class ForgotPasswordController extends Controller
         // }
     }
 
-    // public function getEmail()
-    // {
-
-    //    return view('auth.password.email');
-    // }
 
     public function postEmail(Request $request)
     {
@@ -45,6 +40,5 @@ class ForgotPasswordController extends Controller
         });
 
         return view('auth.checkmail');
-        // back()->with('message', 'We have e-mailed your password reset link!');
     }
 }
