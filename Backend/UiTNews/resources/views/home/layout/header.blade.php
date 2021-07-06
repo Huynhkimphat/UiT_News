@@ -9,7 +9,7 @@
             <p class="navbar-hello" style="color:white">WELCOME, GUEST</p>
             <!-- Right elements -->
             <div class="d-flex align-items-center">
-                <a href="./login.html" type="button" class="btn btn-outline-danger px-3 me-2 text-theme authen" data-mdb-ripple-color="dark">
+                <a href="{{ route('login') }}" type="button" class="btn btn-outline-danger px-3 me-2 text-theme authen" data-mdb-ripple-color="dark">
                     Login
                 </a>
                 <a href="./register.html" type="button" class="btn btn-danger btn-theme authen">
