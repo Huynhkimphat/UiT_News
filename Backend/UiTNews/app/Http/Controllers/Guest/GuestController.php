@@ -38,12 +38,18 @@ class GuestController extends Controller
 
     public function getpost($nametype)
     {
-            # Lấy ra các bài viết theo chuyên mục(slug,ID)
-            #Bước 1: lấy ra THÔNG TIN của chuyên mục đó theo slug(khong-dau)===>lấy ID của chuyên mục đó
-            //Bước 2: Đã có ID chuyên mục==>lấy bài viết theo ID chuyên mục
+           
             $type = Type::where('slug', $nametype)->first();
             $posts = Post::where('POST_TYPE_ID',$type->id)->orderBy('created_at','desc')->get();
-  //     dd($type,$posts);
+
             return view('home.typepost',compact('posts','type'));
+    }
+
+    public function Search(Request $request)
+    {
+            $key_form=$request->key;
+            $key=str_replace(' ','%',$key_form); 
+            $posts=Post::where('POST_TITLE','LIKE','%'.$key.'%')->get();
+            return view('home.search',compact('key_form','posts'));
     }
 }
