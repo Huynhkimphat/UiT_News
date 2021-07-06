@@ -56,6 +56,6 @@ Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordControll
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [GuestController::class, 'loadpostall']);
+// Route::get('/', [GuestController::class, 'loadpostall']);
 Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
 Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');

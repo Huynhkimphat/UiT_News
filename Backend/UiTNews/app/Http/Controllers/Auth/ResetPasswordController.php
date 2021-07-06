@@ -4,10 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-//use DB;
-//use App\User;
 use App\Models\User;
-//use Hash;
 use Illuminate\Support\Facades\hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;

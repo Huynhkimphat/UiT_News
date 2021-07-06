@@ -23,7 +23,7 @@
                         <img src='public/file/post/{{$post_1->POST_IMAGE}}' class="d-block w-100">
                         <div class="carousel-caption ">
                             <a class="carousel-title" href="{{ route('postdetail.show', $post_1->id) }}">
-                              
+
                                     {{$post_1->POST_TITLE}}
                                 <p> {{ date_format($post_1->created_at,"d/m/Y H:i:s") }} </p>
                             </a>
@@ -33,20 +33,20 @@
                     @php    $i=1    @endphp
 
                     @foreach ($latestPosts as $post)
-                        <div 
+                        <div
                             @if ($i==1)
                                 class="carousel-item active "
                             @else
                                 class="carousel-item"
-                            @endif          
-                             > 
+                            @endif
+                             >
                                 <img src='public/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
                                 <div class="carousel-caption ">
                                     <a class="carousel-title" href="{{ route('postdetail.show', $post->id) }}">
 
                                             {{$post->POST_TITLE}}
-                                    
-                                        <p> {{ date_format($post->created_at,"d/m/Y H:i:s") }} </p>
+
+                                        {{-- <p> {{ date_format($post->created_at,"d/m/Y H:i:s") }} </p> --}}
                                     </a>
                                 </div>
                         </div>
@@ -74,7 +74,7 @@
                                     <h4 class="card-title">{{ $post->POST_TITLE }}</h4>
                                 </a>
                                 <p class="card-text content" id="hidden">{{$post->POST_DESCRIPT }}</p>
-                                <p class="time">{{ date_format($post->created_at,"d/m/Y H:i:s") }} </p>
+                                {{-- <p class="time">{{ date_format($post->created_at,"d/m/Y H:i:s") }} </p> --}}
                             </div>
                         </div>
                     </div>
@@ -114,9 +114,9 @@
             <div class="slot1">
                 <img  src='public/file/post/{{$post->POST_IMAGE}}' >
                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
-                <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>  
+                <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
-                <p class="time" > {{ date_format($post->created_at,"d/m/Y H:i:s") }}   </p>
+                {{-- <p class="time" > {{ date_format($post->created_at,"d/m/Y H:i:s") }}   </p> --}}
             </div>
         @endforeach
             {{-- <div class="board clearfix">
@@ -170,9 +170,9 @@
                             <div class="slot1">
                                 <img style="width: 300px;" src='public/file/post/{{$post->POST_IMAGE}}' >
                                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
-                                <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>   
+                                <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
-                                <p class="time" > {{ date_format($post->created_at,"d/m/Y H:i:s") }}   </p>
+                                {{-- <p class="time" > {{ date_format($post->created_at,"d/m/Y H:i:s") }}   </p> --}}
                             </div>
                         @endforeach
                     {{-- <div class="slot1">
