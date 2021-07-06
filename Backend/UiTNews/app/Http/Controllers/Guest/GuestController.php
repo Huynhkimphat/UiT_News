@@ -18,7 +18,7 @@ class GuestController extends Controller
         $post_sk = Post::where('POST_TYPE_ID', 12)->take(3)->orderByDesc('updated_at')->get();
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
         // dd($post_sk);
-        return view('home.home', compact('latestPosts', 'topView', 'post_sk', 'post_tt'));
+        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt'));
     }
 
     public function show($id)

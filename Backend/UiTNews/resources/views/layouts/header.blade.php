@@ -69,120 +69,44 @@
             </div>
         </nav>
     </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light header-nav">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <!-- Logo to back home -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="frontend/assets/images/logo2.png" width="100" height="100"></a>
+        <!-- Navbar Toggle         -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-            <!-- Toggle button -->
-            <!-- Logo to back home -->
-            <a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="./css/2.png" width="100" height="100"></a>
-            <!-- Navbar Toggle         -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Latest
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Politics</a></li>
-                            <li><a class="dropdown-item" href="#">Medical</a></li>
-                            <li><a class="dropdown-item" href="#">Public</a></li>
-                            <li><a class="dropdown-item" href="#">Entertainment</a></li>
-                        </ul>
+                @foreach ($Types as $type)
+                    <li class="nav-item">
+                
+                        <a class="nav-link" href="{{ route('type.getpost', $type->slug) }}"> {{ $type->TYPE_NAME }} <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            View
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Events</a></li>
-                            <li><a class="dropdown-item" href="#">Trending</a></li>
-                            <li><a class="dropdown-item" href="#">Popularity</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            World
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Document</a></li>
-                            <li><a class="dropdown-item" href="#">Analyser</a></li>
-                            <li><a class="dropdown-item" href="#">Vietnamese 5 Continents</a></li>
-                            <li><a class="dropdown-item" href="#">Here's that life</a></li>
-                            <li><a class="dropdown-item" href="#">Military</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Education
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Admissions</a></li>
-                            <li><a class="dropdown-item" href="#">Test Scores</a></li>
-                            <li><a class="dropdown-item" href="#">University Lookup</a></li>
-                            <li><a class="dropdown-item" href="#">Study Abroad</a></li>
-                            <li><a class="dropdown-item" href="#">Learn English</a></li>
-                            <li><a class="dropdown-item" href="#">Education 4.0</a></li>
-                            <li><a class="dropdown-item" href="#">Kid-Lab</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Health
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">News</a></li>
-                            <li><a class="dropdown-item" href="#">Counsel</a></li>
-                            <li><a class="dropdown-item" href="#">Nutritious</a></li>
-                            <li><a class="dropdown-item" href="#">Healthy and Beautiful</a></li>
-                            <li><a class="dropdown-item" href="#">Diseases</a></li>
-                            <li><a class="dropdown-item" href="#">Cancer</a></li>
-                            <li><a class="dropdown-item" href="#">Vaccine</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Business
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Markets</a></li>
-                            <li><a class="dropdown-item" href="#">Tech</a></li>
-                            <li><a class="dropdown-item" href="#">Media</a></li>
-                            <li><a class="dropdown-item" href="#">Success</a></li>
-                            <li><a class="dropdown-item" href="#">Perspectives</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Videos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Latest News</a></li>
-                            <li><a class="dropdown-item" href="#">Rhythm of Life</a></li>
-                            <li><a class="dropdown-item" href="#">Sport Life</a></li>
-                            <li><a class="dropdown-item" href="#">Life 4.0</a></li>
-                            <li><a class="dropdown-item" href="#">Music</a></li>
-                            <li><a class="dropdown-item" href="#">Travel</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- Collapsible wrapper -->
+                @endforeach
 
-            <!-- Right elements -->
-            <!-- Search Button  -->
-            <form class="d-flex input-group w-auto">
-                <input type="search" class="form-control mobile-none iPad-none" placeholder="Type here" aria-label="Search" />
-                <button class="btn btn-outline-danger mobile-none iPad-none" type="button" data-mdb-ripple-color="dark" onclick="alert('Search Results')">
-                    Search
-                </button>
-            </form>
+               
+            </ul>
         </div>
-    </nav>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <!-- Search Button  -->
+        <form class="d-flex input-group w-auto header-search" action="{{ route('guest.search') }}" method="GET">
+            @csrf
+
+            <input type="search" name="key" class="form-control mobile-none iPad-none" placeholder="Search Posts here......" aria-label="Search" required />
+            <button class="btn btn-outline-danger mobile-none iPad-none" type="submit" data-mdb-ripple-color="dark" onclick="alert('Search Results')">
+                Search
+            </button>
+        </form>
+    </div>
+</nav>
 </body>
 
 <!-- TODO : Link jQuery Lib  -->

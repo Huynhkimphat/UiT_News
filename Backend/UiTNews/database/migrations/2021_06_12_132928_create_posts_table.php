@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('POST_AUTHOR_NAME')->nullable();
             $table->string('POST_ORIGIN')->nullable();
             $table->integer('POST_TYPE_ID')->unsigned();
-            $table->foreign('POST_TYPE_ID')->references('id')->on('types')->onDelete('cascade');//liên kết với bảng Type
+            $table->foreign('POST_TYPE_ID')->references('id')->on('types')->onDelete('cascade');
             $table->text('POST_DESCRIPT')->nullable();
             $table->string('POST_IMAGE')->nullable();
             $table->integer('POST_VIEW')->default(0);

@@ -1,11 +1,9 @@
-@extends('home.Master')
-@section('title')
-    <title>CIRCLE NEWS.</title>
+@extends('layouts.app')
+@section('header')
+@extends('layouts.header')
 @endsection
 
-
-@section('main')
-
+@section('content')
 
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
@@ -314,14 +312,4 @@
         </div>
     </div>
 </article>
-@endsection
-
-@section('seemore')
-        <!--see more both-->
-        <div class="btn-seemore btn-news-videos">
-            <button id="seemore">
-                XEM THÊM
-                <span></span>
-            </button>
-        </div>
 @endsection
