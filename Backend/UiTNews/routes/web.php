@@ -21,7 +21,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 
 Route::get('/', function () {
 
-    return view('welcome');
+    return view('home');
 });
 // -----------------------------load account ------------------------------
 Route::get('/account/loadall', function () {
@@ -46,10 +46,10 @@ Route::get('/account/{id}/isAdmin', function ($id) {
     $user = User::find($id)->role;
     return $user == 'Admin' ? true : false;
 });
-// -----------------------------------------------------------
+// ------------------------Authen-----------------------------------
 Auth::routes();
-// -----------------------------------------------------------
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // -----------------------------forget password ------------------------------
 Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
