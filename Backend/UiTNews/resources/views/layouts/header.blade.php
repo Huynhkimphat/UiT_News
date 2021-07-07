@@ -1,8 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-
 <body>
     <!-- Welcome, Guest -->
     <div class="welcome-header" id="app">
@@ -49,19 +47,15 @@
 
                     </div>
             @else
-
                     <a role="button" href="{{ route('login') }}" class="btn btn-outline-danger px-3 me-2 text-theme" >
                         {{ __('Login') }}
                     </a>
-
-
                     @if (Route::has('register'))
                     <a role="button" href="{{ route('register') }}" class="btn btn-danger btn-theme" >
                         {{ __('register') }}
                     </a>
 
                     @endif
-
                 </div>
             @endauth
         @endif

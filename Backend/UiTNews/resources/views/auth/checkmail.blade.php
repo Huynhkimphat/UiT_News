@@ -24,7 +24,7 @@
 <body>
     <div class="authen-page">
         <div class="authen-page__container row">
-            <a href="../public/login" class="authen-page__btn-back btn btn-outline-primary">
+            <a href="{{ url('/') }}" class="authen-page__btn-back btn btn-outline-primary">
                 <i class="fas fa-chevron-left"></i>
                 <p>Back</p>
             </a>

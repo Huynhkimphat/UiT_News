@@ -66,3 +66,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // -----------------------------post  ------------------------------
 
 
+Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
+//------------------------------
+Route::get('/form', function () {
+    return view('Mail.form');
+});
+Route::post('/message/send', ['uses' => 'App\Http\Controllers\FrontController@addFeedback', 'as' => 'front.fb']);
