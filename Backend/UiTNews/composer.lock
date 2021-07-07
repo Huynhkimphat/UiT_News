@@ -5,12 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "0ab1a2d73f802ed1ea08f9070a8bfccf",
-<<<<<<< HEAD
-    "packages": [
-        {
-=======
     "packages": [{
->>>>>>> master
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
             "source": {
@@ -1178,12 +1173,8 @@
             "license": [
                 "MIT"
             ],
-<<<<<<< HEAD
-            "authors": [
-                {
-=======
+
             "authors": [{
->>>>>>> master
                     "name": "Adam Engebretson",
                     "email": "adam@laravelcollective.com"
                 },
@@ -1382,7 +1373,6 @@
                 "issues": "https://github.com/thephpleague/flysystem/issues",
                 "source": "https://github.com/thephpleague/flysystem/tree/1.1.4"
             },
-<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://offset.earth/frankdejonge",
@@ -1390,13 +1380,7 @@
                 }
             ],
             "time": "2021-06-23T21:56:05+00:00"
-=======
-            "funding": [{
-                "url": "https://offset.earth/frankdejonge",
-                "type": "other"
-            }],
-            "time": "2020-08-23T07:39:11+00:00"
->>>>>>> master
+
         },
         {
             "name": "league/mime-type-detection",
@@ -1546,7 +1530,6 @@
         },
         {
             "name": "nesbot/carbon",
-<<<<<<< HEAD
             "version": "2.50.0",
             "source": {
                 "type": "git",
@@ -1557,18 +1540,16 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f47f17d17602b2243414a44ad53d9f8b9ada5fdb",
                 "reference": "f47f17d17602b2243414a44ad53d9f8b9ada5fdb",
-=======
-            "version": "2.49.0",
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "93d9db91c0235c486875d22f1e08b50bdf3e6eee"
+                "reference": "f47f17d17602b2243414a44ad53d9f8b9ada5fdb"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/93d9db91c0235c486875d22f1e08b50bdf3e6eee",
                 "reference": "93d9db91c0235c486875d22f1e08b50bdf3e6eee",
->>>>>>> master
                 "shasum": ""
             },
             "require": {
@@ -1646,11 +1627,8 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-06-28T22:38:45+00:00"
-=======
-            "time": "2021-06-02T07:31:40+00:00"
->>>>>>> master
+
         },
         {
             "name": "nikic/php-parser",
@@ -2020,6 +1998,7 @@
                     "homepage": "http://www.php-fig.org/"
                 }
             ],
+
             "description": "Common interfaces for PSR-7 HTTP message factories",
             "keywords": [
                 "factory",
@@ -6876,7 +6855,6 @@
                 "issues": "https://github.com/sebastianbergmann/global-state/issues",
                 "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.3"
             },
-<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -6884,13 +6862,7 @@
                 }
             ],
             "time": "2021-06-11T13:31:12+00:00"
-=======
-            "funding": [{
-                "url": "https://github.com/sebastianbergmann",
-                "type": "github"
-            }],
-            "time": "2020-10-26T15:55:19+00:00"
->>>>>>> master
+
         },
         {
             "name": "sebastian/lines-of-code",
@@ -7206,7 +7178,6 @@
                 "issues": "https://github.com/sebastianbergmann/type/issues",
                 "source": "https://github.com/sebastianbergmann/type/tree/2.3.4"
             },
-<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
@@ -7214,13 +7185,7 @@
                 }
             ],
             "time": "2021-06-15T12:49:02+00:00"
-=======
-            "funding": [{
-                "url": "https://github.com/sebastianbergmann",
-                "type": "github"
-            }],
-            "time": "2021-06-04T13:02:07+00:00"
->>>>>>> master
+
         },
         {
             "name": "sebastian/version",
