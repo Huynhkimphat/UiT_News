@@ -7,7 +7,7 @@
             <!-- Left elements -->
             <p class="navbar-hello brand text-danger mobile-none"><strong>CIRCLE NEWS</strong></p>
             @if(Route::has('login'))
-            @auth 
+            @auth
             <p class="navbar-hello" style="color:white">WELCOME, {{Auth::user()->name}}</p>
             @else
             <p class="navbar-hello" style="color:white">WELCOME, GUEST</p>
@@ -22,7 +22,7 @@
                     Sign up
                 </a>
             </div>
-            
+
         </div>
     </nav>
 </div>
@@ -43,12 +43,12 @@
 
                 @foreach ($Types as $type)
                     <li class="nav-item">
-                
+
                         <a class="nav-link" href="{{ route('type.getpost', $type->slug) }}"> {{ $type->TYPE_NAME }} <span class="sr-only">(current)</span></a>
                     </li>
                 @endforeach
 
-               
+
             </ul>
         </div>
         <!-- Collapsible wrapper -->

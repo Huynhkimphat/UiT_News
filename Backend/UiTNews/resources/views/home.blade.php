@@ -50,7 +50,7 @@
                         </div>
 
                         @php   $i++   @endphp
-                    @endforeach 
+                    @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -248,7 +248,6 @@
                             </div>
 
                         </a>
-
                         <a href="#">
                             <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/s0tUZhVY5Vc/maxresdefault.jpg');">
                                 <img src="https://vietcetera.com/images/outline/Play.svg">
@@ -299,7 +298,6 @@
                             </div>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>

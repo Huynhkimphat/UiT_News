@@ -1,28 +1,28 @@
 @extends('home.Master')
 <style>
-   
-    .crud{ 
+
+    .crud{
         border-style:none;
         background-color:#fff;
         display: inline-block;
         margin-left:60px;
     }
-    .crud:hover{ 
+    .crud:hover{
         text-decoration:underline;
         color:#ce1212;
     }
-    .form_delete{ 
+    .form_delete{
         display:inline-block;
         float:left;
-       
+
     }
-   
-    #btn-loadmore{ 
+
+    #btn-loadmore{
         border-style:none;
         text-align:center;
         background:white;
     }
-    #btn-loadmore:hover{ 
+    #btn-loadmore:hover{
         text-decoration:underline;
         color:#ce1212;
     }
@@ -38,18 +38,18 @@
             <div class="col-12 white-background">
                 <div class="single_post_area">
                     <h2 class="post_title wow ">{{ $post->POST_TITLE }}</h2>
-                    <a  class="author_name"><i class="fa fa-user"></i> {{ $post->POST_AUTHOR_NAME }}</a> <i class="fa fa-clock-o"></i>{{ date_format($post->created_at,"d/m/Y H:i:s") }}   
+                    <a  class="author_name"><i class="fa fa-user"></i> {{ $post->POST_AUTHOR_NAME }}</a> <i class="fa fa-clock-o"></i>{{ date_format($post->created_at,"d/m/Y H:i:s") }}
                     </a>
 
                     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true" style="left: 160px; top:15px ;margin-left: 25%;"></div>
-                   
+
                     <div class="single_post_content">
                         {!! $post->POST_CONTENT !!}
-                        <hr> 
-                        
+                        <hr>
+
                         <h4>Add Comment</h4>
                         @include('home.comment')
-                        
+
                     </div>
 
                 </div>

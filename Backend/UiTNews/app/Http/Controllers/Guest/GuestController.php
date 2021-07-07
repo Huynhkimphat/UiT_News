@@ -19,7 +19,6 @@ class GuestController extends Controller
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
         // dd($post_sk);
         return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt'));
-     
     }
 
     public function show($id)
@@ -39,18 +38,18 @@ class GuestController extends Controller
 
     public function getpost($nametype)
     {
-           
-            $type = Type::where('slug', $nametype)->first();
-            $posts = Post::where('POST_TYPE_ID',$type->id)->orderBy('created_at','desc')->get();
 
-            return view('home.typepost',compact('posts','type'));
+        $type = Type::where('slug', $nametype)->first();
+        $posts = Post::where('POST_TYPE_ID', $type->id)->orderBy('created_at', 'desc')->get();
+
+        return view('home.typepost', compact('posts', 'type'));
     }
 
     public function Search(Request $request)
     {
-            $key_form=$request->key;
-            $key=str_replace(' ','%',$key_form); 
-            $posts=Post::where('POST_TITLE','LIKE','%'.$key.'%')->get();
-            return view('home.search',compact('key_form','posts'));
+        $key_form = $request->key;
+        $key = str_replace(' ', '%', $key_form);
+        $posts = Post::where('POST_TITLE', 'LIKE', '%' . $key . '%')->get();
+        return view('home.search', compact('key_form', 'posts'));
     }
 }
