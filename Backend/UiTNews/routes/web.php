@@ -1,13 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\VideosController;
 // use App\Http\Resources\VideosResource;
+=======
+use App\Http\Controllers\Admin\PostsController;
+use App\Http\Controllers\Admin\TypesController;
+use App\Http\Controllers\Guest\GuestController;
+>>>>>>> master
 use App\Models\User;
 use App\Models\Video;
 use App\Middleware\Application;
+<<<<<<< HEAD
 
+=======
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+>>>>>>> master
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,24 +31,44 @@ use App\Middleware\Application;
 |
 */
 
+//===============================================================post type=======================================================
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('types', TypesController::class)->except(['create', 'show']);
+    Route::resource('post', PostsController::class);
 });
-Route::get('/signup/{id}', function ($id) {
+
+Route::get('/', [GuestController::class, 'loadpostall']);
+Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
+Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
+Route::get('search', [GuestController::class, 'Search'])->name('guest.search');
+//=======================================================================================================================================
+
+
+Route::get('/account/loadall', function () {
+    $users = User::all();
+    return response()->json($users);
+});
+
+
+Route::get('/account/{id}/loaduser', function ($id) {
     $user = User::find($id);
-    $user->name = 'Yen';
-    $user->email = '10@gmail.com';
-    $user->password = '12312312312';
+    return $user->password;
+    return response()->json($user);
+});
+Route::get('/account/{id}/update', function ($id) {
+    $user = user::find($id);
+    $user->name = $_GET["name"];
+    $user->email = $_GET["email"];
+    $user->password = $_GET["password"];
     $user->save();
 });
-Route::get('/login/{email}', function ($email) {
-    return User::where('email', $email)->first()->password;
+// -----------------------------role account ------------------------------
+Route::get('/account/{id}/isAdmin', function ($id) {
+    $user = User::find($id)->role;
+    return $user == 'Admin' ? true : false;
 });
-Route::get('/login/', function () {
-    $users = User::all();
-    return $users;
-});
+<<<<<<< HEAD
 Route::group(['middleware' => 'web'], function () {
     Route::resource('/posts', PostsController::class);
     // Route::resource('/videos', VideoController::class);
@@ -54,3 +86,20 @@ Route::group(['middleware' => 'web'], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+=======
+// ------------------------Authen-----------------------------------
+Auth::routes();
+// -----------------------------forget password ------------------------------
+Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
+Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// -----------------------------post  ------------------------------
+
+
+Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
+//------------------------------
+Route::get('/form', function () {
+    return view('Mail.form');
+});
+Route::post('/message/send', ['uses' => 'App\Http\Controllers\FrontController@addFeedback', 'as' => 'front.fb']);
+>>>>>>> master
