@@ -38,7 +38,6 @@ class ForgotPasswordController extends Controller
             $message->to($request->email);
             $message->subject('Reset Password Notification');
         });
-
         return view('auth.checkmail');
     }
 }

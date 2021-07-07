@@ -12,12 +12,10 @@ class GuestController extends Controller
     //
     public function loadpostall()
     {
-        $latestPosts = Post::latest()->take(3)->get(); //lấy 3 post mới nhất
+        $latestPosts = Post::latest()->take(3)->get();
         $topView = Post::orderByDesc('POST_VIEW')->take(4)->get();
-        //  dd($latestPosts,$post_1,$topView);
         $post_sk = Post::where('POST_TYPE_ID', 12)->take(3)->orderByDesc('updated_at')->get();
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
-        // dd($post_sk);
         return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt'));
     }
 
@@ -31,7 +29,6 @@ class GuestController extends Controller
             ->where('id', '!=', $post->id)
             ->take(3)
             ->get();
-        //  dd($post);
         return view("home.postdetail", compact('post', 'post_sk', 'post_related'));
     }
 

@@ -1,25 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-use App\Http\Controllers\PostsController;
 use App\Http\Controllers\VideosController;
-// use App\Http\Resources\VideosResource;
-=======
 use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\Guest\GuestController;
->>>>>>> master
 use App\Models\User;
-use App\Models\Video;
-use App\Middleware\Application;
-<<<<<<< HEAD
-
-=======
-use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Auth\ForgotPasswordController;
->>>>>>> master
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,7 +55,6 @@ Route::get('/account/{id}/isAdmin', function ($id) {
     $user = User::find($id)->role;
     return $user == 'Admin' ? true : false;
 });
-<<<<<<< HEAD
 Route::group(['middleware' => 'web'], function () {
     Route::resource('/posts', PostsController::class);
     // Route::resource('/videos', VideoController::class);
@@ -76,9 +62,9 @@ Route::group(['middleware' => 'web'], function () {
 
 //Videos
 Route::group(['middleware' => 'web'], function () {
-    Route::get('/videos/manageVideos', [VideosController::class,'manageVideos'])->name('videos.manageVideos');
-    Route::get('/videos/createAllVideos',[VideosController::class,'createAllVideos'])->name('videos.createAllVideos');
-    Route::get('/videos/latestVideos', [VideosController::class,'latestVideos'])->name('videos.latestVideos');
+    Route::get('/videos/manageVideos', [VideosController::class, 'manageVideos'])->name('videos.manageVideos');
+    Route::get('/videos/createAllVideos', [VideosController::class, 'createAllVideos'])->name('videos.createAllVideos');
+    Route::get('/videos/latestVideos', [VideosController::class, 'latestVideos'])->name('videos.latestVideos');
     Route::resource('/videos', VideosController::class);
 });
 
@@ -86,7 +72,6 @@ Route::group(['middleware' => 'web'], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
 // ------------------------Authen-----------------------------------
 Auth::routes();
 // -----------------------------forget password ------------------------------
@@ -101,4 +86,3 @@ Route::get('/form', function () {
     return view('Mail.form');
 });
 Route::post('/message/send', ['uses' => 'App\Http\Controllers\FrontController@addFeedback', 'as' => 'front.fb']);
->>>>>>> master
