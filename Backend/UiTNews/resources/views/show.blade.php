@@ -1,4 +1,10 @@
 @extends('layouts.app')
+{{-- @section('header')
+@extends('layouts.header')
+@endsection --}}
+@section('footer')
+@extends('layouts.footer')
+@endsection
 
 @section('content')
 <head>

@@ -18,10 +18,11 @@ class VideosController extends Controller
      */
     public function index()
     {
-        // $videos = Video::all();
-        // return view('index')->with('videos',$videos);
+        $videos = Video::all();
+        return view('index')->with('videos',$videos);
 
-        return view('layouts.app');
+        // return view('layouts.app');
+        // return view('layouts.footer');
     }
 
     /**
