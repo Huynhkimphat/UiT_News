@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', [GuestController::class, 'loadpostall']);
 Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
 Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
-Route::get('search', [GuestController::class,'Search'])->name('guest.search');
+Route::get('search', [GuestController::class, 'Search'])->name('guest.search');
 //=======================================================================================================================================
 
 
