@@ -19,26 +19,27 @@
 
                 <div class="col-lg-6">
                     <h3 class="text-center text-danger"><b>Edit Video</b> </h3>
-                   
+
 				    <div class="form-group">
                         <form method="post" action="{{ route('videos.update', $video->id) }}">
                            @csrf
                             @method('put')
-                         <input type="text" name="VIDEO_TITLE" class="form-control m-2" placeholder="Title" value="{{ $video->VIDEO_TITLE }}">
-                         <input type="url" name="VIDEO_FILE" class="form-control m-2" placeholder="Link" value="{{ $video->VIDEO_FILE }}">
-                         <Textarea name="VIDEO_DESCRIPTION" cols="20" rows="4" class="form-control m-2" placeholder="Description" value="{{ $video->VIDEO_DESCRIPTION }}"></Textarea>
-                         <input type="text" name="VIDEO_AUTHOR" class="form-control m-2" placeholder="Author" value="{{ $video->VIDEO_AUTHOR }}">
-                         <input type="text" name="VIDEO_ORIGIN" class="form-control m-2" placeholder="Origin" value="{{ $video->VIDEO_ORIGIN }}">
-                         {{-- <input type="text" name="VIDEO_TYPE_ID" class="form-control m-2" placeholder="Type" value="{{ $video->VIDEO_TYPE_ID }}"> --}}
-                         <select name="VIDEO_TYPE_ID" class="form-control m-2" placeholder="Type" value="{{ $video->VIDEO_TYPE_ID }}">
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option></select>
+                         <input type="text" name="VIDEO_TITLE" class="form-control m-2" placeholder="Title" value="{{ $video->VIDEO_TITLE }}" required>
+                         <input type="url" name="VIDEO_FILE" class="form-control m-2" placeholder="Link" value="{{ $video->VIDEO_FILE }}" required>
+                         <Textarea name="VIDEO_DESCRIPTION" cols="20" rows="4" class="form-control m-2" placeholder="Description" required>{{ $video->VIDEO_DESCRIPTION }}</Textarea>
+                         <input type="text" name="VIDEO_AUTHOR" class="form-control m-2" placeholder="Author" value="{{ $video->VIDEO_AUTHOR }}" required>
+                         <input type="text" name="VIDEO_ORIGIN" class="form-control m-2" placeholder="Origin" value="{{ $video->VIDEO_ORIGIN }}" required>
+                         <select name="VIDEO_TYPE" class="form-control m-2" placeholder="Type" value="{{ $video->VIDEO_TYPE }}" required>
+                            <option value="Âm nhạc">Âm nhạc</option>
+                            <option value="Thể thao">Thể thao</option>
+                            <option value="Tiếng Anh">Tiếng Anh</option>
+                            <option value="Học thuật">Học thuật</option>
+                            <option value="Nấu ăn">Nấu ăn</option>
+                            <option value="Làm đẹp">Làm đẹp</option>
+                            <option value="Du lịch">Du lịch</option>
+                            <option value="Tin tức">Tin tức</option>
+                            <option value="Sức khoẻ">Sức khoẻ</option></select>
+
                         <button type="submit" class="btn btn-danger mt-3 ">Submit</button>
                         </form>
                    </div>

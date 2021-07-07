@@ -21,7 +21,7 @@
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
                     <h3 class="text-center text-danger"><b>Add New Video</b> </h3>
-                   
+
                     <hr>
                     @if(Session::get('success'))
                         <div class = "alert alert-success">
@@ -39,18 +39,27 @@
                         <form method="post" action="{{ route('videos.store') }}">
                          @csrf
 
-        				 <input type="text" name="VIDEO_TITLE" class="form-control m-2" placeholder="Title">
-                         <input type="url" name="VIDEO_FILE" class="form-control m-2" placeholder="Link">
-                         <Textarea name="VIDEO_DESCRIPTION" cols="20" rows="4" class="form-control m-2" placeholder="Description"></Textarea>
-                         <input type="text" name="VIDEO_AUTHOR" class="form-control m-2" placeholder="Author">
-                         <input type="text" name="VIDEO_ORIGIN" class="form-control m-2" placeholder="Origin">
-                         <input type="text" name="VIDEO_TYPE_ID" class="form-control m-2" placeholder="Type">
+        				 <input type="text" name="VIDEO_TITLE" class="form-control m-2" placeholder="Title" required>
+                         <input type="url" name="VIDEO_FILE" class="form-control m-2" placeholder="Link" required>
+                         <Textarea name="VIDEO_DESCRIPTION" cols="20" rows="4" class="form-control m-2" placeholder="Description" required></Textarea>
+                         <input type="text" name="VIDEO_AUTHOR" class="form-control m-2" placeholder="Author" required>
+                         <input type="text" name="VIDEO_ORIGIN" class="form-control m-2" placeholder="Origin" required>
+                         <select name="VIDEO_TYPE" class="form-control m-2" placeholder="Type" required>
+                            <option value="Âm nhạc">Âm nhạc</option>
+                            <option value="Thể thao">Thể thao</option>
+                            <option value="Tiếng Anh">Tiếng Anh</option>
+                            <option value="Học thuật">Học thuật</option>
+                            <option value="Nấu ăn">Nấu ăn</option>
+                            <option value="Làm đẹp">Làm đẹp</option>
+                            <option value="Du lịch">Du lịch</option>
+                            <option value="Tin tức">Tin tức</option>
+                            <option value="Sức khoẻ">Sức khoẻ</option></select>
 
                         <button type="submit" class="btn btn-danger mt-3 ">Submit</button>
                         </form>
                    </div>
                 </div>
-               
+
             </div>
 
          </body>

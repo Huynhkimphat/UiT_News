@@ -20,7 +20,7 @@ class CreateVideosTable extends Migration
             $table->longText('VIDEO_DESCRIPTION')->nullable();
             $table->longText('VIDEO_AUTHOR')->nullable();
             $table->longText('VIDEO_ORIGIN')->nullable();
-            $table->longText('VIDEO_TYPE_ID')->nullable();
+            $table->longText('VIDEO_TYPE')->nullable();
             $table->longText('VIDEO_VIEW')->nullable();
             $table->timestamps();
         });
