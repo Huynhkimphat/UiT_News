@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('post', PostsController::class);
 });
 
-Route::get('/', [GuestController::class, 'loadpostall']);
+Route::get('/', [App\Http\Controllers\Guest\GuestController::class, 'loadpostall']);
 Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
 Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
 Route::get('search', [GuestController::class, 'Search'])->name('guest.search');
@@ -96,7 +96,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // -----------------------------post  ------------------------------
 
 
-Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
 //------------------------------
 Route::get('/form', function () {
     return view('Mail.form');
