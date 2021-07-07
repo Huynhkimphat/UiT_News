@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
-    private $path = "public/file/post/";
+    private $path = "/file/post/";
 
 
     public function Home()
