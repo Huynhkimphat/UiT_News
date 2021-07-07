@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html lang="vi"
+>
 <head>
     <base href="{{ asset('') }}">
     <meta charset="UTF-8">
