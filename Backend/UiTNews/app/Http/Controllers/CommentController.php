@@ -2,36 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Comment;
-use App\Models\Post;
-use Illuminate\Support\Facades\Auth;
-
 class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        $comments=Comment::all();
-        return response()->json($comments);
-        
+        //
     }
     public function showpost($id){ 
       
-      $comments=Comment::where('COMMENT_POST_ID',"=",$id)->orderBy('COMMENT_ID')->get();
-      return $comments;
-      
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+        $comments=Comment::where('COMMENT_POST_ID',"=",$id)->orderBy('COMMENT_ID')->get();
+        return $comments;
+        
+      }
+
+    
     public function create()
     {
       $comments = [
@@ -80,26 +68,20 @@ class CommentController extends Controller
           "message" => "Comment record created"
         ], 201);
   }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+    
     public function store(Request $request)
     {
-      if($request->COMMENT_BODY==null){ 
-        return back()->withFail('Error message');
-
-      }else{ 
-       $comment= Comment::create([ "COMMENT_USER_ID" =>$request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
+        if($request->COMMENT_BODY==null){ 
+            return back()->withFail('Error message');
+    
+          }else{ 
+           $comment= Comment::create([ "COMMENT_USER_ID" =>$request->COMMENT_USER_ID, "COMMENT_POST_ID" => $request->COMMENT_POST_ID, "COMMENT_BODY" => $request->COMMENT_BODY ]);
+              
+            return $comment;
+         
+          }
           
-        return $comment;
-     
-      }
-      
-        
-        
     }
     public function replyStore(Request $request)
     {
@@ -112,82 +94,61 @@ class CommentController extends Controller
         return $reply;
     }
   }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-      $comments=Comment::where('COMMENT_POST_ID',"=",$id)->orderBy('COMMENT_ID')->get();
-        $comtusers=[];
+        $comments=Comment::where('COMMENT_POST_ID',"=",$id)->orderBy('COMMENT_ID')->get();
+        $cmtusers=[];
         $i=0;
       foreach($comments as $comment){ 
 
-        $comtusers[$i]=["COMMENT_USER_ID"=>$comment->COMMENT_USER_ID,"USER_NAME"=>$comment->user->name];
+        $cmtusers[$i]=["COMMENT_USER_ID"=>$comment->COMMENT_USER_ID,"USER_NAME"=>$comment->user->name];
         $i++;
       }
-      return $comtusers;
+      return $cmtusers;
         
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     
+    public function edit(Comment $comment)
+    {
+        //
+    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-      if($request->COMMENT_BODY==null){ 
-        return response()->json([
-
-          'error' => 'fail!'
+        if($request->COMMENT_BODY==null){ 
+            return response()->json([
     
-      ]);
-
-      }else{ 
-        $comment = Comment::find($id);
-        $comment->COMMENT_BODY = $request->COMMENT_BODY ;
-        $comment->save();
-        return response()->json([
-
-          'success' => 'Record updated successfully!'
+              'error' => 'fail!'
+        
+          ]);
     
-      ]);
+          }else{ 
+            $comment = Comment::find($id);
+            $comment->COMMENT_BODY = $request->COMMENT_BODY ;
+            $comment->save();
+            return response()->json([
+    
+              'success' => 'Record updated successfully!'
+        
+          ]);
+        }
     }
-  }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+  
     public function destroy($id)
     {
         $comment=Comment::find($id);
-          if(count($comment->replies) > 0) {
+        if(count($comment->replies) > 0) {
          // Delete children recursive
-        foreach ($comment->replies as $reply) {
+            foreach ($comment->replies as $reply) {
               $reply->delete();
-         }
-      }
-    $comment->delete();
-    
-    return response()->json([
-
-      'success' => 'Record deleted successfully!'
-
-  ]);
-}
+            }
+        }
+        $comment->delete();
+        return response()->json([
+        'success' => 'Record deleted successfully!'
+        ]);
+    }
 }
