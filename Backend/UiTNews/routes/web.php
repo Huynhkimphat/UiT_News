@@ -20,17 +20,25 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 |
 */
 
+//===============================================================post type=======================================================
+
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('types', TypesController::class)->except(['create', 'show']);
     Route::resource('post', PostsController::class);
 });
-Route::get('/', function () {
-    return view('home');
-});
+
+Route::get('/', [GuestController::class, 'loadpostall']);
+Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
+Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
+Route::get('search', [GuestController::class,'Search'])->name('guest.search');
+//=======================================================================================================================================
+
+
 Route::get('/account/loadall', function () {
     $users = User::all();
     return response()->json($users);
 });
+
 
 Route::get('/account/{id}/loaduser', function ($id) {
     $user = User::find($id);
@@ -55,10 +63,10 @@ Auth::routes();
 Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// -----------------------------post  ------------------------------
 
-// Route::get('/', [GuestController::class, 'loadpostall']);
+
 Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
-Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
 //------------------------------
 Route::get('/form', function () {
     return view('Mail.form');

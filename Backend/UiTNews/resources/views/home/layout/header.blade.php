@@ -9,7 +9,7 @@
             <p class="navbar-hello" style="color:white">WELCOME, GUEST</p>
             <!-- Right elements -->
             <div class="d-flex align-items-center">
-                <a href="./login.html" type="button" class="btn btn-outline-danger px-3 me-2 text-theme authen" data-mdb-ripple-color="dark">
+                <a href="{{ route('login') }}" type="button" class="btn btn-outline-danger px-3 me-2 text-theme authen" data-mdb-ripple-color="dark">
                     Login
                 </a>
                 <a href="./register.html" type="button" class="btn btn-danger btn-theme authen">
@@ -64,9 +64,11 @@
 
         <!-- Right elements -->
         <!-- Search Button  -->
-        <form class="d-flex input-group w-auto header-search">
-            <input type="search" class="form-control mobile-none iPad-none" placeholder="Type here" aria-label="Search" />
-            <button class="btn btn-outline-danger mobile-none iPad-none" type="button" data-mdb-ripple-color="dark" onclick="alert('Search Results')">
+        <form class="d-flex input-group w-auto header-search" action="{{ route('guest.search') }}" method="GET">
+            @csrf
+
+            <input type="search" name="key" class="form-control mobile-none iPad-none" placeholder="Search Posts here......" aria-label="Search" required />
+            <button class="btn btn-outline-danger mobile-none iPad-none" type="submit" data-mdb-ripple-color="dark" onclick="alert('Search Results')">
                 Search
             </button>
         </form>
