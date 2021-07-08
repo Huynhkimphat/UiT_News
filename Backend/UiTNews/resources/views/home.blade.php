@@ -27,7 +27,7 @@
                             </a>
                         </div>
                     </div> --}}
-
+                    @if(!empty($latestPosts))
                     @php    $i=1    @endphp
 
                      @foreach ($latestPosts as $post)
@@ -51,6 +51,7 @@
 
                         @php   $i++   @endphp
                     @endforeach
+                    @endif
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -63,6 +64,7 @@
             </div>
             <!--post2 -->
             <div id="picked" class="row ">
+                @if(!empty($post_sk))
                 @foreach ($post_sk as $post)
                     <div class="col-md-4">
                         <div class="card">
@@ -77,6 +79,7 @@
                         </div>
                     </div>
                 @endforeach
+                @endif
                 {{-- <div class="col-md-4">
                     <div class="card">
                         <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/06-may-2021/210426-metime-feature-768x432.jpg" alt="Card image">
