@@ -1,7 +1,4 @@
  @extends('home.Master') 
-
-
-
 @section('main')
 <div class="cover">
     <div class="container">
