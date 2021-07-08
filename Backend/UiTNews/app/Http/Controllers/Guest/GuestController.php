@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Type;
-
+use Illuminate\Support\Facades\Auth;
 class GuestController extends Controller
 {
     //
@@ -16,7 +16,8 @@ class GuestController extends Controller
         $topView = Post::orderByDesc('POST_VIEW')->take(4)->get();
         $post_sk = Post::where('POST_TYPE_ID', 12)->take(3)->orderByDesc('updated_at')->get();
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
-        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt'));
+        $user=Auth::user();
+        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt','user'));
     }
 
     public function show($id)

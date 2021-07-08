@@ -1,4 +1,4 @@
-@extends('home.Master')
+@extends('home.Master') 
 
 @section('title')
     <title>{{ $type->TYPE_NAME }}</title>

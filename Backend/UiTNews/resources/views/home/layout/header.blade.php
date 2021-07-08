@@ -1,32 +1,74 @@
+
+  
   <!-- Welcome, Guest -->
   <div class="welcome-header">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+</div>
+<div class="welcome-header" id="app">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <div class="container-fluid">
             <!-- Left elements -->
             <p class="navbar-hello brand text-danger mobile-none"><strong>CIRCLE NEWS</strong></p>
-            @if(Route::has('login'))
+            @if (Route::has('login'))
             @auth
-            <p class="navbar-hello" style="color:white">WELCOME, {{Auth::user()->name}}</p>
+            <p class="navbar-hello">WELCOME, {{ Auth::user()->name }}</p>
             @else
-            <p class="navbar-hello" style="color:white">WELCOME, GUEST</p>
+            <p class="navbar-hello">WELCOME, Guest</p>
             @endauth
             @endif
             <!-- Right elements -->
+    @if (Route::has('login'))
+    <ul class="dropdown ml-auto ">
+        @auth
             <div class="d-flex align-items-center">
-                <a href="{{ route('login') }}" type="button" class="btn btn-outline-danger px-3 me-2 text-theme authen" data-mdb-ripple-color="dark">
-                    Login
-                </a>
-                <a href="./register.html" type="button" class="btn btn-danger btn-theme authen">
-                    Sign up
-                </a>
-            </div>
 
+                <div class="dropdown ml-auto avaInfo align-items-center"
+                    style="display:flex;justify-content:space-evenly;width:9em;margin-right:10%">
+                    <a href="#" class="btn-user">
+                        <img class="mr-2" style="border-radius:50%"
+                        src="https://wall.vn/wp-content/uploads/2020/03/avatar-hai-huoc-ba-dao-8.jpg" width="40"
+                        height="40" alt="avatar">
+                    </a>
+                    <div class="username" style="color:#DC3545;">
+                        {{ Auth::user()->name }}
+                    </div>
+                </div>
+                <div id=" myDropdown" class="dropdown-content">
+                    <a href="#MyProfile">My Profile</a>
+                    <a href="#Settings">Settings</a>
+                    <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
+                </div>
+        @else
+
+                <a role="button" href="{{ route('login') }}" class="btn btn-outline-danger px-3 me-2 text-theme" >
+                    {{ __('Login') }}
+                </a>
+
+
+                @if (Route::has('register'))
+                <a role="button" href="{{ route('register') }}" class="btn btn-danger btn-theme" >
+                    {{ __('register') }}
+                </a>
+
+                @endif
+
+            </div>
+        @endauth
+    @endif
+        </ul>
         </div>
     </nav>
 </div>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light header-nav">
     <!-- Container wrapper -->
@@ -43,12 +85,10 @@
 
                 @foreach ($Types as $type)
                     <li class="nav-item">
-
+                
                         <a class="nav-link" href="{{ route('type.getpost', $type->slug) }}"> {{ $type->TYPE_NAME }} <span class="sr-only">(current)</span></a>
                     </li>
                 @endforeach
-
-
             </ul>
         </div>
         <!-- Collapsible wrapper -->
