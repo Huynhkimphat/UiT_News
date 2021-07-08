@@ -39,14 +39,7 @@
 <body>
 	<div class="wrapper">
 		
-        {{-- @include('admin.layout.header') --}}
-		<!-- Sidebar -->
-        {{-- @include('admin.layout.sidebar') --}}
-		<!-- End Sidebar -->
-
         @yield('content')
-
-		{{-- @include('admin.layout.tuychon') --}}
 		
 	</div>
 	@include('admin.layout.script')

@@ -2,6 +2,9 @@
 @section('header')
 @extends('layouts.header')
 @endsection
+@section('title')
+    <title>CIRCLE NEWS.</title>
+@endsection
 
 @section('content')
 
@@ -312,4 +315,13 @@
         </div>
     </div>
 </article>
+@endsection
+@section('seemore')
+        <!--see more both-->
+        <div class="btn-seemore btn-news-videos">
+            <button id="seemore">
+                XEM THÊM
+                <span></span>
+            </button>
+        </div>
 @endsection

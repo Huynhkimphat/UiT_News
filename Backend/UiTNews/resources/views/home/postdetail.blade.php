@@ -1,8 +1,6 @@
-@extends('home.Master')
+ @extends('home.Master') 
 
-@section('title')
-    <title>CIRCLE NEWS.</title>
-@endsection
+
 
 @section('main')
 <div class="cover">
@@ -154,7 +152,7 @@
                     <div class="recentpost_nav relatedpost_nav wow fadeInDown animated">
                         @foreach ($post_related as $post)
                         <li>
-                            <a href="{{ route('postdetail.show',$post->id ) }}"> <img alt="" src='public/file/post/{{$post->POST_IMAGE}}'></a>
+                            <a href="{{ route('postdetail.show',$post->id ) }}"> <img alt="" src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}'></a>
                             <a href="#" class="recent_title">{{$post->POST_TITLE}}</a>
                         </li>
                         @endforeach

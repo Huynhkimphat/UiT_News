@@ -14,7 +14,7 @@ class GuestController extends Controller
     {
         $latestPosts = Post::latest()->take(3)->get(); //lấy 3 post mới nhất
         $topView = Post::orderByDesc('POST_VIEW')->take(4)->get();
-        //  dd($latestPosts,$post_1,$topView);
+          //dd($latestPosts);
         $post_sk = Post::where('POST_TYPE_ID', 12)->take(3)->orderByDesc('updated_at')->get();
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
         // dd($post_sk);

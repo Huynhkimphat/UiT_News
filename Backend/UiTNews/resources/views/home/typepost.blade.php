@@ -1,9 +1,5 @@
 @extends('home.Master')
 
-@section('title')
-    <title>{{ $type->TYPE_NAME }}</title>
-@endsection
-
 @section('main')
     <article id="news-video">
         <div class="row d-flex justify-content-center">

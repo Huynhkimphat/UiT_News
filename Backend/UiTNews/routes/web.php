@@ -20,7 +20,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 |
 */
 
-//===============================================================post type=======================================================
+//===============================================================post/type=======================================================
 
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('types', TypesController::class)->except(['create', 'show']);

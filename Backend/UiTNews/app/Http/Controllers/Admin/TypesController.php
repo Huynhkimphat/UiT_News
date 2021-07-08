@@ -21,7 +21,7 @@ class TypesController extends Controller
         return view('admin.type.list', compact('type'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request) 
     {
         $types = $request->all();
         $types['slug'] =  Str::slug($request->TYPE_NAME);
@@ -34,7 +34,7 @@ class TypesController extends Controller
         $type = Type::find($id);
         return view('admin.type.edit', compact('type'));
     }
-
+                                                                                                                                                                    
     public function update(Request $request, $id)
     {
         $types = $request->all();
