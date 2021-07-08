@@ -2,13 +2,45 @@
 
 @section('content')
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous">
+    
+    
     </script>
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/videosShow.css">
+    <style>
+    .crud{
+        border-style:none;
+        background-color:#fff;
+        display: inline-block;
+        margin-left:60px;
+    }
+    .crud:hover{
+        text-decoration:underline;
+        color:#ce1212;
+    }
+    .form_delete{
+        display:inline-block;
+        float:left;
 
+    }
+
+    #btn-loadmore{
+        border-style:none;
+        text-align:center;
+        background:white;
+    }
+    #btn-loadmore:hover{
+        text-decoration:underline;
+        color:#ce1212;
+    }
+    .name{ 
+        font-size:1.4rem;
+    }
+    .content{ 
+        font-size:1.3rem;
+    }
+    </style>
 </head>
 
 <body>
@@ -28,7 +60,8 @@
                             <p>{{$video->VIDEO_VIEW}} lượt xem <sup>.</sup> {{$video->created_at}}</p><hr>
                         </div>
                     </div>
-                    {{-- Here for comments on Video --}}
+                    <h4 style="padding-left: calc(var(--bs-gutter-x)/ 2);">Add Comment</h4>
+                        @include('home.comment',['post'=>$video])
                 </div>
                 <div class="col-md-4" id="latest">
                     <div class="board clearfix">
@@ -51,5 +84,8 @@
                     </div>
                 </div>
             </div>
+            
+
+                       
         </article>
 @endsection

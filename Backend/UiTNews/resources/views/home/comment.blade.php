@@ -11,7 +11,7 @@
 <button type="submit" style="margin-left:20px; margin-bottom:10px" class="btn btn-outline-primary btn-lg" id="btn-submit" >Submit</button>
 
 <br>
-<h4>Comments</h4>
+<h4 style="padding-left: calc(var(--bs-gutter-x)/ 2);">Comments</h4>
 <br>
 <div id="showcomment" class="jquery-comments ">
     <div class="data-container">
@@ -23,10 +23,17 @@
     </center>
 
 <script type="text/javascript">
+    var type;
+    if ('{{$post->POST_TITLE}}'!=''){ 
+         type="post";
+    }else{ 
+         type="video";
+    }
+    
     const username=()=>{
         $.ajax({
             type:"GET",
-            url:'http://uitnews.local/api/comments/'+{{$post->id}},
+            url:'http://127.0.0.1:8000/api/comments/'+type+{{$post->id}},
             }).done((users)=>{
                 let i=0;
                 users.forEach((user)=>{
@@ -39,7 +46,7 @@
     const loadComment=()=>{
         $.ajax({
         type:"GET",
-        url:'http://uitnews.local/api/post/'+{{$post->id}}+'/comments',
+        url:'http://127.0.0.1:8000/api/post/'+type+{{$post->id}}+'/comments',
 
         }).done((cmts)=>{
 
@@ -49,14 +56,14 @@
 
                 cmts.forEach((cmt) => {
                     let date=new Date(cmt.created_at);
-                    console.log(date);
+                    
                     if(cmt.COMMENT_PARENT_ID== null){
                         @if(Route::has('login'))
                         @auth
                         if(cmt.COMMENT_USER_ID=={{ Auth::user()->id }}){
                             commentBox.prepend(`
                             <li id="display-comment`+count+`" class="comment" >
-                        <div class="comment-wrapper">
+                            <div class="comment-wrapper" style="padding-top:13px">
                             <div style="background-image:url('https://image.flaticon.com/icons/png/512/924/924874.png');" class="profile-picture round" ></div>
                             <time>`+date.getDate() +`-`+(date.getMonth()+1)+`-`+date.getFullYear()+`</time>
                             <div class="comment-header"><span class="name" id="username`+count+`"></span></div>
@@ -87,11 +94,11 @@
 
                             commentBox.prepend(`
                             <li id="display-comment`+count+`" class="comment" >
-                                <div class="comment-wrapper">
+                                <div class="comment-wrapper" style="padding-top:13px">
                                 <div style="background-image:url('https://image.flaticon.com/icons/png/512/924/924874.png');" class="profile-picture round" ></div>
                                 <time>`+date.getDate() +`-`+(date.getMonth()+1)+`-`+date.getFullYear()+`</time>
                                 <div class="comment-header"><span class="name" id="username`+count+`"></span></div>
-                                <div class="wrapper">
+                                <div class="wrapper" >
                                     <div id="display${cmt.COMMENT_ID}" class="content">${cmt.COMMENT_BODY}</div>
                                     <div id="formedit${cmt.COMMENT_ID}"></div>
                                     <span class="actions">
@@ -120,7 +127,7 @@
                     if (cmt.COMMENT_USER_ID=={{ Auth::user()->id }}){
                     $('#reply'+cmt.COMMENT_PARENT_ID).prepend(`
                     <li id="display-comment`+count+`" class="comment" >
-                        <div class="comment-wrapper">
+                        <div class="comment-wrapper" style="padding-top:13px">
                             <div style="background-image:url('https://image.flaticon.com/icons/png/512/924/924874.png');" class="profile-picture round" ></div>
                             <time>`+date.getDate() +`-`+(date.getMonth()+1)+`-`+date.getFullYear()+`</time>
                             <div class="comment-header"><span class="name" id="username`+count+`"></span></div>
@@ -153,7 +160,7 @@
 
                             $('#reply'+cmt.COMMENT_PARENT_ID).prepend(`
                     <li id="display-comment`+count+`" class="comment" >
-                        <div class="comment-wrapper">
+                        <div class="comment-wrapper" style="padding-top:13px">
                             <div style="background-image:url('https://image.flaticon.com/icons/png/512/924/924874.png');" class="profile-picture round" ></div>
                             <time>`+date.getDate() +`-`+(date.getMonth()+1)+`-`+date.getFullYear()+`</time>
                             <div class="comment-header"><span class="name" id="username`+count+`"></span></div>
@@ -231,7 +238,7 @@
             var Data = {
                         COMMENT_ID: delete_id,
                     };
-            var urldelete='http://uitnews.local/api/comments/'+delete_id;
+            var urldelete='http://127.0.0.1:8000/api/comments/'+delete_id;
             $.ajax({
                 type: "DELETE",
                 url:urldelete ,
@@ -286,10 +293,10 @@
 
             var formData = {
                 COMMENT_BODY: jQuery('#COMMENT_BODY'+edit_id).val(),
-                COMMENT_POST_ID: {{ $post->id }},
+                COMMENT_POST_ID: type+{{ $post->id }},
                 COMMENT_USER_ID: {{auth::user()->id}},
             };
-            var urledit='http://uitnews.local/api/comments/'+edit_id;
+            var urledit='http://127.0.0.1:8000/api/comments/'+edit_id;
             $.ajax({
                 type: "PUT",
                 url:urledit ,
@@ -341,11 +348,11 @@
             });
             var formData = {
                 COMMENT_BODY: jQuery('#REPLY_COMMENT_BODY'+parent_id).text(),
-                COMMENT_POST_ID: {{ $post->id }},
+                COMMENT_POST_ID: type+{{ $post->id }},
                 COMMENT_USER_ID: {{ Auth::user()->id }},
                 COMMENT_PARENT_ID: parent_id,
             };
-            var urlrep='http://uitnews.local/api/reply';
+            var urlrep='http://127.0.0.1:8000/api/reply';
             $.ajax({
                 type: "POST",
                 url:urlrep ,
@@ -370,6 +377,7 @@
     $("#btn-submit").click(function (e) {
         @if(Route::has('login'))
         @auth
+        console.log('post'+{{ $post->id }});
     e.preventDefault();
     $.ajaxSetup({
         headers: {
@@ -378,12 +386,12 @@
     });
     const formData = {
         COMMENT_BODY: jQuery('#COMMENT_BODY').text(),
-        COMMENT_POST_ID: {{ $post->id }},
+        COMMENT_POST_ID: type+{{ $post->id }},
         COMMENT_USER_ID: {{ Auth::user()->id }},
     };
     $.ajax({
         type: "POST",
-        url: "http://uitnews.local/api/comments",
+        url: "http://127.0.0.1:8000/api/comments",
         data: formData,
         dataType: 'json',
     }).done((cmt)=>{
