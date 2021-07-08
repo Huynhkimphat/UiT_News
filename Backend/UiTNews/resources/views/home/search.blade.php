@@ -1,5 +1,4 @@
-@extends('home.Master')
-
+@extends('home.Master') 
 @section('main')
     <article id="news-video">
         <div class="row d-flex justify-content-center">
