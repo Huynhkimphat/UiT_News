@@ -20,40 +20,34 @@
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    {{-- <div class="carousel-item active ">
-                        <img src='public/file/post/{{$post_1->POST_IMAGE}}' class="d-block w-100">
-                        <div class="carousel-caption ">
-                            <a class="carousel-title" href="{{ route('postdetail.show', $post_1->id) }}">
+                   
 
-                                    {{$post_1->POST_TITLE}}
-                                <p> {{ date_format($post_1->created_at,"d/m/Y H:i:s") }} </p>
-                            </a>
-                        </div>
-                    </div> --}}
+                    @if(!empty($latestPosts))
+                        @php    $i=1    @endphp
 
-                    @php    $i=1    @endphp
+                        @foreach ($latestPosts as $post)
+                            <div
+                                @if ($i==1)
+                                    class="carousel-item active "
+                                @else
+                                    class="carousel-item"
+                                @endif
+                                >
+                                    <img src='public/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
+                                    <div class="carousel-caption ">
+                                        <a class="carousel-title" href="{{ route('postdetail.show', $post->id) }}">
 
-                    @foreach ($latestPosts as $post)
-                        <div
-                            @if ($i==1)
-                                class="carousel-item active "
-                            @else
-                                class="carousel-item"
-                            @endif
-                             >
-                                <img src='public/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
-                                <div class="carousel-caption ">
-                                    <a class="carousel-title" href="{{ route('postdetail.show', $post->id) }}">
+                                                {{$post->POST_TITLE}}
 
-                                            {{$post->POST_TITLE}}
+                                            {{-- <p> {{ date_format($post->created_at,"d/m/Y H:i:s") }} </p> --}}
+                                        </a>
+                                    </div>
+                            </div>
 
-                                        {{-- <p> {{ date_format($post->created_at,"d/m/Y H:i:s") }} </p> --}}
-                                    </a>
-                                </div>
-                        </div>
+                            @php   $i++   @endphp
+                        @endforeach
+                    @endif
 
-                        @php   $i++   @endphp
-                    @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,45 +60,22 @@
             </div>
             <!--post2 -->
             <div id="picked" class="row ">
-                @foreach ($post_sk as $post)
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top"  src='public/file/post/{{$post->POST_IMAGE}}' alt="Card image">
-                            <div class="card-body">
-                                <a href="{{ route('postdetail.show', $post->id) }}">
-                                    <h4 class="card-title">{{ $post->POST_TITLE }}</h4>
-                                </a>
-                                <p class="card-text content" id="hidden">{{$post->POST_DESCRIPT }}</p>
-                                {{-- <p class="time">{{ date_format($post->created_at,"d/m/Y H:i:s") }} </p> --}}
+                @if (isset($post_sk))
+                    @foreach ($post_sk as $post)
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top"  src='public/file/post/{{$post->POST_IMAGE}}' alt="Card image">
+                                <div class="card-body">
+                                    <a href="{{ route('postdetail.show', $post->id) }}">
+                                        <h4 class="card-title">{{ $post->POST_TITLE }}</h4>
+                                    </a>
+                                    <p class="card-text content" id="hidden">{{$post->POST_DESCRIPT }}</p>
+                                    {{-- <p class="time">{{ date_format($post->created_at,"d/m/Y H:i:s") }} </p> --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                {{-- <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/06-may-2021/210426-metime-feature-768x432.jpg" alt="Card image">
-                        <div class="card-body">
-                            <a href="#">
-                                <h4 class="card-title">Thử Rồi Thích: Dành thời gian cho bản thân mà không thấy tội lỗi</h4>
-                            </a>
-                            <p class="card-text content" id="hidden">Công việc và trách nhiệm đôi khi khiến bạn thấy tội lỗi nếu muốn dành thời gian cho mình. 5 Bước sau đây sẽ giúp bạn tìm lại thời gian chăm sóc bản thân.</p>
-                            <p class="time">10 TH 5</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/21-apr-2021/bonao2-optim-768x432.jpg" alt="Card image">
-                        <div class="card-body">
-                            <a href="#">
-                                <h4 class="card-title">Vì sao khi nhìn lâu vào một từ, ta bỗng cảm thấy lạ lẫm?
-                                </h4>
-                            </a>
-                            <p class="card-text content" id="hidden">Đôi khi việc đọc bỗng trở nên thật khó khăn vì nhìn chữ... chả hiểu gì cả.</p>
-                            <p class="time">10 TH 5</p>
-                        </div>
-                    </div>
-                </div> --}}
+                    @endforeach
+                @endif
             </div>
         </div>
         <!--post 3 bên phải-->
