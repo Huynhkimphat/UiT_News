@@ -163,7 +163,7 @@
     <div class="row d-flex justify-content-center">
         <!--post 4-->
         <div class="col-md-7 col-12">
-            <h2>Sports</h2>
+            <h2>SPORTS</h2>
             <div class="left-board clearfix">
                 <div class="news-roller">
                     @foreach ($post_tt as $post)

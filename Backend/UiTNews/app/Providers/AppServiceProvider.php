@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-// use App\Models\Type;
+use App\Models\Type;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 
@@ -27,7 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        // $Types = Type::all();
-        // View::share('Types', $Types);
+        // $this->app->bind('path.public', function() {
+        //     return base_path().'/../public_html';
+        // });
+        $Types = Type::all();
+        View::share('Types', $Types);
     }
 }

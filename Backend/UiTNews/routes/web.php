@@ -1,14 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VideosController;
 use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Models\User;
-use App\Middleware\Application;
-use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Auth\ForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,17 +18,25 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 |
 */
 
+//===============================================================post type=======================================================
+
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('types', TypesController::class)->except(['create', 'show']);
     Route::resource('post', PostsController::class);
 });
-Route::get('/', function () {
-    return view('home');
-});
+
+Route::get('/', [App\Http\Controllers\Guest\GuestController::class, 'loadpostall']);
+Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
+Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
+Route::get('search', [GuestController::class, 'Search'])->name('guest.search');
+//=======================================================================================================================================
+
+
 Route::get('/account/loadall', function () {
     $users = User::all();
     return response()->json($users);
 });
+
 
 Route::get('/account/{id}/loaduser', function ($id) {
     $user = User::find($id);
@@ -49,18 +55,37 @@ Route::get('/account/{id}/isAdmin', function ($id) {
     $user = User::find($id)->role;
     return $user == 'Admin' ? true : false;
 });
+Route::group(['middleware' => 'web'], function () {
+    Route::resource('/posts', PostsController::class);
+    // Route::resource('/videos', VideoController::class);
+});
+
+//Videos
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/videos/manageVideos', [VideosController::class, 'manageVideos'])->name('videos.manageVideos');
+    Route::get('/videos/createAllVideos', [VideosController::class, 'createAllVideos'])->name('videos.createAllVideos');
+    Route::get('/videos/latestVideos', [VideosController::class, 'latestVideos'])->name('videos.latestVideos');
+    Route::resource('/videos', VideosController::class);
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // ------------------------Authen-----------------------------------
 Auth::routes();
 // -----------------------------forget password ------------------------------
 Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
 Route::post('forget-password', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'postEmail'])->name('forget-password');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// -----------------------------post  ------------------------------
 
-// Route::get('/', [GuestController::class, 'loadpostall']);
+
 Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
 Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
 //--------------------Feedback----------
 Route::post('/message/send', ['uses' => 'App\Http\Controllers\FrontController@addFeedback', 'as' => 'front.fb']);
+//------------------------------
 Route::get('/form', function () {
     return view('Mail.form');
 });

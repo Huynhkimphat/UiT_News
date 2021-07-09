@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
-
 class ResetPasswordController extends Controller
 {
     public function showResetForm($token)
@@ -33,7 +32,6 @@ class ResetPasswordController extends Controller
         if (!$updatePassword) {
             return back()->withInput()->with('error', 'Invalid token!');
         }
-
         $user = User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
 
         DB::table('password_resets')->where(['email' => $request->email])->delete();
