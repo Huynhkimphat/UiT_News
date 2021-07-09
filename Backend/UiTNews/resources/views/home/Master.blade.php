@@ -35,7 +35,7 @@
 
     </main>
     @yield('seemore')
-    
+
     @include('home.layout.footer')
 </body>
 

@@ -1,5 +1,5 @@
-@extends('home.app')
-@section('main')
+@extends('layouts.app')
+@section('content')
     <article id="news-video">
         <div class="row d-flex justify-content-center">
             <!--post 4-->
