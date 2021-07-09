@@ -1,26 +1,5 @@
-<!doctype html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer</title>
-    <!-- Bootstrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <!-- Js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <!-- Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="../css/Footer.css">
-
-</head>
-
-<body>
-    <footer class="bg-dark text-white text-center text-lg-start">
+<link rel="stylesheet" href="../css/Footer.css">
+<footer class="bg-dark text-white text-center text-lg-start">
         <!-- Grid container -->
         <div class="container p-4">
             <!--Grid row-->
@@ -100,13 +79,15 @@
                 <div class="row rowSecond">
                     <!-- Section: Form -->
                     <section class="">
-                        <form action="">
+                        {{-- <form method="POST" action="{{ route('front.fb') }}"> --}}
+                            {!! Form::open(array('route' => 'front.fb', 'class' => 'feedback-form')) !!}
                             <!--Grid row-->
+                            @csrf
                             <div class="row d-flex justify-content-md-center">
                                 <!--Grid column-->
                                 <div class="col-auto">
                                     <p class="pt-2">
-                                        <strong class="text-danger">Sign up for your feedback</strong>
+                                        <strong class="text-danger"> Your feedback</strong>
                                     </p>
                                 </div>
                                 <!--Grid column-->
@@ -116,9 +97,20 @@
                                 <div class="col-md-5 col-12">
                                     <!-- Email input -->
                                     <div class="form-outline form-white mb-4">
-                                        <input type="email" id="formEmail" class="form-control"
-                                            placeholder="Email address" /><br>
-                                        <textarea id="feedback" class="form-control" name="feedback" rows="4" cols="50">Type your feedback here...</textarea>
+                                        <div class="mb-3 authen__form__control">
+                                        <input for="email" name="email" id="feedback-email" type="email" id="email" class="form-control
+                                        @error('email') is-invalid @enderror"  placeholder="Email address" required
+                                        ><br>
+                                     @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                        </div>
+                                        <div class="mb-3 authen__form__control">
+                                        <textarea for="comment" id="feedback-content" class="form-control" name="comment" rows="4" cols="50" placeholder="Tell us What do you think about us" required></textarea>
+                                        <span class="authen__form__error"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--Grid column-->
@@ -126,15 +118,15 @@
                                 <!--Grid column-->
                                 <div class="col-auto">
                                     <!-- Submit button -->
-                                    <button type="submit" class="btn btn-outline-danger mt-8"
-                                        onclick="onclick=mySubscribe()">
-                                        Send
+                                    <button type="submit" class="btn btn-outline-danger mt-8">{{_('send')}}
+
                                     </button>
                                 </div>
                                 <!--Grid column-->
                             </div>
+                            {!! Form::close() !!}
                             <!--Grid row-->
-                        </form>
+                        {{-- </form> --}}
                     </section>
                     <!-- Section: Form -->
                 </div>
@@ -181,6 +173,5 @@
         </div>
         <!-- Copyright -->
     </footer>
-</body>
-<script src="../js/footer.js"></script>
-</html>
+
+<script src="./js/footer.js" type="text/javascript"></script>

@@ -1,10 +1,6 @@
 @extends('layouts.app')
-@section('header')
-@extends('layouts.header')
-@endsection
 
 @section('content')
-
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
         <!--post1-->
