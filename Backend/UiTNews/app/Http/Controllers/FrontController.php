@@ -22,11 +22,4 @@ class FrontController extends Controller
         Session::flash('flash_message', 'Send message successfully!');
         return back();
     }
-    protected function validateForm(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|string',
-            'content' => 'required|string',
-        ]);
-    }
 }

@@ -34,7 +34,7 @@
                             {{ Auth::user()->name }}
                         </div>
                     </div>
-                    <div id=" myDropdown" class="dropdown-content">
+                    <div id=" myDropdown" class="dropdown-content"style="top:50px">
                         <a href="#MyProfile">My Profile</a>
                         <a href="#Settings">Settings</a>
                         <a href="{{ route('logout') }}"onclick="event.preventDefault();
@@ -79,12 +79,12 @@
 
                 @foreach ($Types as $type)
                     <li class="nav-item">
-                
+
                         <a class="nav-link" href="{{ route('type.getpost', $type->slug) }}"> {{ $type->TYPE_NAME }} <span class="sr-only">(current)</span></a>
                     </li>
                 @endforeach
 
-               
+
             </ul>
         </div>
         <!-- Collapsible wrapper -->

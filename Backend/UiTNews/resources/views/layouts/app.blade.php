@@ -16,14 +16,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Link to CSS -->
-    <link rel="stylesheet" href="./css/header.css">
+    {{-- <link rel="stylesheet" href="./css/header.css"> --}}
     <!-- Css for component dropdown -->
     <base href="{{ asset('') }}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     @yield('title')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -34,62 +32,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/jquery-comments.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/detail.css')}}">
 
-
-     <!-- Data -->
-     <script type="text/javascript" src="frontend/assets/data/comments-data.js"></script>
-     <!-- Libraries -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-     <script type="text/javascript" src="frontend/assets/js/jquery-comments.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.0/jquery.textcomplete.js"></script>
-     <script type="text/javascript" src="frontend/assets/js/detail.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous">
-     </script>
-     <!--jquery-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script>
-         $(document).ready(() => {
-             $(".btn-news-videos").on("click", function() {
-                 $(".more:hidden").slice(0, 3).slideDown()
-
-             });
-             $(".btn-news").on("click", function() {
-                 $(".more-news:hidden").slice(0, 3).slideDown()
-             });
-             $(".btn-videos").on("click", function() {
-                 $(".more-videos:hidden").slice(0, 3).slideDown()
-             });
-         })
-     </script>
-
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
-     </script>
-     <script>
-         // Toggle for mobile
-         document.querySelector('.toogleText1').onclick = () => {
-             document.querySelector('.toogleMobile1').classList.toggle("active");
-
-         }
-         document.querySelector('.toogleText2').onclick = () => {
-                 document.querySelector('.toogleMobile2').classList.toggle("active");
-
-             }
-             // Js for Subscribe
-         function mySubscribe() {
-             if (document.getElementById("formEmail").value.length == 0) {
-                 alert("Please fill in the email address box below!").innerHTML;
-             } else {
-                 alert("Thank you for your subscription!").innerHTML;
-             }
-         }
-     </script>
-
 </head>
-
-
-
 <body>
 
-    @yield('header')
+    @include('layouts.header')
 
     <div class="container">
 
@@ -97,12 +43,34 @@
 
     </div>
 
-    @yield('footer')
-
+    @include('layouts.footer')
 
 
 </body>
+<script type="text/javascript" src="frontend/assets/data/comments-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="frontend/assets/js/jquery-comments.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.0/jquery.textcomplete.js"></script>
+<script type="text/javascript" src="frontend/assets/js/detail.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous">
+</script>
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+</script>
+<script>
+    $(document).ready(() => {
+        $(".btn-news-videos").on("click", function() {
+        $(".more:hidden").slice(0, 3).slideDown()
 
-
+        });
+        $(".btn-news").on("click", function() {
+        $(".more-news:hidden").slice(0, 3).slideDown()
+        });
+        $(".btn-videos").on("click", function() {
+        $(".more-videos:hidden").slice(0, 3).slideDown()
+        });
+        })
+</script>
 
 </html>

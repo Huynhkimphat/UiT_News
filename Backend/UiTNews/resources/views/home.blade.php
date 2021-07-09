@@ -1,11 +1,6 @@
 @extends('layouts.app')
-@section('header')
-@extends('layouts.header')
-@endsection
-
 
 @section('content')
-
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
         <!--post1-->
@@ -314,7 +309,4 @@
         </div>
     </div>
 </article>
-@endsection
-@section('footer')
-@extends('layouts.footer')
 @endsection
