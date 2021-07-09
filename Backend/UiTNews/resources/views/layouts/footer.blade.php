@@ -112,7 +112,6 @@
                                 <!--Grid column-->
 
                                 <!--Grid column-->
-
                                 <div class="col-md-5 col-12">
                                     <!-- Email input -->
                                     <div class="form-outline form-white mb-4">
@@ -182,5 +181,7 @@
         <!-- Copyright -->
     </footer>
 </body>
+
 <script src="../js/footer.js"></script>
+
 </html>

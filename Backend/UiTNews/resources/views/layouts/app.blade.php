@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
+    {{-- <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -28,13 +28,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
     <!-- Styles -->
     <link href="../css/app.css" rel="stylesheet">
-    <link href="../css/Footer.css" rel="stylesheet">
+    <link href="../css/Footer.css" rel="stylesheet"> --}}
 </head>
 <body>
 
         @yield('header')
 
-        <div class="container">
+        <div>
 
             @yield('content')
 
