@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+        {{-- <link rel="stylesheet" href="./css/new.css"> --}}
         <!-- Styles -->
         <style>
             /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
@@ -44,89 +44,589 @@
                         </g>
                     </svg>
                 </div>
+                <!-- User Login Success -->
+                <!-- <ul class="dropdown ml-auto ">
+                    <div class="dropdown ml-auto avaInfo align-items-center" style="display:flex;justify-content:space-evenly;width:9em;margin-right:10%">
+                        <a href="#" class="btn-user">
+                            <img class="mr-2" style="border-radius:50%" src="https://wall.vn/wp-content/uploads/2020/03/avatar-hai-huoc-ba-dao-8.jpg" width="40" height="40" alt="avatar">
+                        </a>
+                        <div class="username" style="color:#DC3545;">
+                            QuyQuy
+                        </div>
+                    </div>
+                    <div id=" myDropdown" class="dropdown-content">
+                        <a href="#MyProfile">My Profile</a>
+                        <a href="#Settings">Settings</a>
+                        <a href="#Logout">Log Out</a>
+                    </div>
+                </ul> -->
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header-nav">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <!-- Logo to back home -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="./assets/images/logo2.png" width="100" height="100"></a>
+            <!-- Navbar Toggle         -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Latest
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Politics</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Medical</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Public</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Entertainment</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            View
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Events</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Trending</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Popularity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            World
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Document</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Analyser</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Vietnamese 5 Continents</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Here's that life</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Military</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Education
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Admissions</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Test Scores</a></li>
+                            <li><a class="dropdown-item full-size " href="#">University Lookup</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Study Abroad</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Learn English</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Education 4.0</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Kid-Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Health
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">News</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Counsel</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Nutritious</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Healthy and Beautiful</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Diseases</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Cancer</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Vaccine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Business
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Markets</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Tech</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Media</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Success</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Perspectives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Videos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item full-size " href="#">Latest News</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Rhythm of Life</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Sport Life</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Life 4.0</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Music</a></li>
+                            <li><a class="dropdown-item full-size " href="#">Travel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Collapsible wrapper -->
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+            <!-- Right elements -->
+            <!-- Search Button  -->
+            <form class="d-flex input-group w-auto header-search">
+                <input type="search" class="form-control mobile-none iPad-none" placeholder="Type here" aria-label="Search" />
+                <button class="btn btn-outline-danger mobile-none iPad-none" type="button" data-mdb-ripple-color="dark" onclick="alert('Search Results')">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
+    <main>
+        <article id="pop-news">
+            <div class="row d-flex justify-content-center">
+                <!--post1-->
+                <div class="col-md-7 col-12" id="featured">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            @foreach ($posts as $post)
+                                <div class="carousel-item {{$post->id==5?'active':''}}">{{-- active --}}
+                                    <img src={{$post->POST_IMAGE}} class="d-block w-100">
+                                    <div class="carousel-caption ">
+                                        <a class="carousel-title" href="#">
+                                            <h3>{{$post->POST_TITLE}}</h3>
+                                            <p>{{$post->created_at}}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!--post2 -->
+                    <div id="picked" class="row ">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/13-may-2021/210512-nghianoib-feature-2-768x432.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <h4 class="card-title">Vì sao lâu lâu nghĩ một đằng nói một nẻo?</h4>
+                                    </a>
+                                    <p class="card-text content" id="hidden">Hiện tượng “nghĩ một đằng nói một nẻo” không phải của riêng ai. Ca sĩ đến điệp khúc vẫn quên lời. MC đến hồi gay cấn vẫn đọc nhầm tên hoa hậu.</p>
+                                    <p class="time">10 TH 5</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/06-may-2021/210426-metime-feature-768x432.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <h4 class="card-title">Thử Rồi Thích: Dành thời gian cho bản thân mà không thấy tội lỗi</h4>
+                                    </a>
+                                    <p class="card-text content" id="hidden">Công việc và trách nhiệm đôi khi khiến bạn thấy tội lỗi nếu muốn dành thời gian cho mình. 5 Bước sau đây sẽ giúp bạn tìm lại thời gian chăm sóc bản thân.</p>
+                                    <p class="time">10 TH 5</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="https://img.vietcetera.com/uploads/images/21-apr-2021/bonao2-optim-768x432.jpg" alt="Card image">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <h4 class="card-title">Vì sao khi nhìn lâu vào một từ, ta bỗng cảm thấy lạ lẫm?
+                                        </h4>
+                                    </a>
+                                    <p class="card-text content" id="hidden">Đôi khi việc đọc bỗng trở nên thật khó khăn vì nhìn chữ... chả hiểu gì cả.</p>
+                                    <p class="time">10 TH 5</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--post 3 bên phải-->
+                <div class="col-md-5 " id="latest">
+                    <div class="board clearfix">
+                        <div class="news-roller">
+                            <div class="slot1">
+                                <img src="https://img.vietcetera.com/uploads/images/07-may-2021/techlimits-feature-768x432-1620374549751.jpg">
+                                <a href="#"><strong>Thử Rồi Thích: Tối giản cách bạn tiêu thụ thông tin</strong></a>
+                                <p class="content" id="hidden">6 Bước làm chủ cuộc sống trực tuyến của bạn bằng cách đặt ra giới hạn trong việc tiêu thụ thông tin.</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1">
+                                <img src="https://img.vietcetera.com/uploads/images/09-dec-2020/cautoan-feature1-768x432-1607527827958.jpg">
+                                <a href="#"><strong>Các kiểu cầu toàn thường gặp: Bạn theo đuổi sự hoàn hảo
+                                        nào?</strong></a>
+                                <p class="content" id="hidden">Không chỉ đơn thuần là sự cầu toàn, một tính cách perfectionist còn có thể được chia ra thành nhiều loại nữa đấy! Bạn thuộc loại cầu toàn nào sau đây?</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1" id="hidden">
+                                <img src="https://img.vietcetera.com/uploads/images/06-may-2021/vulnerability-feature-768x432.jpg">
+                                <a href="#"><strong>Làm sao để mở lòng mà không gây phiền lòng?</strong></a>
+                                <p class="content" id="hidden">Nhiều người lầm tưởng mở lòng là thao túng hoặc là phương tiện để trút cảm xúc. Điểm khác nhau giữa chúng là gì?</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1">
+                                <img src="https://img.vietcetera.com/uploads/images/11-may-2021/20210511-dien-anh-logo-2-01-768x432.jpg">
+                                <a href="#"><strong>Girl From Nowhere 2: Có gì hay và không hay ở 8 tập
+                                        phim?</strong></a>
+                                <p class="content" id="hidden">Bài viết giúp bạn hệ thống lại cả một mùa 2 “xuống sức” thấy rõ của Girl From Nowhere - series Netflix đình đám thời gian gần đây. Bạn thích tập phim nào nhất?</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
+
+        </article>
+        <hr>
+        <article id="news-video">
+            <div class="row d-flex justify-content-center">
+                <!--post 4-->
+                <div class="col-md-7 col-12">
+                    <h2>NEWS</h2>
+                    <div class="left-board clearfix">
+                        <div class="news-roller">
+                            <div class="slot1">
+                                <img src="https://i1-thethao.vnecdn.net/2021/05/09/Lewuy-jpeg-2081-1620529059.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=dfQ1CKZmL8O8nk75d8fK7A">
+                                <a href="#"><strong>Lewandowski tiệm cận kỷ lục của Gerd Muller</strong></a>
+                                <p class="content">Tiền đạo Robert Lewandowski chỉ thiếu một pha lập công để bắt kịp kỷ lục ghi bàn trong một mùa giải Bundesliga do Gerd Muller lập cách đây 49 năm.</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1">
+                                <img src="https://i1-suckhoe.vnecdn.net/2021/05/11/PHAM5615JPG-1620693895-2683-1620693986.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=eTcz_1zwJOF4WiSpv6QMNQ">
+                                <a href="#"><strong>nCoV liên quan viện Nhiệt đới là biến chủng Ấn Độ</strong></a>
+                                <p class="content">Viện Vệ sinh dịch tễ Trung ương giải trình tự gene virus 7 mẫu bệnh phẩm liên quan tới Bệnh viện Bệnh nhiệt đới Trung ương cơ sở 2, kết quả cho thấy nhiễm biến chủng tìm thấy ở Ấn Độ.</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1">
+                                <img src="https://i1-vnexpress.vnecdn.net/2021/05/11/VNENano-1620701911-1590-1620701972.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=hj2ivjo834kHmHc-HMtMLw">
+                                <a href="#"><strong>Bẫy nano có thể tiêu diệt nhiều biến chủng nCoV</strong></a>
+                                <p class="content">Các nhà nghiên cứu ở Đại học Chicago sử dụng hạt nano để 'bắt' nCoV bên trong cơ thể, sử dụng dưới dạng xịt mũi.</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1 more more-news ">
+                                <img src="https://img.vietcetera.com/uploads/images/10-may-2021/thumb-kem-chong-nang-768x432-1620634115896.jpg">
+                                <a href="#"><strong>Lật tẩy SPF - Liệu có nên tin vào kem chống nắng?</strong></a>
+                                <p class="content">Chỉ số SPF của kem chống nắng ngày càng cao liệu có giúp chúng ta thoát khỏi các tia độc hại hay sự thật đây chỉ là những con số ảo?</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                            <div class="slot1 more more-news ">
+                                <img src="https://i1-vnexpress.vnecdn.net/2021/05/11/vacuna-covid-nuevomexico-16207-6292-5071-1620739635.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=Q0b7JMR5h0SHGT-tIaHKUQ">
+                                <a href="#"><strong>Mỹ đau đầu xử lý vaccine thừa.</strong></a>
+                                <p class="content">Một số bang Mỹ từng mong mỏi nhận được nhiều liều vaccine Covid-19 nhất có thể, giờ đây, họ đang thừa vaccine khi cung lớn hơn cầu.</p>
+                                <p class="type">Type</p>
+                                <p class="time"> 10 TH 5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--button see more news-->
+                <div class="btn-seemore btn-news ">
+                    <button id="seemore">
+                        XEM THÊM
+                        <span></span>
+                    </button>
+                </div>
+
+
+                <div class="col-md-5 col-12">
+                    <h2>VIDEOS</h2>
+                    <div class="board clearfix">
+                        <div class="news-roller">
+                            <div class="playlist clearfix">
+                                <a href="#">
+                                    <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/1V86NyTL25g/maxresdefault.jpg')">
+                                        <img src="https://vietcetera.com/images/outline/Play.svg">
+                                        <p>4:27</p>
+                                    </div>
+
+                                    <div class="video-info">
+                                        <div class="item-title">
+                                            <strong>"Hà Đỗ, Giám đốc sáng tạo Đẹp Magazine: Tác phẩm phải tự kể câu
+                                                chuyện của nó | MAD EP06"</strong></div>
+                                        <div class="item-info">
+                                            <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                        </div>
+                                    </div>
+
+                                </a>
+                                <a href="#">
+                                    <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/KmPUD_F1-bQ/maxresdefault.jpg');">
+                                        <img src="https://vietcetera.com/images/outline/Play.svg">
+                                        <p>4:27</p>
+                                    </div>
+
+                                    <div class="video-info">
+                                        <div class="item-title">
+                                            <strong>Tiếp quản doanh nghiệp gia đình: tưởng dễ mà khó!? | THANG TIẾN
+                                                EP03</strong></div>
+                                        <div class="item-info">
+                                            <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                        </div>
+                                    </div>
+
+                                </a>
+
+                                <a href="#">
+                                    <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/s0tUZhVY5Vc/maxresdefault.jpg');">
+                                        <img src="https://vietcetera.com/images/outline/Play.svg">
+                                        <p>4:27</p>
+                                    </div>
+
+                                    <div class="video-info">
+                                        <div class="item-title">
+                                            <strong>Kinh nghiệm từ 4 Giám đốc sáng tạo về quá trình học hỏi trong Agency
+                                                | MAD EP04</strong>
+                                        </div>
+                                        <div class="item-info">
+                                            <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="playlist clearfix more more-videos">
+                                <a href="#">
+                                    <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/m-kLlUOq8fg/mqdefault.jpg');">
+                                        <img src="https://vietcetera.com/images/outline/Play.svg">
+                                        <p>4:27</p>
+                                    </div>
+
+                                    <div class="video-info">
+                                        <div class="item-title">
+                                            <strong>Vũ Đinh Trọng Thắng - Ngọt: Viết nhạc đừng nổi tiếng | Have A Sip
+                                                EP30</strong>
+                                        </div>
+                                        <div class="item-info">
+                                            <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/qCt0-w1dX2o/mqdefault.jpg');">
+                                        <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
+                                        <p>2:18</p>
+                                    </div>
+                                    <div class="video-info">
+                                        <div class="item-title">
+                                            <strong>Bảo Nguyễn, Giám đốc quốc gia tại Salesforce: Dùng công nghệ để phát
+                                                triển | Vietnam Innovators EP28</strong>
+                                        </div>
+                                        <div class="item-info">
+                                            <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--button see more videos-->
+                <div class="btn-seemore btn-videos">
+                    <button id="seemore">
+                        XEM THÊM
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    <!--see more both-->
+    <div class="btn-seemore btn-news-videos">
+        <button id="seemore">
+            XEM THÊM
+            <span></span>
+        </button>
+    </div>
+    <footer class="bg-dark text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!-- first row -->
+                <div class="row rowFirst">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                        <!-- Logo -->
+                        <a href="#!" class="footer-logo">
+                            <img src="./assets/images/logo.png" alt="footer_logo" class="img-thumbnail w-100" style="width: 300px;height: 250px;">
+                        </a>
+                        <!-- Text -->
+                        <p style="text-align:justify" class="full-size">
+                            Circle News is an operational information division of the UIT responsible for the gathering and broadcasting of news and current affairs around the world. Circle News, giving information on its origins, as well.
+                        </p>
+                    </div>
+                    <!--Grid column-->
+                    <div class="col-lg-2"></div>
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase text-danger toogleText1 full-size">Discover</h5>
+
+                        <ul class="list-unstyled mb-0 toogleMobile1">
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Latest</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">View</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">World</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Technology</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Design</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Culture</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Business</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase text-danger toogleText2 full-size">About</h5>
+
+                        <ul class="list-unstyled mb-0 toogleMobile2">
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Newsroom</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Advertisement</a>
+                            </li>
+                            <li>
+                                <a href="#!" target="blank" class="text-white full-size">Testimonials</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!-- first row -->
+
+                <!-- second row -->
+                <div class="row rowSecond">
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-md-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong class="text-danger full-size">Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+
+                                <div class="col-md-5 col-12">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="formEmail" class="form-control full-size" placeholder="Email address" />
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-danger mb-4 full-size" onclick="onclick=mySubscribe()">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+                </div>
+                <!-- second row -->
+            </div>
+            <!--Grid row-->
         </div>
-    </body>
+        <!-- Grid container -->
+
+        <!-- Social media -->
+        <div class="text-center p-3">
+            <section class="mb-4 center p-4 pb-0">
+                <!-- Facebook -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #3b5998;" href="https://www.facebook.com/" target="_blank" role="button"><i
+                        class="fab fa-facebook-f full-size"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #55acee;" href="https://twitter.com/twitter?lang=vi" target="_blank" role="button"><i
+                        class="fab fa-twitter full-size"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #dd4b39;" href="https://www.instagram.com/" target="_blank" role="button"><i
+                        class="fab fa-google full-size"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #ac2bac;" href="https://www.instagram.com/" target="_blank" role="button"><i
+                        class="fab fa-instagram full-size"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #0082ca;" href="https://www.linkedin.com/" target="_blank" role="button"><i
+                        class="fab fa-linkedin-in full-size"></i></a>
+                <!-- Github -->
+                <a class="btn btn-primary btn-floating m-1 full-size" style="background-color: #333333;" href="https://github.com/" target="_blank" role="button"><i class="fab fa-github full-size"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 full-size" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright © 2021, Circle News
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous">
+</script>
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(() => {
+        $(".btn-news-videos").on("click", function() {
+            $(".more:hidden").slice(0, 3).slideDown()
+
+        });
+        $(".btn-news").on("click", function() {
+            $(".more-news:hidden").slice(0, 3).slideDown()
+        });
+        $(".btn-videos").on("click", function() {
+            $(".more-videos:hidden").slice(0, 3).slideDown()
+        });
+    })
+</script>
+
 </html>
