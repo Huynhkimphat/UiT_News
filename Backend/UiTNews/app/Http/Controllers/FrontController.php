@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Auth;
+use PharIo\Manifest\Email;
+
 class FrontController extends Controller
 {
     public function addFeedback(Request $request)
@@ -17,7 +20,13 @@ class FrontController extends Controller
 	    });
 
         Session::flash('flash_message', 'Send message successfully!');
-
-        return view('Mail.form');
+        return back();
+    }
+    protected function validateForm(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string',
+            'content' => 'required|string',
+        ]);
     }
 }

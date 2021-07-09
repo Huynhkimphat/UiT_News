@@ -3,6 +3,7 @@
 @extends('layouts.header')
 @endsection
 
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -23,4 +24,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('footer')
+@extends('layouts.footer')
 @endsection
