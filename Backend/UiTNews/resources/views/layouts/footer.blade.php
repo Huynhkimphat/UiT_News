@@ -172,13 +172,5 @@
         </div>
         <!-- Copyright -->
     </footer>
-<<<<<<< HEAD
-</body>
-
-<script src="../js/footer.js"></script>
-
-</html>
-=======
 
 <script src="./js/footer.js" type="text/javascript"></script>
->>>>>>> master

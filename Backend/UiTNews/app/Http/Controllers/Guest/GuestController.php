@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Video;
+use App\Http\Resources\VideosResource;
+use Illuminate\Support\Facades\DB;
 use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
 class GuestController extends Controller
@@ -17,7 +20,9 @@ class GuestController extends Controller
         $post_sk = Post::where('POST_TYPE_ID', 12)->take(3)->orderByDesc('updated_at')->get();
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
         $user=Auth::user();
-        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt','user'));
+        $latestVideos = Video::latest()->take(3)->get();
+        $latestVideosMore = Video::latest()->skip(3)->take(2)->get();
+        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt','user','latestVideos','latestVideosMore'));
     }
 
     public function show($id)

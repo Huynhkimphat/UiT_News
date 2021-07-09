@@ -1,8 +1,5 @@
-* {
-    font-family: "Inter" !important;
-}
 #pop-news {
-    margin: 20px 3%;
+    margin: 20px 1%;
 }
 #pop-news img {
     width: 100%;
@@ -39,10 +36,12 @@ a:hover {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     line-height: 20px;
+    font-size: 15px;
 }
 .news-roller a {
     text-decoration: none;
     color: #030303;
+    font-size: 15px;
 }
 
 .clearfix::after {
@@ -56,7 +55,7 @@ a:hover {
 .slot1 .content {
     line-height: 24px;
     color: #757575;
-    font-size: 1rem;
+    font-size: 15px;
     padding-left: 5px;
 }
 .content {
@@ -70,30 +69,31 @@ a:hover {
     position: relative;
     margin-top: 10px;
     color: #757575;
-    font-size: 1rem;
+    font-size: 15px;
 }
 .slot1 .time {
     float: right;
     position: relative;
     margin-top: 10px;
     color: #757575;
-    font-size: 1rem;
+    font-size: 15px;
 }
 .item-title {
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 .item-info {
     color: #757575;
+    font-size: 15px;
 }
 
 @media screen and (max-width: 1025px) {
-    .news-roller img {
+    .news-roller iframe {
         width: 50%;
     }
-    .slot1 .content {
+    /* .slot1 .content {
         line-height: 18px;
         font-size: 0.9rem;
-    }
+    } */
     #latest .content {
         height: 40px;
     }
@@ -101,7 +101,7 @@ a:hover {
     .thumbnails p {
         margin-top: 70% !important;
     }
-    .thumbnails img {
+    .thumbnails frame {
         margin-top: 30% !important;
     }
     .time,
@@ -110,36 +110,33 @@ a:hover {
     }
 }
 @media screen and (max-width: 767px) {
-    #picked {
+    /* #picked {
         display: none;
-    }
+    } */
     #latest {
-        display: none;
+        display: content;
     }
 
     #pop-news {
         margin: 30px 5%;
     }
-    #news-video {
-        margin: 30px 5%;
-    }
-    .btn-news-videos {
-        display: none !important;
-    }
 }
 @media screen and (max-width: 768px) {
     .news-roller .slot1 {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
-    .left-board .news-roller img {
-        height: 130px;
+    .left-board .news-roller iframe {
+        height: 250px;
+        width: 350px;
     }
-    #hidden {
-        display: none;
+    #latest {
+        display: contents;
     }
-    #latest .slot1 a {
-        height: 66px !important;
-        -webkit-line-clamp: 3;
+    .thumbnail {
+        width: 100%;
+    }
+    .slot1 .video-info {
+        margin-left: -90px;
     }
     .news-roller a strong {
         font-size: calc(1rem + 0.3vw);
@@ -147,8 +144,8 @@ a:hover {
 }
 
 .video-info {
-    margin-left: 8px;
-    width: 70%;
+    /* margin-left: 8px; */
+    width: 90%;
     position: relative;
 }
 
