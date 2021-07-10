@@ -39,7 +39,7 @@
                                     <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
                                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-                                <div class="video-info">
+                                <div class="video-info" >
                                     <a href="{{ route('videos.show', $video->id) }}"><strong>{{$video->VIDEO_TITLE}}</strong></a>
                                     <p class="content" id="hidden">{{$video->VIDEO_DESCRIPTION}}</p>
                                     <p class="type">{{$video->VIDEO_VIEW}} lượt xem</p>

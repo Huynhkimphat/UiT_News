@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!doctype html>
 <html lang="en">
     <head>
@@ -10,14 +13,14 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
      <!-- Font-awesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+     <link rel="stylesheet" href="../css/manageVideos.css">
     </head>
     <body>
 
-        <div class="container" style="margin-top: 50px;">
+        <div class="container">
 
-            <h3 class="text-center text-danger"><b>Laravel CRUD With Multiple Videos Upload</b> </h3>
-            <a href="{{ route('videos.create') }}" class="btn btn-outline-success">Add New Video</a>
+            <h1 class="text-center text-danger"><b>Manager Multiple Videos Upload</b> </h1>
+            <a href="{{ route('videos.create') }}" class="btn btn-outline-success">Add New Video</a><hr/>
 
             <table class="table">
                 <thead>
@@ -61,3 +64,4 @@
                 </tbody>
               </table>
         </div>
+@endsection
