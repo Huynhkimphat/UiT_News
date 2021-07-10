@@ -35,7 +35,7 @@ class GuestController extends Controller
             ->where('id', '!=', $post->id)
             ->take(3)
             ->get();
-        return view("home.postdetail", compact('post', 'post_sk', 'post_related'));
+        return view("postdetail", compact('post', 'post_sk', 'post_related'));
     }
 
 
@@ -45,7 +45,7 @@ class GuestController extends Controller
         $type = Type::where('slug', $nametype)->first();
         $posts = Post::where('POST_TYPE_ID', $type->id)->orderBy('created_at', 'desc')->get();
 
-        return view('home.typepost', compact('posts', 'type'));
+        return view('typepost', compact('posts', 'type'));
     }
 
     public function Search(Request $request)
@@ -53,6 +53,6 @@ class GuestController extends Controller
         $key_form = $request->key;
         $key = str_replace(' ', '%', $key_form);
         $posts = Post::where('POST_TITLE', 'LIKE', '%' . $key . '%')->get();
-        return view('home.search', compact('key_form', 'posts'));
+        return view('search', compact('key_form', 'posts'));
     }
 }

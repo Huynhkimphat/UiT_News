@@ -13,12 +13,10 @@ class FrontController extends Controller
     {
         $input = $request->all();
         Mail::send('Mail.mailfb', array(
-        // 'name'=>$input["name"],
         'email'=>$input["email"],
         'content'=>$input['comment']), function($message){
 	        $message->to('19520056@gm.uit.edu.vn', 'Visitor')->subject('Visitor Feedback!');
 	    });
-
         Session::flash('flash_message', 'Send message successfully!');
         return back();
     }

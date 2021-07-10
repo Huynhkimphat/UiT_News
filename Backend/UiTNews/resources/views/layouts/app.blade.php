@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Link to CSS -->
-    {{-- <link rel="stylesheet" href="./css/header.css"> --}}
+    <link rel="stylesheet" href="./css/header.css">
     <!-- Css for component dropdown -->
     <base href="{{ asset('') }}">
     <meta charset="UTF-8">
@@ -31,7 +31,39 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/main.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/jquery-comments.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/detail.css')}}">
+    <style>
+    .crud{
+        border-style:none;
+        background-color:#fff;
+        display: inline-block;
+        margin-left:60px;
+    }
+    .crud:hover{
+        text-decoration:underline;
+        color:#ce1212;
+    }
+    .form_delete{
+        display:inline-block;
+        float:left;
 
+    }
+
+    #btn-loadmore{
+        border-style:none;
+        text-align:center;
+        background:white;
+    }
+    #btn-loadmore:hover{
+        text-decoration:underline;
+        color:#ce1212;
+    }
+    .name{ 
+        font-size:1.4rem;
+    }
+    .content{ 
+        font-size:1.3rem;
+    }
+    </style>
 </head>
 <body>
 
