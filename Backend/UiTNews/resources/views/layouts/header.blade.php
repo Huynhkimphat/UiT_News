@@ -70,19 +70,19 @@
         <!-- Logo to back home -->
         <a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="frontend/assets/images/logo2.png" width="100" height="100"></a>
         <!-- Navbar Toggle         -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" id="navbarToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 @foreach ($Types as $type)
-                    <li class="nav-item">
+                    <li class="nav-item dropdown">
 
                         <a class="nav-link" href="{{ route('type.getpost', $type->slug) }}"> {{ $type->TYPE_NAME }} <span class="sr-only">(current)</span></a>
                     </li>
                 @endforeach
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a class="nav-link" href="{{ route('videos.index') }} " style="hover:cursor">Video</a>
                 </li>
 
@@ -105,11 +105,11 @@
 </body>
 
 <!-- TODO : Link jQuery Lib  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- TODO : Link  Bootstrap Libs -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
-
+<script src="../js/header.js"></script>
 </html>
 
 
