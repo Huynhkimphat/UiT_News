@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
         <!--post1-->
@@ -211,92 +210,47 @@
                 <span></span>
             </button>
         </div>
+        {{-- Render the latest Videos --}}
         <div class="col-md-5 col-12">
-            <h2>VIDEOS</h2>
+            <h2><a href="{{ route('videos.index') }}">VIDEOS</a></h2>
             <div class="board clearfix">
                 <div class="news-roller">
                     <div class="playlist clearfix">
-                        <a href="#">
-                            <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/1V86NyTL25g/maxresdefault.jpg')">
-                                <img src="https://vietcetera.com/images/outline/Play.svg">
-                                <p>4:27</p>
+                        @foreach ($latestVideos as $video)
+                        <a href="{{ route('videos.show', $video->id) }}">
+                            <div class="thumbnails">
+                                <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
 
                             <div class="video-info">
                                 <div class="item-title">
-                                    <strong>"Hà Đỗ, Giám đốc sáng tạo Đẹp Magazine: Tác phẩm phải tự kể câu
-                                        chuyện của nó | MAD EP06"</strong></div>
+                                    <strong>{{ $video->VIDEO_TITLE }}</strong></div>
                                 <div class="item-info">
-                                    <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
-                                </div>
-                            </div>
-
-                        </a>
-                        <a href="#">
-                            <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/KmPUD_F1-bQ/maxresdefault.jpg');">
-                                <img src="https://vietcetera.com/images/outline/Play.svg">
-                                <p>4:27</p>
-                            </div>
-
-                            <div class="video-info">
-                                <div class="item-title">
-                                    <strong>Tiếp quản doanh nghiệp gia đình: tưởng dễ mà khó!? | THANG TIẾN
-                                        EP03</strong></div>
-                                <div class="item-info">
-                                    <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
-                                </div>
-                            </div>
-
-                        </a>
-                        <a href="#">
-                            <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/s0tUZhVY5Vc/maxresdefault.jpg');">
-                                <img src="https://vietcetera.com/images/outline/Play.svg">
-                                <p>4:27</p>
-                            </div>
-
-                            <div class="video-info">
-                                <div class="item-title">
-                                    <strong>Kinh nghiệm từ 4 Giám đốc sáng tạo về quá trình học hỏi trong Agency
-                                        | MAD EP04</strong>
-                                </div>
-                                <div class="item-info">
-                                    <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                    <p>{{$video->VIDEO_VIEW}} lượt xem <sup>.</sup> {{$video->VIDEO_AUTHOR}}</p>
                                 </div>
                             </div>
                         </a>
+                        @endforeach
                     </div>
                     <div class="playlist clearfix more more-videos">
-                        <a href="#">
-                            <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/m-kLlUOq8fg/mqdefault.jpg');">
-                                <img src="https://vietcetera.com/images/outline/Play.svg">
-                                <p>4:27</p>
+                        @foreach ($latestVideosMore as $video)
+                        <a href="{{ route('videos.show', $video->id) }}">
+                            <div class="thumbnails">
+                                <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
 
                             <div class="video-info">
                                 <div class="item-title">
-                                    <strong>Vũ Đinh Trọng Thắng - Ngọt: Viết nhạc đừng nổi tiếng | Have A Sip
-                                        EP30</strong>
-                                </div>
+                                    <strong>{{ $video->VIDEO_TITLE }}</strong></div>
                                 <div class="item-info">
-                                    <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
+                                    <p>{{$video->VIDEO_VIEW}} lượt xem <sup>.</sup> {{$video->VIDEO_AUTHOR}}</p>
                                 </div>
                             </div>
+
                         </a>
-                        <a href="#">
-                            <div class="thumbnails" style="background: url('https://i.ytimg.com/vi/qCt0-w1dX2o/mqdefault.jpg');">
-                                <img id="pause" src="https://vietcetera.com/images/outline/Play.svg">
-                                <p>2:18</p>
-                            </div>
-                            <div class="video-info">
-                                <div class="item-title">
-                                    <strong>Bảo Nguyễn, Giám đốc quốc gia tại Salesforce: Dùng công nghệ để phát
-                                        triển | Vietnam Innovators EP28</strong>
-                                </div>
-                                <div class="item-info">
-                                    <p>1tr lượt xem <sup>.</sup> 10 giờ trước</p>
-                                </div>
-                            </div>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -308,6 +262,17 @@
                 <span></span>
             </button>
         </div>
+    </div>
+</article>
+
+</main>
+<!--see more both-->
+<div class="btn-seemore btn-news-videos">
+<button id="seemore">
+    XEM THÊM
+    <span></span>
+</button>
+</div>
     </div>
 </article>
 @endsection
