@@ -1,7 +1,7 @@
 #pop-news {
     margin: 20px 1%;
 }
-#pop-news img {
+#pop-news iframe {
     width: 100%;
 
     border-radius: 5px;
@@ -11,25 +11,28 @@ a:hover {
     color: #e84545 !important;
 }
 
-#picked {
+#pickedVideo {
     margin-top: 10px;
 }
 
-.news-roller .slot1 {
+.newsVideo-roller .slotVideos {
     width: 100%;
     height: 100%;
     display: inline-flex;
     overflow: hidden;
     margin-bottom: 10px;
+    margin-top: 0px;
+    padding-top: inherit;
 }
 
-.news-roller img {
+.newsVideo-roller iframe {
     width: 37%;
     float: left;
     margin-right: 5px;
     border-radius: 2px;
+    padding-left: 5px;
 }
-.news-roller a {
+.newsVideo-roller a {
     padding: 5px;
     overflow: hidden;
     display: -webkit-box;
@@ -38,7 +41,7 @@ a:hover {
     line-height: 20px;
     font-size: 15px;
 }
-.news-roller a {
+.newsVideo-roller a {
     text-decoration: none;
     color: #030303;
     font-size: 15px;
@@ -49,10 +52,10 @@ a:hover {
     clear: both;
     display: table;
 }
-.slot1 a {
+.slotVideos a {
     height: 45px;
 }
-.slot1 .content {
+.slotVideos .content {
     line-height: 24px;
     color: #757575;
     font-size: 15px;
@@ -64,14 +67,14 @@ a:hover {
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
-.slot1 .type {
+.slotVideos .type {
     float: left;
     position: relative;
     margin-top: 10px;
     color: #757575;
     font-size: 15px;
 }
-.slot1 .time {
+.slotVideos .time {
     float: right;
     position: relative;
     margin-top: 10px;
@@ -85,70 +88,15 @@ a:hover {
     color: #757575;
     font-size: 15px;
 }
-
-@media screen and (max-width: 1025px) {
-    .news-roller iframe {
-        width: 50%;
-    }
-    /* .slot1 .content {
-        line-height: 18px;
-        font-size: 0.9rem;
-    } */
-    #latest .content {
-        height: 40px;
-    }
-
-    .thumbnails p {
-        margin-top: 70% !important;
-    }
-    .thumbnails frame {
-        margin-top: 30% !important;
-    }
-    .time,
-    .type {
-        font-size: smaller;
-    }
-}
-@media screen and (max-width: 767px) {
-    /* #picked {
-        display: none;
-    } */
-    #latest {
-        display: content;
-    }
-
-    #pop-news {
-        margin: 30px 5%;
-    }
-}
-@media screen and (max-width: 768px) {
-    .news-roller .slot1 {
-        margin-bottom: 10px;
-    }
-    .left-board .news-roller iframe {
-        height: 250px;
-        width: 350px;
-    }
-    #latest {
-        display: contents;
-    }
-    .thumbnail {
-        width: 100%;
-    }
-    .slot1 .video-info {
-        margin-left: -90px;
-    }
-    .news-roller a strong {
-        font-size: calc(1rem + 0.3vw);
-    }
-}
-
 .video-info {
-    /* margin-left: 8px; */
     width: 90%;
     position: relative;
 }
-
+.videos-info {
+    margin-left: 8px;
+    width: 95%;
+    position: relative;
+}
 a .item-title {
     text-align: left;
     line-height: 20px;
@@ -160,4 +108,57 @@ a .item-title {
 }
 a .item-info {
     line-height: 18px;
+}
+@media screen and (max-width: 1024px) {
+    .newsVideo-roller iframe {
+        width: 50%;
+    }
+    .slotVideos {
+        display: inline-flex;
+    }
+    #latestVideos .content {
+        height: 40px;
+    }
+    .slotVideos .videos-info {
+        margin-left: 8px;
+    }
+    .thumbnails-video p {
+        margin-top: 70% !important;
+    }
+    .thumbnails-video frame {
+        margin-top: 30% !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    /* #picked {
+        display: none;
+    } */
+    #latestVideos {
+        display: content;
+    }
+
+    #pop-news {
+        margin: 30px 5%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .newsVideo-roller .slot1 {
+        margin-bottom: 10px;
+    }
+    .left-board .news-roller iframe {
+        height: 250px;
+        width: 350px;
+    }
+    #latestVideos {
+        display: contents;
+    }
+    .thumbnails-video {
+        width: 100%;
+    }
+    .slotVideos .video-info {
+        margin-left: -90px;
+    }
+    .newsVideo-roller a strong {
+        font-size: calc(1rem + 0.3vw);
+    }
 }

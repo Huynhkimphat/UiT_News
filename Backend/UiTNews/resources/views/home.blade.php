@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link rel="stylesheet" href="../css/homepage.css">
+</head>
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
         <!--post1-->
