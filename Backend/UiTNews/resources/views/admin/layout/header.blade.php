@@ -7,7 +7,7 @@ $user = Auth::user();
 <div class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="blue">
-        
+
         <a href="#" class="logo">
             <!-- <img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand"> -->
             <span>News</span>
@@ -28,7 +28,7 @@ $user = Auth::user();
 
     <!-- Navbar Header -->
     <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-        
+
         <div class="container-fluid">
             <div class="collapse" id="search-nav">
                 <form class="navbar-left navbar-form nav-search mr-md-3">

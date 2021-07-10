@@ -38,7 +38,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		
+
         {{-- @include('admin.layout.header') --}}
 		<!-- Sidebar -->
         {{-- @include('admin.layout.sidebar') --}}
@@ -47,7 +47,7 @@
         @yield('content')
 
 		{{-- @include('admin.layout.tuychon') --}}
-		
+
 	</div>
 	@include('admin.layout.script')
 
