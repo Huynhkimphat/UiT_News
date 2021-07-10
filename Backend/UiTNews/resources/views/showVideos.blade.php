@@ -52,7 +52,7 @@
                         <iframe width="100%" height="500" src="{{ $video->VIDEO_FILE }}" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div id="picked" class="row video-info">
+                    <div id="pickedVideo" class="row video-info">
                         <div class="item-title">
                             <strong>{{$video->VIDEO_TITLE}} | {{$video->VIDEO_AUTHOR}}</strong></div>
                         <div class="item-info">
@@ -63,16 +63,16 @@
                     <h4 style="padding-left: calc(var(--bs-gutter-x)/ 2);">Add Comment</h4>
                         @include('comment',['post'=>$video])
                 </div>
-                <div class="col-md-4" id="latest">
+                <div class="col-md-4" id="latestVideos">
                     <div class="board clearfix">
-                        <div class="news-roller">
+                        <div class="newsVideo-roller">
                             @foreach ($topView as $video)
-                            <div class="slot1">
-                                <div class="thumbnails">
+                            <div class="slotVideos">
+                                <div class="thumbnails-video">
                                     <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
                                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-                                <div class="video-info" >
+                                <div class="videos-info" >
                                     <a href="{{ route('videos.show', $video->id) }}"><strong>{{$video->VIDEO_TITLE}}</strong></a>
                                     <p class="content" id="hidden">{{$video->VIDEO_DESCRIPTION}}</p>
                                     <p class="type">{{$video->VIDEO_VIEW}} lượt xem</p>

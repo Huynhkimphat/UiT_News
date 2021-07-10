@@ -80,7 +80,9 @@
                         <a class="nav-link" href="{{ route('type.getpost', $type->slug) }}"> {{ $type->TYPE_NAME }} <span class="sr-only">(current)</span></a>
                     </li>
                 @endforeach
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('videos.index') }} " style="hover:cursor">Video</a>
+                </li>
 
             </ul>
         </div>
