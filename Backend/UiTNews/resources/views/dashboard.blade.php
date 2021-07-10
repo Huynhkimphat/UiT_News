@@ -17,7 +17,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                3,243
+                                {{$post}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -81,12 +81,12 @@
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0">Donate Money</h5>
+                        <h5 class="card-title mb-0">Video</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
+                                {{$video}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -104,10 +104,10 @@
     <hr>
     <a href="/posts" class="btn btn-primary">Manage Post</a> Add, Update, Delete Your Post
     <hr>
-    <a href="/videos/manageVideos" class="btn btn-warning">Manage Video</a> Add, Update, Delete Your Video Post
+    <a href="/videos/manageVideos" class="btn btn-primary">Manage Video</a> Add, Update, Delete Your Video Post
     <hr>
-    <a href="/types" class="btn btn-danger">Manage Type</a> Add, Update, Delete Your Video Type
+    <a href="/types" class="btn btn-primary">Manage Type</a> Add, Update, Delete Your Video Type
     <hr>
-    <a href="../AcocuntPage/index.html" class="btn btn-danger">Manage Acocunt</a> View All Account
+    <a href="../AcocuntPage/index.html" class="btn btn-primary">Manage Acocunt</a> View All Account
     <hr>
 @endsection

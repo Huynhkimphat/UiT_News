@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Video;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/account/loadall', function () {
@@ -44,7 +45,8 @@ Route::group(['middleware' => 'web'], function () {
         $userRole = Auth::user()->role;
         if ($userRole == 'admin') {
             $post = Post::all()->count();
-            return view('dashboard');
+            $video = Video::all()->count();
+            return view('dashboard', compact('post', 'video'));
         }
         return  redirect('/');
     });
