@@ -17,7 +17,6 @@
                        <hr>
                         <h4> Add Comment </h4>
                         @include('comment')
-
                     </div>
                 </div>
                 <div class="" style="text-transform:uppercase; font-size:2rem; font-weight:bold;text-align:center; padding-top:20px">

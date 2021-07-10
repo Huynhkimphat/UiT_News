@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use File;
+
 use Illuminate\Http\Request;
 use App\Models\Type;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class TypesController extends Controller
 {
@@ -16,9 +18,12 @@ class TypesController extends Controller
     }
     public function index()
     {
-        $type = Type::all();
-        //  dd($types);
-        return view('admin.type.list', compact('type'));
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $type = Type::all();
+            return view('admin.type.list', compact('type'));
+        }
+        return redirect('/');
     }
 
     public function store(Request $request)
