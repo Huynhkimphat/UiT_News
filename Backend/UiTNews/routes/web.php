@@ -44,9 +44,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dashboard', function () {
         $userRole = Auth::user()->role;
         if ($userRole == 'admin') {
-            $post = Post::all()->count();
-            $video = Video::all()->count();
-            return view('dashboard', compact('post', 'video'));
+            $users = User::all()->count();
+            $posts = Post::all()->count();
+            $videos = Video::all()->count();
+            return view('dashboard', compact('post', 'video', 'user'));
         }
         return  redirect('/');
     });

@@ -17,7 +17,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                {{$post}}
+                                {{$posts}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -40,7 +40,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                15.07k
+                                {{$users}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -86,7 +86,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                {{$video}}
+                                {{$videos}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">

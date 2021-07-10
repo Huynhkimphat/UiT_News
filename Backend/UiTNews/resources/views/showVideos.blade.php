@@ -2,8 +2,8 @@
 
 @section('content')
 <head>
-    
-    
+
+
     </script>
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,10 +34,10 @@
         text-decoration:underline;
         color:#ce1212;
     }
-    .name{ 
+    .name{
         font-size:1.4rem;
     }
-    .content{ 
+    .content{
         font-size:1.3rem;
     }
     </style>
@@ -84,8 +84,8 @@
                     </div>
                 </div>
             </div>
-            
 
-                       
+
+
         </article>
 @endsection
