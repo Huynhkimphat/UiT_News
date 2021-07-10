@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Models\User;
+use App\Models\Post;
+use App\Models\Video;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 Route::get('/account/loadall', function () {
     $users = User::all();
@@ -40,9 +43,20 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dashboard', function () {
         $userRole = Auth::user()->role;
         if ($userRole == 'admin') {
-            return view('dashboard');
+            $users = User::all()->count();
+            $posts = Post::all()->count();
+            $videos = Video::all()->count();
+            $comments = Comment::all()->count();
+            return view('dashboard', compact('posts', 'videos', 'users', 'comments'));
         }
         return  redirect('/');
+    });
+    Route::get('/account', function () {
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $users = User::all();
+            return view('account', compact('users'));
+        }
     });
     // Authenticate
     Auth::routes();

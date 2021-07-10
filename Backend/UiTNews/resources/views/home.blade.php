@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link rel="stylesheet" href="../css/homepage.css">
+</head>
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
         <!--post1-->
@@ -13,7 +16,7 @@
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    
+
                     @if(!empty($latestPosts))
                     @php    $i=1    @endphp
 
@@ -25,7 +28,7 @@
                                 class="carousel-item"
                             @endif
                              >
-                                <img src='public/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
+                                <img src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
                                 <div class="carousel-caption ">
                                     <a class="carousel-title" href="{{ route('postdetail.show', $post->id) }}">
 
@@ -55,7 +58,7 @@
                 @foreach ($post_sk as $post)
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img-top"  src='public/file/post/{{$post->POST_IMAGE}}' alt="Card image">
+                            <img class="card-img-top"  src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' alt="Card image">
                             <div class="card-body">
                                 <a href="{{ route('postdetail.show', $post->id) }}">
                                     <h4 class="card-title">{{ $post->POST_TITLE }}</h4>
@@ -67,7 +70,7 @@
                     </div>
                 @endforeach
                 @endif
-               
+
             </div>
         </div>
         <!--post 3 bên phải-->
@@ -76,7 +79,7 @@
                 <div class="news-roller">
             @foreach ($topView as $post)
             <div class="slot1">
-                <img  src='public/file/post/{{$post->POST_IMAGE}}' >
+                <img  src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                 <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
@@ -130,16 +133,23 @@
             <h2>SPORTS</h2>
             <div class="left-board clearfix">
                 <div class="news-roller">
+                    <?php $i=1; ?>
                     @foreach ($post_tt as $post)
+                        @if ($i < 3)
                             <div class="slot1">
-                                <img style="width: 300px;" src='public/file/post/{{$post->POST_IMAGE}}' >
+                        @else
+                            <div class="slot1 more more-news ">
+                        @endif
+                                <img style="width: 300px;" src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
                                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                                 <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
                                 {{-- <p class="time" > {{ date_format($post->created_at,"d/m/Y H:i:s") }}   </p> --}}
                             </div>
+                        <?php $i++; ?>
                         @endforeach
-                    
+
+
                 </div>
             </div>
         </div>
@@ -152,11 +162,12 @@
         </div>
         {{-- Render the latest Videos --}}
         <div class="col-md-5 col-12">
-            <h2><a href="{{ route('videos.index') }}">VIDEOS</a></h2>
+            <h2>LATEST VIDEOS</h2>
             <div class="board clearfix">
                 <div class="news-roller">
                     <div class="playlist clearfix">
                         @foreach ($latestVideos as $video)
+                        <div class="slot1">
                         <a href="{{ route('videos.show', $video->id) }}">
                             <div class="thumbnails">
                                 <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
@@ -171,11 +182,12 @@
                                 </div>
                             </div>
                         </a>
+                        </div>
                         @endforeach
                     </div>
                     <div class="playlist clearfix more more-videos">
                         @foreach ($latestVideosMore as $video)
-                        <a href="{{ route('videos.show', $video->id) }}">
+                        <a href="{{ route('videos.show', $video->id) }}" class="videoTitle">
                             <div class="thumbnails">
                                 <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
                                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

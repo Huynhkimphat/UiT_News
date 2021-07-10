@@ -17,7 +17,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                3,243
+                                {{$posts}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -40,7 +40,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                15.07k
+                                {{$users}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -63,7 +63,7 @@
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                578
+                                {{$comments}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -81,12 +81,12 @@
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                     <div class="mb-4">
-                        <h5 class="card-title mb-0">Donate Money</h5>
+                        <h5 class="card-title mb-0">Video</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $11.61k
+                                {{$videos}}
                             </h2>
                         </div>
                         <div class="col-4 text-right">
@@ -102,10 +102,12 @@
     </div>
 
     <hr>
-    <a href="../PostPage/ManagePost/index.html" class="btn btn-primary">Manage Post</a> Add, Update, Delete Your Post
+    <a href="/posts" class="btn btn-primary">Manage Post</a> Add, Update, Delete Your Post
     <hr>
-    <a href="../VideoPage/ManageVideo/index.html" class="btn btn-warning">Manage Video</a> Add, Update, Delete Your Video Post
+    <a href="/videos/manageVideos" class="btn btn-primary">Manage Video</a> Add, Update, Delete Your Video Post
     <hr>
-    <a href="../AcocuntPage/index.html" class="btn btn-danger">Manage Acocunt</a> View All Account and Send Mail To Users
+    <a href="/types" class="btn btn-primary">Manage Type</a> Add, Update, Delete Your Video Type
+    <hr>
+    <a href="/account" class="btn btn-primary">Manage Account</a> View All Account
     <hr>
 @endsection

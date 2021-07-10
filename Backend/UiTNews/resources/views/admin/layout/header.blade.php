@@ -55,35 +55,6 @@ $user = Auth::user();
                             <img src="{{asset('admin_assets/img/profile.jpg')}}" alt="avatar admin" class="avatar-img rounded-circle">
                         </div>
                     </a>
-                    {{-- <ul class="dropdown-menu dropdown-user animated fadeIn">
-                        <div class="dropdown-user-scroll scrollbar-outer">
-                            <li>
-                                <div class="user-box">
-                                    <div class="avatar-lg"><img src="{{asset('admin_assets/img/profile.jpg')}}" alt="image profile" class="avatar-img rounded"></div>
-                                    <div class="u-text">
-                                        <h4>Admin</h4>
-                                        <p class="text-muted">admin@gmail.com</p>
-                                        <a  class="btn btn-xs btn-secondary btn-sm">Xem thông tin cá nhân</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" > <i class="fas fa-user" style="margin-right:3px;"></i> Tài khoản của tôi</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"
-                                onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                <i class="fas fa-arrow-left" style="margin-right:3px;"></i>
-                                 {{ __('Đăng xuất') }}
-                             </a>
-
-                             <form id="logout-form" action="#" method="POST" class="d-none">
-                                 @csrf
-                             </form>
-                            </li>
-                        </div>
-                    </ul> --}}
                 </li>
             </ul>
         </div>

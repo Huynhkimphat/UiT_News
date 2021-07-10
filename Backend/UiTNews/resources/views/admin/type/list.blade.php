@@ -8,7 +8,7 @@
             <div class="page-header">
                 <ul class="breadcrumbs" style="margin-left: 0px !important;">
                     <li class="nav-home">
-                        <a >
+                        <a href="/dashboard">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -39,7 +39,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header no-bd">
                                             <h5 class="modal-title">
-                                                <span class="fw-mediumbold" style="color: #007bff;font-weight: 700!important;">Type</span> 
+                                                <span class="fw-mediumbold" style="color: #007bff;font-weight: 700!important;">Type</span>
                                             </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span style="color: #F25961 !important;" aria-hidden="true">&times;</span>
@@ -47,12 +47,12 @@
                                         </div>
                                         <form action="{{ route('types.store') }}" method="POST" enctype="multipart/form-data">
                                            @csrf
-                                            <div class="modal-body">													
+                                            <div class="modal-body">
                                                 <div class="row">
                                                     <div class="form-group col-lg-12 col-md-12">
                                                         <label for="">TYPE NAME</label>
                                                         <input type="text" name="TYPE_NAME" class="form-control"  placeholder="Type name...." required>
-                                                    </div>                                     
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer no-bd">
@@ -63,17 +63,17 @@
                                     </div>
                                 </div>
                             </div>
-                       
+
                             <div class="table-responsive">
                                   <table id="add-row" class="display table table-striped table-hover" >
                                     <thead class="thead-dark" >
-                                        <tr> 
-                                            <th>STT</th>                                       
+                                        <tr>
+                                            <th>STT</th>
                                             <th>TYPE NAME</th>
                                             <th style="width: 10%">Action</th>
                                         </tr>
                                     </thead>
-                                   
+
                                     <tbody>
                                         @php   $stt=1   @endphp
                                         @foreach ($type as $type)
@@ -90,7 +90,7 @@
 
                                                         <form action="{{ route('types.destroy',$type->id) }}" method="post">
                                                             @method('DELETE')   @csrf
-                                                            <button  type="submit"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')"  class="btn btn-danger" style="margin-top :12px">Delete </button>  
+                                                            <button  type="submit"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')"  class="btn btn-danger" style="margin-top :12px">Delete </button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -110,8 +110,8 @@
                                                   <h5 class="modal-title">
                                                       <span class="fw-mediumbold">
                                                       Edit Type
-                                                      </span> 
-                                      
+                                                      </span>
+
                                                   </h5>
                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                       <span aria-hidden="true">&times;</span>
@@ -125,7 +125,7 @@
                                           </div>
                                       </div>
                                   </div>
-                 
+
                              {{-- END  --}}
                         </div>
                     </div>
@@ -166,5 +166,5 @@
 	});
 
 </script>
-    
+
 @endsection

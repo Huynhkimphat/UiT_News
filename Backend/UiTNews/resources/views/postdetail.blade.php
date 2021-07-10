@@ -39,7 +39,7 @@
                             <a href="#" class="recent_title">{{$post->POST_TITLE}}</a>
                         </li>
                         @endforeach
-                       
+
                     </div>
                 </div>
             </div>
