@@ -49,7 +49,7 @@
                     </a>
                     @if (Route::has('register'))
                     <a role="button" href="{{ route('register') }}" class="btn btn-danger btn-theme" >
-                        {{ __('register') }}
+                        {{ __('Register') }}
                     </a>
 
                     @endif

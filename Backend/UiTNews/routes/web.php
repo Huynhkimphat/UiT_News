@@ -9,6 +9,7 @@ use App\Http\Controllers\Guest\GuestController;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Video;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/account/loadall', function () {
@@ -47,7 +48,8 @@ Route::group(['middleware' => 'web'], function () {
             $users = User::all()->count();
             $posts = Post::all()->count();
             $videos = Video::all()->count();
-            return view('dashboard', compact('post', 'video', 'user'));
+            $comments = Comment::all()->count();
+            return view('dashboard', compact('posts', 'videos', 'users', 'comments'));
         }
         return  redirect('/');
     });

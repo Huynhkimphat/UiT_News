@@ -13,7 +13,7 @@
 
 a:hover {
     text-decoration: underline !important;
-    color: #e84545 !important;
+    /* color: #e84545 !important; */
 }
 
 .carousel-title h3,
