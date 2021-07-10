@@ -7,7 +7,7 @@
             <div class="page-header">
                 <ul class="breadcrumbs" style="margin-left: 0px !important;">
                     <li class="nav-home">
-                        <a >
+                        <a href="/">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>

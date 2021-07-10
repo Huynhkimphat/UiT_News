@@ -48,7 +48,7 @@ Route::group(['middleware' => 'web'], function () {
     // Posts
     Route::resource('/posts', PostsController::class);
     // Types
-    Route::resource('types', TypesController::class);
+    Route::resource('types', TypesController::class)->except(['create', 'show']);
     // Videos
     Route::get('/videos/manageVideos', [VideosController::class, 'manageVideos'])->name('videos.manageVideos');
     Route::resource('/videos', VideosController::class);

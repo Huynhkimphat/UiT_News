@@ -17,7 +17,7 @@ class PostsController extends Controller
 
     public function Home()
     {
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index');
     }
 
     public function index()
@@ -79,8 +79,6 @@ class PostsController extends Controller
             $post['POST_IMAGE'] = $filename;
             $file->move($this->path, $filename);
         }
-
-
         Post::findOrFail($id)->update($post);
         return $this->Home();
     }
