@@ -20,7 +20,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="row">
+            <div class="row" >
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -66,7 +66,7 @@
                        
                             <div class="table-responsive">
                                   <table id="add-row" class="display table table-striped table-hover" >
-                                    <thead>
+                                    <thead class="thead-dark" >
                                         <tr> 
                                             <th>STT</th>                                       
                                             <th>TYPE NAME</th>
