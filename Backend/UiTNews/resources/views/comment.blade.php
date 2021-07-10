@@ -34,6 +34,7 @@
         $.ajax({
             type:"GET",
             url:'http://localhost/UiT_News/Backend/UiTNews/api/comments/'+type+{{$post->id}},
+
             }).done((users)=>{
                 let i=0;
                 users.forEach((user)=>{
@@ -46,6 +47,7 @@
     const loadComment=()=>{
         $.ajax({
         type:"GET",
+
         url:'http://localhost/UiT_News/Backend/UiTNews/api/post/'+type+{{$post->id}}+'/comments',
 
         }).done((cmts)=>{

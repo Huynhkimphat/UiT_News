@@ -54,7 +54,7 @@
                                         <div class="form-group col-lg-12 col-md-12">
                                             <label for="exampleFormControlFile1">POST IMAGE</label>
                                                 @if (!empty ($post->POST_IMAGE))
-                                                    <img  style="width: 100px;height:100px" src="http://uitnews.local/file/post/{{$post->POST_IMAGE}}" class="thumbnail">
+                                                    <img  style="width: 100px;height:100px" src="public/file/post/{{$post->POST_IMAGE}}" class="thumbnail">
                                                 @endif
                                             <input  type="file" name="POST_IMAGE" class="form-control-file" id="exampleFormControlFile1">
                                         </div>
