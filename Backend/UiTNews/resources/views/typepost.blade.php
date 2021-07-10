@@ -14,6 +14,7 @@
                     <div class="news-roller">
                         @foreach ($posts as $post)
                             <div class="slot1">
+
                                 <img src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
                                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                                  <p class="content" font-size: 1.2rem>{{$post->POST_DESCRIPT}}</p>

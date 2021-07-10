@@ -7,8 +7,6 @@ use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
-
 Route::get('/account/loadall', function () {
     $users = User::all();
     return response()->json($users);
@@ -30,6 +28,7 @@ Route::get('/account/{id}/isAdmin', function ($id) {
     $user = User::find($id)->role;
     return $user == 'Admin' ? true : false;
 });
+
 // Posts
 Route::resource('/posts', PostsController::class);
 //Videos + Post
