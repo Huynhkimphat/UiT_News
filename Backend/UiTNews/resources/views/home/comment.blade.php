@@ -19,7 +19,7 @@
     </div>
 </div>
     <center>
-        <button type="sunmit" id="btn-loadmore">Load more comments</button>
+        <button style="" id="btn-loadmore">Load more comments</button>
     </center>
 
 <script type="text/javascript">
@@ -33,7 +33,7 @@
     const username=()=>{
         $.ajax({
             type:"GET",
-            url:'http://127.0.0.1:8000/api/comments/'+{{$post->id}}',
+            url:'http://127.0.0.1:8000/api/comments/'+type+{{$post->id}},
             }).done((users)=>{
                 let i=0;
                 users.forEach((user)=>{

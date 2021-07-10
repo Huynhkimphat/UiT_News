@@ -31,7 +31,39 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/main.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/jquery-comments.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/detail.css')}}">
+    <style>
+    .crud{
+        border-style:none;
+        background-color:#fff;
+        display: inline-block;
+        margin-left:60px;
+    }
+    .crud:hover{
+        text-decoration:underline;
+        color:#ce1212;
+    }
+    .form_delete{
+        display:inline-block;
+        float:left;
 
+    }
+
+    #btn-loadmore{
+        border-style:none;
+        text-align:center;
+        background:white;
+    }
+    #btn-loadmore:hover{
+        text-decoration:underline;
+        color:#ce1212;
+    }
+    .name{ 
+        font-size:1.4rem;
+    }
+    .content{ 
+        font-size:1.3rem;
+    }
+    </style>
 </head>
 <body>
 
@@ -44,7 +76,6 @@
     </div>
 
     @include('layouts.footer')
-
 
 </body>
 <script type="text/javascript" src="frontend/assets/data/comments-data.js"></script>
