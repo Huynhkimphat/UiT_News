@@ -35,7 +35,7 @@
                     <div class="recentpost_nav relatedpost_nav wow fadeInDown animated">
                         @foreach ($post_related as $post)
                         <li>
-                            <a href="{{ route('postdetail.show',$post->id ) }}"> <img alt="" src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}'></a>
+                            <a href="{{ route('postdetail.show',$post->id ) }}"> <img alt="" src='http://127.0.0.1:8000/file/post/{{$post->POST_IMAGE}}'></a>
                             <a href="#" class="recent_title">{{$post->POST_TITLE}}</a>
                         </li>
                         @endforeach

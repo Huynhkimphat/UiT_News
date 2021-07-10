@@ -28,7 +28,7 @@
                                 class="carousel-item"
                             @endif
                              >
-                                <img src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
+                                <img src='http://127.0.0.1:8000/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
                                 <div class="carousel-caption ">
                                     <a class="carousel-title" href="{{ route('postdetail.show', $post->id) }}">
 
@@ -58,7 +58,7 @@
                 @foreach ($post_sk as $post)
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img-top"  src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' alt="Card image">
+                            <img class="card-img-top"  src='http://127.0.0.1:8000/file/post/{{$post->POST_IMAGE}}' alt="Card image">
                             <div class="card-body">
                                 <a href="{{ route('postdetail.show', $post->id) }}">
                                     <h4 class="card-title">{{ $post->POST_TITLE }}</h4>
@@ -79,7 +79,7 @@
                 <div class="news-roller">
             @foreach ($topView as $post)
             <div class="slot1">
-                <img  src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
+                <img  src='http://127.0.0.1:8000/file/post/{{$post->POST_IMAGE}}' >
                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                 <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
@@ -133,15 +133,22 @@
             <h2>SPORTS</h2>
             <div class="left-board clearfix">
                 <div class="news-roller">
+                    <?php $i=1; ?>
                     @foreach ($post_tt as $post)
+                        @if ($i < 3)
                             <div class="slot1">
-                                <img style="width: 300px;" src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
+                        @else
+                            <div class="slot1 more more-news ">
+                        @endif
+                                <img style="width: 300px;" src='http://127.0.0.1:8000/file/post/{{$post->POST_IMAGE}}' >
                                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                                 <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
                                 {{-- <p class="time" > {{ date_format($post->created_at,"d/m/Y H:i:s") }}   </p> --}}
                             </div>
+                        <?php $i++; ?>
                         @endforeach
+                        
 
                 </div>
             </div>
