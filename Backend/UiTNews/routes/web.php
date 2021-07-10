@@ -12,28 +12,6 @@ use App\Models\Video;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/account/loadall', function () {
-    $users = User::all();
-    return response()->json($users);
-});
-Route::get('/account/{id}/loaduser', function ($id) {
-    $user = User::find($id);
-    return $user->password;
-    return response()->json($user);
-});
-Route::get('/account/{id}/update', function ($id) {
-    $user = user::find($id);
-    $user->name = $_GET["name"];
-    $user->email = $_GET["email"];
-    $user->password = $_GET["password"];
-    $user->save();
-});
-// -----------------------------role account ------------------------------
-Route::get('/account/{id}/isAdmin', function ($id) {
-    $user = User::find($id)->role;
-    return $user == 'Admin' ? true : false;
-});
-
 // Posts
 Route::resource('posts', PostsController::class);
 //Videos + Post
@@ -52,6 +30,13 @@ Route::group(['middleware' => 'web'], function () {
             return view('dashboard', compact('posts', 'videos', 'users', 'comments'));
         }
         return  redirect('/');
+    });
+    Route::get('/account', function () {
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $users = User::all();
+            return view('account', compact('users'));
+        }
     });
     // Authenticate
     Auth::routes();

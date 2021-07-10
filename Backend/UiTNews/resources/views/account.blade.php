@@ -1,16 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="../MainPage/index.html" class="btn btn-warning">Back</a>
+<a href="/dashboard" class="btn btn-warning">Back</a>
 
-        <div class="row mt-4">
-            <div class="col-md-4 col-12">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Customer's email" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <span class="input-group-text" id="basic-addon2">Search</span>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-12">
                 <table class="table">
@@ -18,59 +10,16 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Comments</th>
-                            <th scope="col">Returning</th>
-                            <th scope="col">Send Email</th>
+
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $user)
                         <tr>
                             <th scope="row">1</th>
                             <td>kimphat.devcs@gmail.com</td>
-                            <td>100</td>
-                            <td>10</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Send
-                                </button>
-                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>kimphat.devcs@gmail.com</td>
-                            <td>100</td>
-                            <td>10</td>
-
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Send
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>kimphat.devcs@gmail.com</td>
-                            <td>100</td>
-                            <td>10</td>
-
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Send
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>kimphat.devcs@gmail.com</td>
-                            <td>100</td>
-                            <td>10</td>
-
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Send
-                                </button>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
