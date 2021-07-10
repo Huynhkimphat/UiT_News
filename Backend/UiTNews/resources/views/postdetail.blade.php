@@ -39,14 +39,7 @@
                             <a href="#" class="recent_title">{{$post->POST_TITLE}}</a>
                         </li>
                         @endforeach
-                        {{-- <li>
-                            <a href="{{ route('postdetail.show',$post->id ) }}"> <img alt="" src='public/file/post/{{$post->POST_IMAGE}}'></a>
-                            <a href="#" class="recent_title">{{$post->POST_TITLE}}</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('postdetail.show',$post->id ) }}"> <img alt="" src='public/file/post/{{$post->POST_IMAGE}}'></a>
-                            <a href="#" class="recent_title">{{$post->POST_TITLE}}</a>
-                        </li> --}}
+                       
                     </div>
                 </div>
             </div>

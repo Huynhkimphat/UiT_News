@@ -31,7 +31,7 @@ Route::get('/account/{id}/isAdmin', function ($id) {
 });
 
 // Posts
-Route::resource('/posts', PostsController::class);
+Route::resource('posts', PostsController::class);
 //Videos + Post
 Route::group(['middleware' => 'web'], function () {
     // Home

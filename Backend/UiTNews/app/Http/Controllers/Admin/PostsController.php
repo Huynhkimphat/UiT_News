@@ -12,7 +12,7 @@ use File;
 
 class PostsController extends Controller
 {
-    private $path = "/file/post/";
+    protected $path="public/file/post/";
 
 
     public function Home()
@@ -40,15 +40,13 @@ class PostsController extends Controller
     }
     public function store(Request $request)
     {
-        $file = $request->file('POST_IMAGE');
-        $duoifile = $file->getClientOriginalExtension();
-        $filename = Str::random(10) . "." . $duoifile;
-        $post = $request->all();
-        $post['POST_IMAGE'] = $filename;
-        // return $post;
-        Post::create($post);
-        $file->move($this->path, $filename);
-        return $this->Home();
+                $file=$request->file('POST_IMAGE');$duoifile=$file->getClientOriginalExtension();
+                $filename=Str::random(10).".".$duoifile;
+                $data = $request->all();     $data['POST_IMAGE']=$filename;
+      //   dd($data,$this->path);
+                Post::create($data);// thêm vào CSDL 
+                $file->move($this->path,$filename); // 
+                return $this->Home();
     }
 
 
@@ -72,9 +70,9 @@ class PostsController extends Controller
         if (isset($file)) //co file
         {
             $duoifile = $file->getClientOriginalExtension();
-            $filename = Str::random(10) . "." . $duoifile;
+            $filename = Str::random(10).".".$duoifile;
             $post['POST_IMAGE'] = $filename;
-            $file->move($this->path, $filename);
+            $file->move($this->path,$filename);
         }
         Post::findOrFail($id)->update($post);
         return $this->Home();
@@ -84,7 +82,8 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
-        File::delete($this->path . $post->POST_IMAGE);
+    //dd($this->path.$post->POST_IMAGE);
+        File::delete($this->path.$post->POST_IMAGE);
         Post::find($id)->delete();
         return $this->Home();
     }
