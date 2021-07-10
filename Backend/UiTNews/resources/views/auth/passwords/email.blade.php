@@ -44,9 +44,14 @@
                             <label for="email"
                                 class="form-label authen__form-wrapper__inputs__label"
                                 >{{ __('E-Mail Address') }}</label>
-                            <input type="email" class="form-control authen__form-wrapper__inputs__input"
+                            <input type="email" class="form-control authen__form-wrapper__inputs__input @error('email') is-invalid @enderror"
                                  id="email" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder="Enter your Email">
                             <span class="authen__form__error"></span>
+                            @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
 
                         </div>
                     </div>

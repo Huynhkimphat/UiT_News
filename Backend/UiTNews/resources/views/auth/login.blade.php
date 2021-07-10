@@ -48,13 +48,23 @@
                 <div class="authen__form-wrapper__inputs">
                     <div class="mb-3 authen__form__control">
                         <label for="email" class="form-label authen__form-wrapper__inputs__label">{{ __('E-Mail Address') }}</label>
-                        <input name="email" id="email" type="email" class="form-control authen__form-wrapper__inputs__input @error('email') is-invalid @enderror " placeholder="Enter your Email">
+                        <input name="email" id="email" type="email" class="form-control authen__form-wrapper__inputs__input @error('email') is-invalid @enderror "  value="{{ old('email') }}"  placeholder="Enter your Email">
                         <span class="authen__form__error"></span>
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                         @enderror
                     </div>
                     <div class="mb-3 authen__form__control">
                         <label for="password" class="form-label authen__form-wrapper__inputs__label">{{ __('Password') }}</label>
-                        <input name="password" id="password" type="password" class="form-control authen__form-wrapper__inputs__input" placeholder="Enter your password">
+                        <input name="password" id="password" type="password" class="form-control authen__form-wrapper__inputs__input @error('password') is-invalid @enderror" placeholder="Enter your password">
                         <span class="authen__form__error"></span>
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
                     <div class="mt-3 authen__form__control">
                         <a class="text-color-primary forgot-password__link" href="{{ route('password.request') }}">Forgot your password ? </a>
@@ -87,4 +97,3 @@
 <script src="././js/Validator.js" type="text/javascript"></script>
 <script src="././js/login.js"></script>
 </html>
-
