@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
+use File;
 use Illuminate\Http\Request;
 use App\Models\Type;
 use Illuminate\Support\Str;

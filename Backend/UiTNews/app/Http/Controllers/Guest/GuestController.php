@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Type;
-
+use Illuminate\Support\Facades\Auth;
 class GuestController extends Controller
 {
     //
@@ -16,7 +16,8 @@ class GuestController extends Controller
         $topView = Post::orderByDesc('POST_VIEW')->take(4)->get();
         $post_sk = Post::where('POST_TYPE_ID', 12)->take(3)->orderByDesc('updated_at')->get();
         $post_tt = Post::where('POST_TYPE_ID', 11)->take(4)->orderByDesc('updated_at')->get();
-        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt'));
+        $user=Auth::user();
+        return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt','user'));
     }
 
     public function show($id)
@@ -29,7 +30,7 @@ class GuestController extends Controller
             ->where('id', '!=', $post->id)
             ->take(3)
             ->get();
-        return view("home.postdetail", compact('post', 'post_sk', 'post_related'));
+        return view("postdetail", compact('post', 'post_sk', 'post_related'));
     }
 
 
@@ -39,7 +40,7 @@ class GuestController extends Controller
         $type = Type::where('slug', $nametype)->first();
         $posts = Post::where('POST_TYPE_ID', $type->id)->orderBy('created_at', 'desc')->get();
 
-        return view('home.typepost', compact('posts', 'type'));
+        return view('typepost', compact('posts', 'type'));
     }
 
     public function Search(Request $request)
@@ -47,6 +48,6 @@ class GuestController extends Controller
         $key_form = $request->key;
         $key = str_replace(' ', '%', $key_form);
         $posts = Post::where('POST_TITLE', 'LIKE', '%' . $key . '%')->get();
-        return view('home.search', compact('key_form', 'posts'));
+        return view('search', compact('key_form', 'posts'));
     }
 }

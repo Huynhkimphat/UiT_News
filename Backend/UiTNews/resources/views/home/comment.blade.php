@@ -33,7 +33,7 @@
     const username=()=>{
         $.ajax({
             type:"GET",
-            url:'http://127.0.0.1:8000/api/comments/'+type+{{$post->id}},
+            url:'http://127.0.0.1:8000/api/comments/'+{{$post->id}}',
             }).done((users)=>{
                 let i=0;
                 users.forEach((user)=>{

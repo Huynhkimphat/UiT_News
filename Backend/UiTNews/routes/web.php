@@ -55,6 +55,7 @@ Route::get('/account/{id}/isAdmin', function ($id) {
     $user = User::find($id)->role;
     return $user == 'Admin' ? true : false;
 });
+//----------------------------------------------------------------------------
 Route::group(['middleware' => 'web'], function () {
     Route::resource('/posts', PostsController::class);
     // Route::resource('/videos', VideoController::class);
@@ -68,9 +69,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('/videos', VideosController::class);
 });
 
-
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // ------------------------Authen-----------------------------------
 Auth::routes();
@@ -81,8 +79,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // -----------------------------post  ------------------------------
 
 
-//------------------------------
-Route::get('/form', function () {
-    return view('Mail.form');
-});
+Route::get('postdetail/{id}', [GuestController::class, 'show'])->name('postdetail.show');
+Route::get('types/{nametype}', [GuestController::class, 'getpost'])->name('type.getpost');
+//--------------------Feedback----------
 Route::post('/message/send', ['uses' => 'App\Http\Controllers\FrontController@addFeedback', 'as' => 'front.fb']);
+
