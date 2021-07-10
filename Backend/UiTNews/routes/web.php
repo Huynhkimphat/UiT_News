@@ -30,6 +30,8 @@ Route::get('/account/{id}/isAdmin', function ($id) {
     $user = User::find($id)->role;
     return $user == 'Admin' ? true : false;
 });
+// Posts
+Route::resource('/posts', PostsController::class);
 //Videos + Post
 Route::group(['middleware' => 'web'], function () {
     // Home
@@ -45,8 +47,7 @@ Route::group(['middleware' => 'web'], function () {
     });
     // Authenticate
     Auth::routes();
-    // Posts
-    Route::resource('/posts', PostsController::class);
+
     // Types
     Route::resource('types', TypesController::class)->except(['create', 'show']);
     // Videos
