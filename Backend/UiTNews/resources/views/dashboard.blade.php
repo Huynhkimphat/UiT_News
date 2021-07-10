@@ -108,6 +108,6 @@
     <hr>
     <a href="/types" class="btn btn-primary">Manage Type</a> Add, Update, Delete Your Video Type
     <hr>
-    <a href="/account" class="btn btn-primary">Manage Acocunt</a> View All Account
+    <a href="/account" class="btn btn-primary">Manage Account</a> View All Account
     <hr>
 @endsection
