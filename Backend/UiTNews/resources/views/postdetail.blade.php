@@ -16,7 +16,7 @@
                         {!! $post->POST_CONTENT !!}
                        <hr>
                         <h4> Add Comment </h4>
-                        @include('home.comment')
+                        @include('comment')
 
                     </div>
                 </div>

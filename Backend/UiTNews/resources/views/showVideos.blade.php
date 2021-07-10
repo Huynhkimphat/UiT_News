@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <h4 style="padding-left: calc(var(--bs-gutter-x)/ 2);">Add Comment</h4>
-                        @include('home.comment',['post'=>$video])
+                        @include('comment',['post'=>$video])
                 </div>
                 <div class="col-md-4" id="latest">
                     <div class="board clearfix">
