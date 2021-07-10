@@ -33,7 +33,7 @@
     const username=()=>{
         $.ajax({
             type:"GET",
-            url:'http://localhost/UiT_News/Backend/UiTNews/api/comments/'+type+{{$post->id}},
+            url:'http://127.0.0.1:8000/api/comments/'+type+{{$post->id}},
 
             }).done((users)=>{
                 let i=0;
@@ -48,7 +48,7 @@
         $.ajax({
         type:"GET",
 
-        url:'http://localhost/UiT_News/Backend/UiTNews/api/post/'+type+{{$post->id}}+'/comments',
+        url:'http://127.0.0.1:8000/api/post/'+type+{{$post->id}}+'/comments',
 
         }).done((cmts)=>{
 
@@ -199,7 +199,7 @@
     username();
 
     const displaymore=()=>{
-
+        console.log(count);
         if (count<8){
             $("#btn-loadmore").hide();
         }else{
@@ -240,7 +240,7 @@
             var Data = {
                         COMMENT_ID: delete_id,
                     };
-            var urldelete='http://localhost/UiT_News/Backend/UiTNews/api/comments/'+delete_id;
+            var urldelete='http://127.0.0.1:8000/api/comments/'+delete_id;
             $.ajax({
                 type: "DELETE",
                 url:urldelete ,
@@ -298,7 +298,7 @@
                 COMMENT_POST_ID: type+{{ $post->id }},
                 COMMENT_USER_ID: {{auth::user()->id}},
             };
-            var urledit='http://localhost/UiT_News/Backend/UiTNews/api/comments/'+edit_id;
+            var urledit='http://127.0.0.1:8000/api/comments/'+edit_id;
             $.ajax({
                 type: "PUT",
                 url:urledit ,
@@ -354,7 +354,7 @@
                 COMMENT_USER_ID: {{ Auth::user()->id }},
                 COMMENT_PARENT_ID: parent_id,
             };
-            var urlrep='http://localhost/UiT_News/Backend/UiTNews/api/reply';
+            var urlrep='http://127.0.0.1:8000/api/reply';
             $.ajax({
                 type: "POST",
                 url:urlrep ,
@@ -393,7 +393,7 @@
     };
     $.ajax({
         type: "POST",
-        url: "http://localhost/UiT_News/Backend/UiTNews/api/comments",
+        url: "http://127.0.0.1:8000/api/comments",
         data: formData,
         dataType: 'json',
     }).done((cmt)=>{
