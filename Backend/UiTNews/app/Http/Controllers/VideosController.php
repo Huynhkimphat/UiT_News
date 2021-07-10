@@ -32,9 +32,12 @@ class VideosController extends Controller
      */
     public function manageVideos()
     {
-        $videos = Video::all();
-        // return $videos;
-        return view('manageVideos')->with('videos', $videos);
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $videos = Video::all();
+            return view('manageVideos')->with('videos', $videos);
+        }
+        return redirect('/');
     }
 
     /**
@@ -44,7 +47,11 @@ class VideosController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            return view('create');
+        }
+        return redirect('/');
     }
 
     /**
@@ -55,27 +62,31 @@ class VideosController extends Controller
      */
     public function store(Request $request)
     {
-        $video = new Video();
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $video = new Video();
 
-        $query = DB::table('videos')->insert([
-            'VIDEO_TITLE' => $request->input('VIDEO_TITLE'),
-            'VIDEO_FILE' => $request->input('VIDEO_FILE'),
-            'VIDEO_DESCRIPTION' => $request->input('VIDEO_DESCRIPTION'),
-            'VIDEO_AUTHOR' => $request->input('VIDEO_AUTHOR'),
-            'VIDEO_ORIGIN' => $request->input('VIDEO_ORIGIN'),
-            'VIDEO_TYPE' => $request->input('VIDEO_TYPE'),
-            'created_at' => $request->created_at,
-            'updated_at' => $request->updated_at,
-        ]);
+            $query = DB::table('videos')->insert([
+                'VIDEO_TITLE' => $request->input('VIDEO_TITLE'),
+                'VIDEO_FILE' => $request->input('VIDEO_FILE'),
+                'VIDEO_DESCRIPTION' => $request->input('VIDEO_DESCRIPTION'),
+                'VIDEO_AUTHOR' => $request->input('VIDEO_AUTHOR'),
+                'VIDEO_ORIGIN' => $request->input('VIDEO_ORIGIN'),
+                'VIDEO_TYPE' => $request->input('VIDEO_TYPE'),
+                'created_at' => $request->created_at,
+                'updated_at' => $request->updated_at,
+            ]);
 
-        if ($query) {
-            return back()->with('success', 'Video have been successfully created');
-        } else {
-            return back()->with('fail', 'Something went wrong');
+            if ($query) {
+                return back()->with('success', 'Video have been successfully created');
+            } else {
+                return back()->with('fail', 'Something went wrong');
+            }
+
+            $video->save();
+            return redirect('videos/manageVideos');
         }
-
-        $video->save();
-        return redirect('videos/manageVideos');
+        return redirect('/');
     }
     /**
      * Display the specified resource.
@@ -100,9 +111,12 @@ class VideosController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $video = Video::findOrFail($id);
-
-        return view('edit', compact('video'));
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $video = Video::findOrFail($id);
+            return view('edit', compact('video'));
+        }
+        return redirect('/');
     }
 
     /**
@@ -114,18 +128,20 @@ class VideosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $video = Video::findOrFail($id);
-
-        $video->VIDEO_TITLE = $request->input('VIDEO_TITLE');
-        $video->VIDEO_FILE = $request->input('VIDEO_FILE');
-        $video->VIDEO_DESCRIPTION = $request->input('VIDEO_DESCRIPTION');
-        $video->VIDEO_AUTHOR = $request->input('VIDEO_AUTHOR');
-        $video->VIDEO_ORIGIN = $request->input('VIDEO_ORIGIN');
-        $video->VIDEO_TYPE = $request->input('VIDEO_TYPE');
-        $video->updated_at = $request->updated_at;
-        $video->save();
-
-        return redirect('videos/manageVideos');
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $video = Video::findOrFail($id);
+            $video->VIDEO_TITLE = $request->input('VIDEO_TITLE');
+            $video->VIDEO_FILE = $request->input('VIDEO_FILE');
+            $video->VIDEO_DESCRIPTION = $request->input('VIDEO_DESCRIPTION');
+            $video->VIDEO_AUTHOR = $request->input('VIDEO_AUTHOR');
+            $video->VIDEO_ORIGIN = $request->input('VIDEO_ORIGIN');
+            $video->VIDEO_TYPE = $request->input('VIDEO_TYPE');
+            $video->updated_at = $request->updated_at;
+            $video->save();
+            return redirect('videos/manageVideos');
+        }
+        return redirect('/');
     }
 
     /**
@@ -136,10 +152,12 @@ class VideosController extends Controller
      */
     public function destroy($id)
     {
-
-        $videos = Video::findOrFail($id);
-
-        $videos->delete();
-        return redirect('/videos/manageVideos');
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $videos = Video::findOrFail($id);
+            $videos->delete();
+            return redirect('/videos/manageVideos');
+        }
+        return redirect('/');
     }
 }

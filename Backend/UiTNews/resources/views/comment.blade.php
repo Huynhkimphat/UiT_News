@@ -24,16 +24,16 @@
 
 <script type="text/javascript">
     var type;
-    if ('{{$post->POST_TITLE}}'!=''){ 
+    if ('{{$post->POST_TITLE}}'!=''){
          type="post";
-    }else{ 
+    }else{
          type="video";
     }
-    
+
     const username=()=>{
         $.ajax({
             type:"GET",
-            url:'http://127.0.0.1:8000/api/comments/'+type+{{$post->id}},
+            url:'http://uitnews.local/api/comments/'+type+{{$post->id}},
             }).done((users)=>{
                 let i=0;
                 users.forEach((user)=>{
@@ -46,7 +46,7 @@
     const loadComment=()=>{
         $.ajax({
         type:"GET",
-        url:'http://127.0.0.1:8000/api/post/'+type+{{$post->id}}+'/comments',
+        url:'http://uitnews.local/api/post/'+type+{{$post->id}}+'/comments',
 
         }).done((cmts)=>{
 
@@ -56,7 +56,7 @@
 
                 cmts.forEach((cmt) => {
                     let date=new Date(cmt.created_at);
-                    
+
                     if(cmt.COMMENT_PARENT_ID== null){
                         @if(Route::has('login'))
                         @auth
@@ -238,7 +238,7 @@
             var Data = {
                         COMMENT_ID: delete_id,
                     };
-            var urldelete='http://127.0.0.1:8000/api/comments/'+delete_id;
+            var urldelete='http://uitnews.local/api/comments/'+delete_id;
             $.ajax({
                 type: "DELETE",
                 url:urldelete ,
@@ -296,7 +296,7 @@
                 COMMENT_POST_ID: type+{{ $post->id }},
                 COMMENT_USER_ID: {{auth::user()->id}},
             };
-            var urledit='http://127.0.0.1:8000/api/comments/'+edit_id;
+            var urledit='http://uitnews.local/api/comments/'+edit_id;
             $.ajax({
                 type: "PUT",
                 url:urledit ,
@@ -352,7 +352,7 @@
                 COMMENT_USER_ID: {{ Auth::user()->id }},
                 COMMENT_PARENT_ID: parent_id,
             };
-            var urlrep='http://127.0.0.1:8000/api/reply';
+            var urlrep='http://uitnews.local/api/reply';
             $.ajax({
                 type: "POST",
                 url:urlrep ,
@@ -391,7 +391,7 @@
     };
     $.ajax({
         type: "POST",
-        url: "http://127.0.0.1:8000/api/comments",
+        url: "http://uitnews.local/api/comments",
         data: formData,
         dataType: 'json',
     }).done((cmt)=>{

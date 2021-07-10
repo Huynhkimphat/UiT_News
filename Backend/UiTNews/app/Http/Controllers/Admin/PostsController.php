@@ -29,8 +29,6 @@ class PostsController extends Controller
         }
         return redirect('/');
     }
-
-
     public function create()
     {
         $userRole = Auth::user()->role;
