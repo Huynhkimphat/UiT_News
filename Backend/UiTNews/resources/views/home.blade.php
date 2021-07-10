@@ -215,7 +215,7 @@
         </div>
         {{-- Render the latest Videos --}}
         <div class="col-md-5 col-12">
-            <h2><a href="{{ route('videos.index') }}">VIDEOS</a></h2>
+            <h2>LATEST VIDEOS</h2>
             <div class="board clearfix">
                 <div class="news-roller">
                     <div class="playlist clearfix">

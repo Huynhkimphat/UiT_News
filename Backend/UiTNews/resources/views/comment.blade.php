@@ -33,7 +33,7 @@
     const username=()=>{
         $.ajax({
             type:"GET",
-            url:'http://uitnews.local/api/comments/'+type+{{$post->id}},
+            url:'http://localhost/UiT_News/Backend/UiTNews/api/comments/'+type+{{$post->id}},
             }).done((users)=>{
                 let i=0;
                 users.forEach((user)=>{
@@ -46,7 +46,7 @@
     const loadComment=()=>{
         $.ajax({
         type:"GET",
-        url:'http://uitnews.local/api/post/'+type+{{$post->id}}+'/comments',
+        url:'http://localhost/UiT_News/Backend/UiTNews/api/post/'+type+{{$post->id}}+'/comments',
 
         }).done((cmts)=>{
 
@@ -238,7 +238,7 @@
             var Data = {
                         COMMENT_ID: delete_id,
                     };
-            var urldelete='http://uitnews.local/api/comments/'+delete_id;
+            var urldelete='http://localhost/UiT_News/Backend/UiTNews/api/comments/'+delete_id;
             $.ajax({
                 type: "DELETE",
                 url:urldelete ,
@@ -296,7 +296,7 @@
                 COMMENT_POST_ID: type+{{ $post->id }},
                 COMMENT_USER_ID: {{auth::user()->id}},
             };
-            var urledit='http://uitnews.local/api/comments/'+edit_id;
+            var urledit='http://localhost/UiT_News/Backend/UiTNews/api/comments/'+edit_id;
             $.ajax({
                 type: "PUT",
                 url:urledit ,
@@ -352,7 +352,7 @@
                 COMMENT_USER_ID: {{ Auth::user()->id }},
                 COMMENT_PARENT_ID: parent_id,
             };
-            var urlrep='http://uitnews.local/api/reply';
+            var urlrep='http://localhost/UiT_News/Backend/UiTNews/api/reply';
             $.ajax({
                 type: "POST",
                 url:urlrep ,
@@ -391,7 +391,7 @@
     };
     $.ajax({
         type: "POST",
-        url: "http://uitnews.local/api/comments",
+        url: "http://localhost/UiT_News/Backend/UiTNews/api/comments",
         data: formData,
         dataType: 'json',
     }).done((cmt)=>{
