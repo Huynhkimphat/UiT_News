@@ -25,7 +25,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title" style="font-size: 14px!important; font-weight: 600!important;">List post</h4>
-                                <a href=" {{ route('post.create') }}" class="btn btn-primary btn-round ml-auto">
+                                <a href=" {{ route('posts.create') }}" class="btn btn-primary btn-round ml-auto">
                                     <i class="fa fa-plus"></i>
                                    Add New
                                 </a>
@@ -68,11 +68,11 @@
                                                         <a href="{{ route('postdetail.show', $post->id) }}" class="btn btn-link btn-primary btn-lg" data-original-title="Xem thông tin">
                                                             <button type="submit" class="btn btn-primary">Show </button>
                                                         </a>
-                                                        <a href="{{ route('post.edit',$post->id) }}" class="btn btn-link btn-primary btn-lg" data-original-title="Xem thông tin">
+                                                        <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-link btn-primary btn-lg" data-original-title="Xem thông tin">
                                                             <button type="submit" class="btn btn-primary">Edit</button>
                                                         </a>
 
-                                                        <form action="{{ route('post.destroy',$post->id) }}" method="post">
+                                                        <form action="{{ route('posts.destroy',$post->id) }}" method="post">
                                                             @method('DELETE')   @csrf
                                                             <button  type="submit"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger" style="margin-top :12px">Delete </button>
 
