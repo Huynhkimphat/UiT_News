@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Models\Type;
 use App\Models\Post;
-use File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use File;
 
 class PostsController extends Controller
 {
@@ -17,24 +17,27 @@ class PostsController extends Controller
 
     public function Home()
     {
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index');
     }
 
     public function index()
     {
-        $posts = Post::with('types')->get(); //những bài viết đã Join với bảng Types
-        // dd($posts);
-        return view('admin.post.all', compact('posts'));
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $posts = Post::with('types')->get();
+            return view('admin.post.all', compact('posts'));
+        }
+        return redirect('/');
     }
-
-
     public function create()
     {
-        $types = Type::all();
-        return view('admin.post.create', compact('types'));
+        $userRole = Auth::user()->role;
+        if ($userRole == 'admin') {
+            $types = Type::all();
+            return view('admin.post.create', compact('types'));
+        }
+        return redirect('/');
     }
-
-
     public function store(Request $request)
     {
         $file = $request->file('POST_IMAGE');
@@ -42,7 +45,7 @@ class PostsController extends Controller
         $filename = Str::random(10) . "." . $duoifile;
         $post = $request->all();
         $post['POST_IMAGE'] = $filename;
-        // dd($data,$data['POST_IMAGE']);
+        // return $post;
         Post::create($post);
         $file->move($this->path, $filename);
         return $this->Home();
@@ -51,8 +54,6 @@ class PostsController extends Controller
 
     public function show($id)
     {
-
-        // dd($id);
     }
 
 
@@ -75,8 +76,6 @@ class PostsController extends Controller
             $post['POST_IMAGE'] = $filename;
             $file->move($this->path, $filename);
         }
-
-
         Post::findOrFail($id)->update($post);
         return $this->Home();
     }

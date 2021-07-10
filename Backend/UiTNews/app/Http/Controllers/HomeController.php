@@ -35,6 +35,5 @@ class HomeController extends Controller
         $latestVideos = Video::latest()->take(3)->get();
         $latestVideosMore = Video::latest()->skip(3)->take(2)->get();
         return view('home', compact('latestPosts', 'topView', 'post_sk', 'post_tt','user','latestVideos','latestVideosMore'));
-
     }
 }
