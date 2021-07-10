@@ -224,7 +224,10 @@ a .item-info {
 }
 @media screen and (max-width: 1025px) {
     .news-roller img {
-        width: 50%;
+        width: 70%;
+    }
+    .news-roller iframe {
+        width: 70%;
     }
     .slot1 .content {
         line-height: 18px;
@@ -243,6 +246,11 @@ a .item-info {
     .time,
     .type {
         font-size: smaller;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .news-roller iframe {
+        width: 100%;
     }
 }
 @media screen and (max-width: 767px) {
@@ -295,10 +303,5 @@ a .item-info {
     }
     .btn-videos {
         display: none !important;
-    }
-}
-@media screen and (width: 768px) {
-    .video-info {
-        display: none;
     }
 }
