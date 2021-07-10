@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Models\Type;
 use App\Models\Post;
-use File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use File;
 
 class PostsController extends Controller
 {
@@ -25,7 +24,7 @@ class PostsController extends Controller
     {
         $userRole = Auth::user()->role;
         if ($userRole == 'admin') {
-            $posts = Post::with('types')->get(); //những bài viết đã Join với bảng Types
+            $posts = Post::with('types')->get();
             return view('admin.post.all', compact('posts'));
         }
         return redirect('/');
@@ -41,8 +40,6 @@ class PostsController extends Controller
         }
         return redirect('/');
     }
-
-
     public function store(Request $request)
     {
         $file = $request->file('POST_IMAGE');

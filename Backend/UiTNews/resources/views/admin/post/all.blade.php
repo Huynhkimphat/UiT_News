@@ -1,6 +1,5 @@
 @extends('admin.layout.index')
 @section('menu2')   active  @endsection
-
 @section('content')
 <div class="main-panel">
     <div class="content">
@@ -34,14 +33,14 @@
                         </div>
                         <div class="card-body">
                             <!-- Modal add -->
-                          
-                       
+
+
                             <div class="table-responsive">
                                   <table id="add-row" class="display table table-striped table-hover" >
                                     <thead class="thead-dark">
-                                        <tr>     
-                                            <th>STT</th>                                   
-                                            <th style="width: 320px;">POST TITLE</th> 
+                                        <tr>
+                                            <th>STT</th>
+                                            <th style="width: 320px;">POST TITLE</th>
                                             <th>TYPES</th>
                                             <th>AUTHOR</th>
                                             <th>POST ORIGIN</th>
@@ -49,7 +48,7 @@
                                             <th style="text-align: center">Action</th>
                                         </tr>
                                     </thead>
-                                   
+
                                     <tbody>
                                         @php   $stt=1   @endphp
                                         @foreach ($posts as $post)
@@ -57,7 +56,7 @@
                                                 <td>{{ $stt++ }}</td>
                                                 <td>{{ $post->POST_TITLE}}</td>
                                                 <td>{{ $post->types->TYPE_NAME }}</td>
-                                           
+
                                                 <td>
                                                     {{ $post->POST_AUTHOR_NAME }}
                                                 </td>
@@ -76,8 +75,8 @@
                                                         <form action="{{ route('post.destroy',$post->id) }}" method="post">
                                                             @method('DELETE')   @csrf
                                                             <button  type="submit"  onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger" style="margin-top :12px">Delete </button>
-                                                               
-                                                            </button>             
+
+                                                            </button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -87,7 +86,7 @@
                                 </table>
                             </div>
 
-                             
+
                         </div>
                     </div>
                 </div>
