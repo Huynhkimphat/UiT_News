@@ -45,6 +45,7 @@ class PostsController extends Controller
         $filename = Str::random(10) . "." . $duoifile;
         $post = $request->all();
         $post['POST_IMAGE'] = $filename;
+        // return $filename;
         // return $post;
         Post::create($post);
         $file->move($this->path, $filename);

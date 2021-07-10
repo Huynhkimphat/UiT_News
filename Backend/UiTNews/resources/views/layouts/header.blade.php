@@ -33,9 +33,7 @@
                             {{ Auth::user()->name }}
                         </div>
                     </div>
-                    <div id=" myDropdown" class="dropdown-content"style="top:50px">
-                        <a href="#MyProfile">My Profile</a>
-                        <a href="#Settings">Settings</a>
+                    <div id=" myDropdown" class="dropdown-content"style="top:46px">
                         <a href="{{ route('logout') }}"onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
@@ -68,7 +66,7 @@
     <div class="container-fluid">
         <!-- Toggle button -->
         <!-- Logo to back home -->
-        <a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="frontend/assets/images/logo2.png" width="100" height="100"></a>
+        <a class="navbar-brand mt-2 mt-lg-0" href="/dashboard"><img src="frontend/assets/images/logo2.png" width="100" height="100"></a>
         <!-- Navbar Toggle         -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
