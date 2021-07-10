@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link rel="stylesheet" href="../css/homepage.css">
+</head>
 <article id="pop-news">
     <div class="row d-flex justify-content-center">
         <!--post1-->
@@ -152,11 +155,12 @@
         </div>
         {{-- Render the latest Videos --}}
         <div class="col-md-5 col-12">
-            <h2><a href="{{ route('videos.index') }}">VIDEOS</a></h2>
+            <h2>LATEST VIDEOS</h2>
             <div class="board clearfix">
                 <div class="news-roller">
                     <div class="playlist clearfix">
                         @foreach ($latestVideos as $video)
+                        <div class="slot1">
                         <a href="{{ route('videos.show', $video->id) }}">
                             <div class="thumbnails">
                                 <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
@@ -171,11 +175,12 @@
                                 </div>
                             </div>
                         </a>
+                        </div>
                         @endforeach
                     </div>
                     <div class="playlist clearfix more more-videos">
                         @foreach ($latestVideosMore as $video)
-                        <a href="{{ route('videos.show', $video->id) }}">
+                        <a href="{{ route('videos.show', $video->id) }}" class="videoTitle">
                             <div class="thumbnails">
                                 <iframe width="250" height="150" src="{{ $video->VIDEO_FILE }}" title="YouTube video player"
                                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

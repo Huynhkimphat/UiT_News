@@ -102,10 +102,12 @@
     </div>
 
     <hr>
-    <a href="../PostPage/ManagePost/index.html" class="btn btn-primary">Manage Post</a> Add, Update, Delete Your Post
+    <a href="/posts" class="btn btn-primary">Manage Post</a> Add, Update, Delete Your Post
     <hr>
-    <a href="../VideoPage/ManageVideo/index.html" class="btn btn-warning">Manage Video</a> Add, Update, Delete Your Video Post
+    <a href="/videos/manageVideos" class="btn btn-warning">Manage Video</a> Add, Update, Delete Your Video Post
     <hr>
-    <a href="../AcocuntPage/index.html" class="btn btn-danger">Manage Acocunt</a> View All Account and Send Mail To Users
+    <a href="/types" class="btn btn-danger">Manage Type</a> Add, Update, Delete Your Video Type
+    <hr>
+    <a href="../AcocuntPage/index.html" class="btn btn-danger">Manage Acocunt</a> View All Account
     <hr>
 @endsection
