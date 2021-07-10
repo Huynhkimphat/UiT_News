@@ -1,10 +1,10 @@
-@extends('home.Master') 
+@extends('layouts.app')
 
 @section('title')
     <title>{{ $type->TYPE_NAME }}</title>
 @endsection
 
-@section('main')
+@section('content')
     <article id="news-video">
         <div class="row d-flex justify-content-center">
             <!--post 4-->

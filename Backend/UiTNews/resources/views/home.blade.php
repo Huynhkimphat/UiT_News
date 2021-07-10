@@ -1,7 +1,4 @@
 @extends('layouts.app')
-@section('header')
-@extends('layouts.header')
-@endsection
 
 @section('content')
 
@@ -38,7 +35,7 @@
                                 class="carousel-item"
                             @endif
                              >
-                                <img src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
+                                <img src='http://localhost/UiT_News/file/post/{{$post->POST_IMAGE}}' class="d-block w-100">
                                 <div class="carousel-caption ">
                                     <a class="carousel-title" href="{{ route('postdetail.show', $post->id) }}">
 
@@ -68,7 +65,7 @@
                 @foreach ($post_sk as $post)
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img-top"  src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' alt="Card image">
+                            <img class="card-img-top"  src='public/file/post/{{$post->POST_IMAGE}}' alt="Card image">
                             <div class="card-body">
                                 <a href="{{ route('postdetail.show', $post->id) }}">
                                     <h4 class="card-title">{{ $post->POST_TITLE }}</h4>
@@ -113,7 +110,7 @@
                 <div class="news-roller">
             @foreach ($topView as $post)
             <div class="slot1">
-                <img  src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
+                <img  src='public/file/post/{{$post->POST_IMAGE}}' >
                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                 <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
@@ -169,7 +166,7 @@
                 <div class="news-roller">
                     @foreach ($post_tt as $post)
                             <div class="slot1">
-                                <img style="width: 300px;" src='http://uitnews.local/file/post/{{$post->POST_IMAGE}}' >
+                                <img style="width: 300px;" src='public/file/post/{{$post->POST_IMAGE}}' >
                                 <a href="{{ route('postdetail.show',$post->id ) }}"><strong>  {{$post->POST_TITLE}}</strong></a>
                                 <p class="content"id="hidden"> {{$post->POST_DESCRIPT }}</p>
                                 {{-- <p class="type">{{ $type->TYPE_NAME }}</p> --}}
