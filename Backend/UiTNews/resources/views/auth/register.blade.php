@@ -48,14 +48,19 @@
                     <div class="authen__form-wrapper__inputs">
                         <div class="mb-3 authen__form__control">
                             <label for="name" class="form-label authen__form-wrapper__inputs__label" >{{ __('Name') }}</label>
-                            <input id="name" name="name" type="text" class="form-control authen__form-wrapper__inputs__input "  placeholder="Enter your name"  name="name" value="{{ old('name') }}" required autocomplete="name" autofocus >
+                            <input id="name" name="name" type="text" class="form-control authen__form-wrapper__inputs__input "  placeholder="Enter your name"  name="name" value="{{ old('name') }}"  autocomplete="name" >
                             <span class="authen__form__error"></span>
                         </div>
                         <div class="mb-3 authen__form__control">
                             <label for="email" class="form-label authen__form-wrapper__inputs__label" >{{ __('E-Mail Address') }}</label>
-                            <input  id="email" name="email" type="email" class="form-control authen__form-wrapper__inputs__input "  placeholder="Enter your Email"
-                             name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input  id="email" name="email" type="email" class="form-control authen__form-wrapper__inputs__input @error('email') is-invalid @enderror"  placeholder="Enter your Email"
+                             name="email" value="{{ old('email') }}" autocomplete="email">
                             <span class="authen__form__error"></span>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                         @enderror
                         </div>
                         <div class="mb-3 authen__form__control">
                             <label for="password" class="form-label authen__form-wrapper__inputs__label" >{{ __('Password') }}</label>
@@ -113,4 +118,3 @@
 <script src="././js/Validator.js" type="text/javascript"></script>
 <script src="././js/register.js"></script>
 </html>
-
