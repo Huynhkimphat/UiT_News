@@ -12,7 +12,6 @@ use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
 class GuestController extends Controller
 {
-    //
     public function loadpostall()
     {
         $latestPosts = Post::latest()->take(3)->get();
@@ -37,8 +36,6 @@ class GuestController extends Controller
             ->get();
         return view("postdetail", compact('post', 'post_sk', 'post_related'));
     }
-
-
     public function getpost($nametype)
     {
 

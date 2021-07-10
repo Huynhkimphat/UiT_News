@@ -13,13 +13,10 @@ use File;
 class PostsController extends Controller
 {
     protected $path="public/file/post/";
-
-
     public function Home()
     {
         return redirect()->route('posts.index');
     }
-
     public function index()
     {
         $userRole = Auth::user()->role;
@@ -49,7 +46,6 @@ class PostsController extends Controller
                 return $this->Home();
     }
 
-
     public function show($id)
     {
     }
@@ -77,7 +73,6 @@ class PostsController extends Controller
         Post::findOrFail($id)->update($post);
         return $this->Home();
     }
-
 
     public function destroy($id)
     {

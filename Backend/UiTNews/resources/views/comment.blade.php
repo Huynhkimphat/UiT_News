@@ -46,7 +46,7 @@
     const loadComment=()=>{
         $.ajax({
         type:"GET",
-        url:'http://localhost/UiT_News/Backend/UiTNews/api/post/'+{{$post->id}}+'/comments',
+        url:'http://localhost/UiT_News/Backend/UiTNews//api/post/'+{{$post->id}}+'/comments',
 
         }).done((cmts)=>{
 

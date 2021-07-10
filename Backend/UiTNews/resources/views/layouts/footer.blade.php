@@ -10,7 +10,7 @@
                     <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
                         <!-- Logo -->
                         <a href="#!" class="footer-logo">
-                            <img src="../images/logo.png" alt="footer_logo" class="img-thumbnail w-100"
+                            <img src="public/images/logo.png" alt="footer_logo" class="img-thumbnail w-100"
                                 style="width: 300px;height: 250px;">
                         </a>
                         <!-- Text -->
