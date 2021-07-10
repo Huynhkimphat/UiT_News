@@ -48,11 +48,9 @@ Route::group(['middleware' => 'web'], function () {
     // Posts
     Route::resource('/posts', PostsController::class);
     // Types
-    Route::resource('types', TypesController::class)->except(['create', 'show']);
+    Route::resource('types', TypesController::class);
     // Videos
     Route::get('/videos/manageVideos', [VideosController::class, 'manageVideos'])->name('videos.manageVideos');
-    Route::get('/videos/createAllVideos', [VideosController::class, 'createAllVideos'])->name('videos.createAllVideos');
-    Route::get('/videos/latestVideos', [VideosController::class, 'latestVideos'])->name('videos.latestVideos');
     Route::resource('/videos', VideosController::class);
     // -----------------------------forget password ------------------------------
     Route::get('forget-password',  [App\Http\Controllers\Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget-password');
