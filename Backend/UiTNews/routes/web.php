@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\TypesController;
 use App\Http\Controllers\Guest\GuestController;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+
 Route::get('/account/loadall', function () {
     $users = User::all();
     return response()->json($users);
@@ -41,6 +43,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/dashboard', function () {
         $userRole = Auth::user()->role;
         if ($userRole == 'admin') {
+            $post = Post::all()->count();
             return view('dashboard');
         }
         return  redirect('/');
